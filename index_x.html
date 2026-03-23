@@ -3,34 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>X迷子情報リンク集｜全国迷子情報リンク集</title>
+<title>全国迷子情報リンク集</title>
 <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 <style>
 :root{
   --font:'Kosugi Maru',sans-serif;
-  --border:#dde;--radius:12px;
   --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;
   --kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;
-  --cs:50px;
+  --border:#dde;--radius:12px;--cs:50px;
+  /* X版：ダーク黒系 */
+  --header-from:#111;
+  --header-to:#333;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
 
-header{background:linear-gradient(135deg,#111,#383838);color:white;padding:1.6rem 1rem 1.2rem;}
+header{
+  background:linear-gradient(135deg,var(--header-from),var(--header-to));
+  color:white;padding:1.4rem 1rem 0;
+}
 .header-inner{max-width:940px;margin:0 auto;}
-.header-top{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem;}
-.header-icon{width:58px;height:58px;border-radius:50%;background:white;
+.header-top{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.header-icon{width:56px;height:56px;border-radius:50%;background:white;
   padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
-.header-text h1{font-size:clamp(1.2rem,3.8vw,2rem);letter-spacing:0.08em;margin-bottom:0.35rem;}
-.header-text p{font-size:0.83rem;opacity:0.88;line-height:1.75;}
-.top-nav{display:flex;gap:0.8rem;flex-wrap:wrap;}
-.nav-btn{display:flex;align-items:center;gap:0.5rem;padding:0.65rem 1.4rem;border-radius:50px;
-  font-family:var(--font);font-size:0.95rem;font-weight:700;
-  text-decoration:none;border:2.5px solid transparent;transition:all 0.16s;}
-.nav-btn.active{background:#fff;color:#111;border-color:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.3);}
-.nav-btn.inactive{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.5);}
-.nav-btn.inactive:hover{background:rgba(255,255,255,0.32);}
+.header-text h1{font-size:clamp(1.1rem,3.5vw,1.8rem);letter-spacing:0.08em;margin-bottom:0.3rem;}
+.header-text p{font-size:0.82rem;opacity:0.85;line-height:1.7;}
+
+/* タブナビ */
+.tab-nav{
+  display:flex;gap:0;overflow-x:auto;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:0.5rem;
+}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{
+  display:flex;align-items:center;gap:0.35rem;
+  padding:0.65rem 1.1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;
+  text-decoration:none;white-space:nowrap;border:none;border-radius:10px 10px 0 0;
+  transition:all 0.15s;cursor:pointer;flex-shrink:0;margin-right:3px;
+}
+.tab-btn.active{background:white;color:#111;box-shadow:0 -2px 8px rgba(0,0,0,0.15);}
+.tab-btn.inactive{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);}
+.tab-btn.inactive:hover{background:rgba(255,255,255,0.3);}
+.tab-btn.soon{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.45);cursor:default;}
+.tab-badge{font-size:0.65rem;background:rgba(255,255,255,0.2);border-radius:50px;padding:0.1rem 0.4rem;}
+.tab-btn.active .tab-badge{background:#f0f0f0;color:#555;}
 
 main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .guide{text-align:center;font-size:0.86rem;color:#555;margin-bottom:1rem;
@@ -39,31 +56,14 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 
 /* 保健所案内バナー */
 .shelter-banner{display:flex;align-items:flex-start;gap:0.8rem;
-  background:#ebf4ff;border:2px solid #90c2f5;border-radius:var(--radius);
-  padding:0.85rem 1.1rem;margin-bottom:1.2rem;text-decoration:none;color:#1a365d;
+  background:#e8f5e9;border:2px solid #81c784;border-radius:var(--radius);
+  padding:0.85rem 1.1rem;margin-bottom:1.2rem;text-decoration:none;color:#1b5e20;
   transition:border-color 0.15s,background 0.15s;}
-.shelter-banner:hover{border-color:#2b6cb0;background:#dbeafe;}
+.shelter-banner:hover{border-color:#2a7a4a;background:#c8e6c9;}
 .shelter-banner .si{font-size:1.5rem;flex-shrink:0;padding-top:0.1rem;}
 .shelter-banner .st strong{display:block;font-size:0.9rem;margin-bottom:0.2rem;}
-.shelter-banner .st span{font-size:0.78rem;color:#2c5282;line-height:1.7;}
+.shelter-banner .st span{font-size:0.78rem;color:#2e7d32;line-height:1.7;}
 .shelter-banner .sa{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
-
-/* 特別セクション（猫・鳥） */
-.special-section{background:white;border-radius:var(--radius);
-  box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:1.2rem;margin-bottom:1.4rem;}
-.special-section h2{font-size:1rem;font-weight:700;margin-bottom:0.8rem;}
-.special-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.6rem;}
-.special-card{display:flex;align-items:center;gap:0.8rem;
-  background:#fafafa;border:1.5px solid var(--border);border-radius:10px;
-  padding:0.8rem 1rem;text-decoration:none;color:#333;
-  transition:border-color 0.15s,background 0.15s;}
-.special-card:hover{border-color:#111;background:#f0f0f0;}
-.special-card .sc-icon{font-size:2rem;flex-shrink:0;}
-.special-card .sc-text strong{display:block;font-size:0.9rem;margin-bottom:0.15rem;}
-.special-card .sc-text span{font-size:0.76rem;color:#666;}
-.special-card .sc-arrow{margin-left:auto;font-size:1.1rem;flex-shrink:0;
-  background:#111;color:white;padding:0.3rem 0.7rem;border-radius:50px;
-  font-size:0.76rem;font-weight:700;white-space:nowrap;}
 
 /* ブロック地図 */
 .map-wrap{background:white;border-radius:var(--radius);
@@ -124,12 +124,27 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
   transition:background 0.13s,border-color 0.13s;font-family:var(--font);}
 .pref-btn:hover{background:#f0f0f0;border-color:#888;color:#111;}
 
-/* 全国キーワード検索 */
+/* 特別セクション */
+.special-section{background:white;border-radius:var(--radius);
+  box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:1.2rem;margin-bottom:1.4rem;}
+.special-section h2{font-size:1rem;font-weight:700;margin-bottom:0.8rem;}
+.special-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.6rem;}
+.special-card{display:flex;align-items:center;gap:0.8rem;
+  background:#fafafa;border:1.5px solid var(--border);border-radius:10px;
+  padding:0.8rem 1rem;text-decoration:none;color:#333;
+  transition:border-color 0.15s,background 0.15s;}
+.special-card:hover{border-color:#111;background:#f0f0f0;}
+.special-card .sc-icon{font-size:2rem;flex-shrink:0;}
+.special-card .sc-text strong{display:block;font-size:0.88rem;margin-bottom:0.12rem;}
+.special-card .sc-text span{font-size:0.75rem;color:#666;}
+.special-card .sc-arrow{margin-left:auto;background:#111;color:white;
+  padding:0.3rem 0.7rem;border-radius:50px;font-size:0.75rem;font-weight:700;white-space:nowrap;}
+
+/* キーワード検索 */
 .search-section{background:white;border-radius:var(--radius);
   box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:1.2rem;margin-bottom:1.4rem;}
 .search-section h2{font-size:1rem;font-weight:700;margin-bottom:0.4rem;}
 .search-note{font-size:0.8rem;color:#888;margin-bottom:1rem;line-height:1.65;}
-.search-note strong{color:#555;}
 .search-group{margin-bottom:1.2rem;}
 .search-group:last-child{margin-bottom:0;}
 .search-group-label{display:inline-flex;align-items:center;gap:0.35rem;
@@ -140,10 +155,10 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
   background:#fafafa;border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.65rem;}
 .s-word{font-size:0.82rem;font-weight:700;color:#222;flex:1;}
 .s-word span{font-size:0.7rem;font-weight:400;color:#888;display:block;margin-top:0.08rem;}
-.s-btn{display:inline-flex;align-items:center;gap:0.18rem;
-  background:#111;color:white;padding:0.26rem 0.62rem;border-radius:50px;
-  font-size:0.73rem;font-weight:700;text-decoration:none;flex-shrink:0;
-  transition:background 0.13s;font-family:var(--font);white-space:nowrap;}
+.s-btn{display:inline-flex;align-items:center;background:#111;color:white;
+  padding:0.26rem 0.62rem;border-radius:50px;font-size:0.73rem;font-weight:700;
+  text-decoration:none;flex-shrink:0;transition:background 0.13s;
+  font-family:var(--font);white-space:nowrap;}
 .s-btn:hover{background:#444;}
 .s-btn.ht{background:#1a6a3a;}
 .s-btn.ht:hover{background:#0e4226;}
@@ -161,49 +176,27 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         <p>迷子のペット情報を一元化｜保健所・X（Twitter）・ジモティ</p>
       </div>
     </div>
-    <div class="top-nav">
-      <a class="nav-btn inactive" href="index.html">🐾 保健所リンク集</a>
-      <a class="nav-btn active"   href="index_x.html">𝕏 X（Twitter）情報</a>
-    </div>
+    <nav class="tab-nav">
+      <a class="tab-btn inactive" href="index.html">🐾 保健所リンク集</a>
+      <a class="tab-btn active"   href="index_x.html">𝕏 X迷子情報</a>
+      <span class="tab-btn soon">💡 迷子を探すコツ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">🎉 見つかりました！ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">📋 迷子掲示板 <span class="tab-badge">準備中</span></span>
+    </nav>
   </div>
 </header>
 
 <main>
   <div class="guide">𝕏 都道府県をクリックしてXの迷子情報まとめポストを確認できます</div>
 
-  <!-- 保健所案内バナー -->
   <a class="shelter-banner" href="index.html">
     <div class="si">🐾</div>
     <div class="st">
       <strong>保健所・収容施設リンク集もチェック！</strong>
-      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。<br>
-      迷子のペットが別の管轄エリアで保護されている場合があります。</span>
+      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。</span>
     </div>
     <div class="sa">›</div>
   </a>
-
-  <!-- 特別セクション：猫・鳥の保護情報 -->
-  <div class="special-section">
-    <h2>🔔 保護情報まとめポスト</h2>
-    <div class="special-cards">
-      <a class="special-card" href="https://x.com/i/status/1210516335295262723" target="_blank" rel="noopener">
-        <div class="sc-icon">🐱</div>
-        <div class="sc-text">
-          <strong>猫　保護情報まとめ</strong>
-          <span>全国の猫の保護情報ポスト</span>
-        </div>
-        <div class="sc-arrow">𝕏 見る</div>
-      </a>
-      <a class="special-card" href="https://x.com/i/status/1236489259470610432" target="_blank" rel="noopener">
-        <div class="sc-icon">🐦</div>
-        <div class="sc-text">
-          <strong>鳥　保護情報まとめ</strong>
-          <span>全国の鳥の保護情報ポスト</span>
-        </div>
-        <div class="sc-arrow">𝕏 見る</div>
-      </a>
-    </div>
-  </div>
 
   <!-- ブロック地図 -->
   <div class="map-wrap">
@@ -275,13 +268,27 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     <div class="regions" id="regionList"></div>
   </div>
 
+  <!-- 保護情報まとめ -->
+  <div class="special-section">
+    <h2>🔔 保護情報まとめポスト</h2>
+    <div class="special-cards">
+      <a class="special-card" href="https://x.com/i/status/1210516335295262723" target="_blank" rel="noopener">
+        <div class="sc-icon">🐱</div>
+        <div class="sc-text"><strong>🐱 猫 保護情報まとめポスト</strong><span>全国の猫の保護情報</span></div>
+        <div class="sc-arrow">𝕏 見る</div>
+      </a>
+      <a class="special-card" href="https://x.com/i/status/1236489259470610432" target="_blank" rel="noopener">
+        <div class="sc-icon">🐦</div>
+        <div class="sc-text"><strong>🐦 鳥 保護情報まとめポスト</strong><span>全国の鳥の保護情報</span></div>
+        <div class="sc-arrow">𝕏 見る</div>
+      </a>
+    </div>
+  </div>
+
   <!-- 全国キーワード検索 -->
   <div class="search-section">
     <h2>🔍 全国キーワード・ハッシュタグ検索</h2>
-    <p class="search-note">
-      💡 <strong>県名が書かれていない投稿もキーワード検索で見つかることがあります。</strong><br>
-      すべて最新順で表示されます。
-    </p>
+    <p class="search-note">💡 <strong>県名が書かれていない投稿もキーワード検索で見つかることがあります。</strong>すべて最新順で表示されます。</p>
     <div class="search-group">
       <div class="search-group-label">🐕 犬</div>
       <div class="search-grid">
@@ -309,13 +316,24 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       </div>
     </div>
   </div>
-
 </main>
 <footer>
   <p>🐾 迷子のペットが早く見つかりますように</p>
   <p style="margin-top:0.3rem">掲載内容は各自治体・各団体の公式情報をご確認ください</p>
 </footer>
 <script>
+const names={
+  hokkaido:"北海道",aomori:"青森",iwate:"岩手",miyagi:"宮城",akita:"秋田",
+  yamagata:"山形",fukushima:"福島",ibaraki:"茨城",tochigi:"栃木",gunma:"群馬",
+  saitama:"埼玉",chiba:"千葉",tokyo:"東京",kanagawa:"神奈川",niigata:"新潟",
+  toyama:"富山",ishikawa:"石川",fukui:"福井",yamanashi:"山梨",nagano:"長野",
+  shizuoka:"静岡",aichi:"愛知",gifu:"岐阜",mie:"三重",shiga:"滋賀",kyoto:"京都",
+  osaka:"大阪",hyogo:"兵庫",nara:"奈良",wakayama:"和歌山",tottori:"鳥取",
+  shimane:"島根",okayama:"岡山",hiroshima:"広島",yamaguchi:"山口",
+  tokushima:"徳島",kagawa:"香川",ehime:"愛媛",kochi:"高知",
+  fukuoka:"福岡",saga:"佐賀",nagasaki:"長崎",kumamoto:"熊本",
+  oita:"大分",miyazaki:"宮崎",kagoshima:"鹿児島",okinawa:"沖縄"
+};
 const data={
   hokkaido:"1190950811376869376",aomori:"1185541339435266053",iwate:"1191321180872949760",
   miyagi:"1183154466633089024",akita:"1191232347481370624",yamagata:"1181533518792286208",
@@ -333,18 +351,6 @@ const data={
   fukuoka:"1181493374970253312",saga:"1190504881766858752",nagasaki:"1218309350466342913",
   kumamoto:"1185823930516307968",oita:"1189489861650042882",miyazaki:"1187845393297494016",
   kagoshima:"1181945519502954496",okinawa:"1183338866519863297"
-};
-const names={
-  hokkaido:"北海道",aomori:"青森",iwate:"岩手",miyagi:"宮城",akita:"秋田",
-  yamagata:"山形",fukushima:"福島",ibaraki:"茨城",tochigi:"栃木",gunma:"群馬",
-  saitama:"埼玉",chiba:"千葉",tokyo:"東京",kanagawa:"神奈川",niigata:"新潟",
-  toyama:"富山",ishikawa:"石川",fukui:"福井",yamanashi:"山梨",nagano:"長野",
-  shizuoka:"静岡",aichi:"愛知",gifu:"岐阜",mie:"三重",shiga:"滋賀",kyoto:"京都",
-  osaka:"大阪",hyogo:"兵庫",nara:"奈良",wakayama:"和歌山",tottori:"鳥取",
-  shimane:"島根",okayama:"岡山",hiroshima:"広島",yamaguchi:"山口",
-  tokushima:"徳島",kagawa:"香川",ehime:"愛媛",kochi:"高知",
-  fukuoka:"福岡",saga:"佐賀",nagasaki:"長崎",kumamoto:"熊本",
-  oita:"大分",miyazaki:"宮崎",kagoshima:"鹿児島",okinawa:"沖縄"
 };
 const regions=[
   {name:"北海道",cls:"hk",prefs:["hokkaido"]},
@@ -365,8 +371,7 @@ regions.forEach(r=>{
     const a=document.createElement('a');
     a.className='pref-btn';
     a.href=`https://x.com/i/status/${data[id]}`;
-    a.target='_blank';
-    a.rel='noopener';
+    a.target='_blank';a.rel='noopener';
     a.textContent='𝕏 '+(names[id]||id);
     d.appendChild(a);
   });
