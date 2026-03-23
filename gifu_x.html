@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岐阜県 X迷子情報｜全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+:root{--font:'Kosugi Maru',sans-serif;--border:#dde;--radius:12px;
+  --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;--kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;--cs:50px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+header{background:linear-gradient(135deg,#111,#383838);color:white;padding:1.4rem 1rem 0;}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
+.header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text .breadcrumb{font-size:0.76rem;opacity:0.75;margin-bottom:0.3rem;}
+.header-text .breadcrumb a{color:white;text-decoration:none;}
+.header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
+.header-text p{font-size:0.8rem;opacity:0.82;}
+.tab-nav{max-width:900px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.35rem;padding:0.65rem 1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.7);border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.15s;flex-shrink:0;}
+.tab-btn:hover{color:white;border-bottom-color:rgba(255,255,255,0.5);}
+.tab-btn.active{color:white;border-bottom-color:white;background:rgba(255,255,255,0.15);}
+.tab-btn.soon{color:rgba(255,255,255,0.35);cursor:default;}
+main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
+.back-btn{display:inline-flex;align-items:center;gap:0.4rem;background:#333;color:white;padding:0.55rem 1.1rem;border-radius:50px;text-decoration:none;font-size:0.83rem;font-weight:700;margin-bottom:1.2rem;font-family:var(--font);}
+.back-btn:hover{background:#111;}
+.shelter-banner{display:flex;align-items:flex-start;gap:0.8rem;background:#ebf4ff;border:2px solid #90c2f5;border-radius:var(--radius);padding:0.85rem 1.1rem;margin-bottom:1rem;text-decoration:none;color:#1a365d;transition:border-color 0.15s;}
+.shelter-banner:hover{border-color:#2b6cb0;background:#dbeafe;}
+.shelter-banner .si{font-size:1.5rem;flex-shrink:0;padding-top:0.1rem;}
+.shelter-banner .st strong{display:block;font-size:0.9rem;margin-bottom:0.2rem;}
+.shelter-banner .st span{font-size:0.78rem;color:#2c5282;line-height:1.7;}
+.shelter-banner .sa{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
+.note{background:#fffbe6;border-left:4px solid #f6ad55;border-radius:0 var(--radius) var(--radius) 0;padding:0.75rem 1rem;font-size:0.82rem;color:#7a4000;margin-bottom:1.3rem;line-height:1.75;}
+.note a{color:#c05a00;font-weight:700;text-decoration:none;}
+.section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
+.section-head{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
+.post-card{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.2rem;}
+.post-card .pc-icon{font-size:2rem;flex-shrink:0;}
+.post-card .pc-text strong{display:block;font-size:0.9rem;margin-bottom:0.2rem;}
+.post-card .pc-text span{font-size:0.78rem;color:#555;}
+.post-link{display:inline-flex;align-items:center;gap:0.22rem;background:#111;color:white;padding:0.38rem 0.85rem;border-radius:50px;font-size:0.82rem;font-weight:700;text-decoration:none;flex-shrink:0;margin-left:auto;font-family:var(--font);}
+.post-link:hover{background:#444;}
+.search-body{padding:0.8rem 1rem 1rem;}
+.search-group{margin-bottom:1.1rem;}
+.search-group:last-child{margin-bottom:0;}
+.search-group-label{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.82rem;font-weight:700;background:#222;color:white;border-radius:50px;padding:0.22rem 0.8rem;margin-bottom:0.5rem;}
+.search-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.38rem;}
+.s-card{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:#fafafa;border:1px solid var(--border);border-radius:8px;padding:0.48rem 0.65rem;}
+.s-word{font-size:0.81rem;font-weight:700;color:#222;flex:1;}
+.s-word span{font-size:0.69rem;font-weight:400;color:#888;display:block;margin-top:0.06rem;}
+.s-btn{display:inline-flex;align-items:center;background:#111;color:white;padding:0.25rem 0.6rem;border-radius:50px;font-size:0.72rem;font-weight:700;text-decoration:none;flex-shrink:0;font-family:var(--font);white-space:nowrap;}
+.s-btn:hover{background:#444;}
+.s-btn.ht{background:#1a6a3a;}
+.s-btn.ht:hover{background:#0e4226;}
+.map-section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
+.map-section-head{padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
+.map-wrap{overflow-x:auto;padding:1rem 0.8rem 0.8rem;}
+.jmap{display:grid;grid-template-columns:repeat(15,var(--cs));grid-template-rows:repeat(10,var(--cs));gap:2px;width:max-content;margin:0 auto;}
+.b{display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:700;font-size:12px;border:2px solid #444;border-radius:4px;cursor:pointer;text-decoration:none;color:#222;transition:filter 0.13s,transform 0.11s;text-align:center;line-height:1.25;padding:2px;user-select:none;}
+.b:hover{filter:brightness(0.78);transform:scale(1.07);z-index:20;position:relative;}
+.b.current{outline:3px solid #c0392b;outline-offset:1px;}
+.xs{font-size:9px;}.sm{font-size:10.5px;}
+.hk{background:var(--hk);}.th{background:var(--th);}.kt{background:var(--kt);}
+.cb{background:var(--cb);}.kk{background:var(--kk);}.cg{background:var(--cg);}
+.sk{background:var(--sk);}.ky{background:var(--ky);}.ok{background:var(--ok);}
+.f-hokkaido{grid-column:14/16;grid-row:1/3;font-size:15px;}
+.f-aomori{grid-column:14/16;grid-row:3;}.f-akita{grid-column:14;grid-row:4;}.f-iwate{grid-column:15;grid-row:4;}
+.f-yamagata{grid-column:14;grid-row:5;}.f-miyagi{grid-column:15;grid-row:5;}.f-fukushima{grid-column:13/15;grid-row:6;}
+.f-gunma{grid-column:13;grid-row:7;}.f-tochigi{grid-column:14;grid-row:7;}.f-ibaraki{grid-column:15;grid-row:7;}
+.f-saitama{grid-column:13;grid-row:8;}.f-tokyo{grid-column:14;grid-row:8;}.f-chiba{grid-column:15;grid-row:8;}
+.f-kanagawa{grid-column:13;grid-row:9;}.f-niigata{grid-column:12;grid-row:5/7;}
+.f-toyama{grid-column:11;grid-row:6;}.f-ishikawa{grid-column:10;grid-row:6;}.f-fukui{grid-column:9;grid-row:6;}
+.f-nagano{grid-column:10;grid-row:7;}.f-yamanashi{grid-column:11;grid-row:7;}.f-gifu{grid-column:9;grid-row:7;}
+.f-aichi{grid-column:10;grid-row:8;}.f-shizuoka{grid-column:11;grid-row:8;}
+.f-hyogo{grid-column:7;grid-row:6/8;}.f-kyoto{grid-column:8;grid-row:6;}.f-shiga{grid-column:8;grid-row:7;}
+.f-osaka{grid-column:8;grid-row:8;}.f-nara{grid-column:8;grid-row:9;}.f-mie{grid-column:9;grid-row:8;}.f-wakayama{grid-column:7;grid-row:9;}
+.f-shimane{grid-column:5;grid-row:6;}.f-tottori{grid-column:6;grid-row:6;}
+.f-hiroshima{grid-column:5;grid-row:7;}.f-okayama{grid-column:6;grid-row:7;}.f-yamaguchi{grid-column:4;grid-row:7;}
+.f-ehime{grid-column:5;grid-row:8;}.f-kagawa{grid-column:6;grid-row:8;}
+.f-kochi{grid-column:5;grid-row:9;}.f-tokushima{grid-column:6;grid-row:9;}
+.f-fukuoka{grid-column:3;grid-row:7;}.f-oita{grid-column:3;grid-row:8;}
+.f-saga{grid-column:2;grid-row:7;}.f-nagasaki{grid-column:1;grid-row:8;}
+.f-kumamoto{grid-column:2;grid-row:8;}.f-miyazaki{grid-column:2;grid-row:9;}
+.f-kagoshima{grid-column:1;grid-row:9/11;}.f-okinawa{grid-column:14/16;grid-row:10;}
+.legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;padding-bottom:0.5rem;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
+.bottom-banner{display:flex;align-items:flex-start;gap:0.8rem;background:#ebf4ff;border:2px solid #90c2f5;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#1a365d;transition:border-color 0.15s;}
+.bottom-banner:hover{border-color:#2b6cb0;}
+.bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
+.bottom-banner .bb-text span{font-size:0.79rem;color:#2c5282;line-height:1.7;}
+.bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
+    <div class="header-text">
+      <div class="breadcrumb"><a href="index.html">🏠 全国迷子情報リンク集</a> › <a href="index_x.html">𝕏 X迷子情報</a> › 岐阜県</div>
+      <h1>𝕏 岐阜県　X（Twitter）迷子情報</h1>
+      <p>まとめポスト・キーワード検索リンク集</p>
+    </div>
+  </div>
+  <nav class="tab-nav">
+    <a class="tab-btn"        href="index.html">🐾 保健所リンク集</a>
+    <a class="tab-btn active" href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn soon"   href="#">💡 迷子を探すコツ</a>
+    <a class="tab-btn soon"   href="#">🎉 見つかりました！</a>
+    <a class="tab-btn soon"   href="#">📋 迷子掲示板</a>
+  </nav>
+</header>
+<main>
+  <a class="back-btn" href="index_x.html">← 都道府県マップに戻る</a>
+
+  <a class="shelter-banner" href="gifu.html">
+    <div class="si">🐾</div>
+    <div class="st">
+      <strong>岐阜県の保健所・収容施設もチェック！</strong>
+      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。</span>
+    </div>
+    <div class="sa">›</div>
+  </a>
+
+  <div class="note">
+    💡 下記はX（Twitter）上の情報へのリンクです。収容・保護情報は <a href="gifu.html">🐾 保健所リンク集</a> もあわせてご覧ください。
+  </div>
+
+  <!-- まとめポスト -->
+  <div class="section">
+    <div class="section-head">𝕏 岐阜県 迷子情報まとめポスト</div>
+    <div class="post-card">
+      <div class="pc-icon">𝕏</div>
+      <div class="pc-text">
+        <strong>岐阜県の迷子情報まとめ</strong>
+        <span>保護情報・収容情報・目撃情報をまとめたポスト</span>
+      </div>
+      <a class="post-link" href="https://x.com/i/status/1211018587437072384" target="_blank" rel="noopener">𝕏 見る</a>
+    </div>
+  </div>
+
+  <!-- キーワード検索 -->
+  <div class="section">
+    <div class="section-head">🔍 キーワード・ハッシュタグ検索</div>
+    <div class="search-body">
+      <div class="search-group">
+        <div class="search-group-label">🐕 犬</div>
+        <div class="search-grid"><div class="s-card"><div class="s-word">迷子犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%BF%B7%E5%AD%90%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">迷い犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%BF%B7%E3%81%84%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">脱走 犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%84%B1%E8%B5%B0%20%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">保護しました 犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E4%BF%9D%E8%AD%B7%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">保護しています 犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E4%BF%9D%E8%AD%B7%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%20%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">飼い主 保護 犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E9%A3%BC%E3%81%84%E4%B8%BB%20%E4%BF%9D%E8%AD%B7%20%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">#迷子犬<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23%E8%BF%B7%E5%AD%90%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">#迷い犬<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23%E8%BF%B7%E3%81%84%E7%8A%AC%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+</div>
+      </div>
+      <div class="search-group">
+        <div class="search-group-label">🐈 猫</div>
+        <div class="search-grid"><div class="s-card"><div class="s-word">迷子猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%BF%B7%E5%AD%90%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">迷い猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%BF%B7%E3%81%84%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">脱走 猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%84%B1%E8%B5%B0%20%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">保護しました 猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E4%BF%9D%E8%AD%B7%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">保護しています 猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E4%BF%9D%E8%AD%B7%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%20%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">飼い主 保護 猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E9%A3%BC%E3%81%84%E4%B8%BB%20%E4%BF%9D%E8%AD%B7%20%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">#迷子猫<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23%E8%BF%B7%E5%AD%90%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+<div class="s-card"><div class="s-word">#迷い猫<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23%E8%BF%B7%E3%81%84%E7%8C%AB%20%E5%B2%90%E9%98%9C%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 他県ブロック地図 -->
+  <div class="map-section">
+    <div class="map-section-head">🗾 他の都道府県のX迷子情報を見る</div>
+    <div class="map-wrap">
+      <div class="jmap"><a class="b hk f-hokkaido" href="hokkaido_x.html">北海道</a>
+<a class="b th f-aomori" href="aomori_x.html">青森</a>
+<a class="b th f-akita" href="akita_x.html">秋田</a>
+<a class="b th f-iwate" href="iwate_x.html">岩手</a>
+<a class="b th f-yamagata" href="yamagata_x.html">山形</a>
+<a class="b th f-miyagi" href="miyagi_x.html">宮城</a>
+<a class="b th f-fukushima" href="fukushima_x.html">福島</a>
+<a class="b kt f-gunma" href="gunma_x.html">群馬</a>
+<a class="b kt f-tochigi" href="tochigi_x.html">栃木</a>
+<a class="b kt f-ibaraki" href="ibaraki_x.html">茨城</a>
+<a class="b kt f-saitama" href="saitama_x.html">埼玉</a>
+<a class="b kt f-tokyo" href="tokyo_x.html">東京</a>
+<a class="b kt f-chiba" href="chiba_x.html">千葉</a>
+<a class="b kt f-kanagawa sm" href="kanagawa_x.html">神奈川</a>
+<a class="b cb f-niigata" href="niigata_x.html">新潟</a>
+<a class="b cb f-toyama" href="toyama_x.html">富山</a>
+<a class="b cb f-ishikawa" href="ishikawa_x.html">石川</a>
+<a class="b cb f-fukui" href="fukui_x.html">福井</a>
+<a class="b cb f-nagano" href="nagano_x.html">長野</a>
+<a class="b cb f-yamanashi" href="yamanashi_x.html">山梨</a>
+<a class="b cb f-gifu current" href="gifu_x.html">岐阜</a>
+<a class="b cb f-aichi" href="aichi_x.html">愛知</a>
+<a class="b cb f-shizuoka" href="shizuoka_x.html">静岡</a>
+<a class="b kk f-hyogo" href="hyogo_x.html">兵庫</a>
+<a class="b kk f-kyoto" href="kyoto_x.html">京都</a>
+<a class="b kk f-shiga" href="shiga_x.html">滋賀</a>
+<a class="b kk f-osaka" href="osaka_x.html">大阪</a>
+<a class="b kk f-nara" href="nara_x.html">奈良</a>
+<a class="b kk f-mie" href="mie_x.html">三重</a>
+<a class="b kk f-wakayama xs" href="wakayama_x.html">和歌山</a>
+<a class="b cg f-shimane" href="shimane_x.html">島根</a>
+<a class="b cg f-tottori" href="tottori_x.html">鳥取</a>
+<a class="b cg f-hiroshima" href="hiroshima_x.html">広島</a>
+<a class="b cg f-okayama" href="okayama_x.html">岡山</a>
+<a class="b cg f-yamaguchi" href="yamaguchi_x.html">山口</a>
+<a class="b sk f-ehime" href="ehime_x.html">愛媛</a>
+<a class="b sk f-kagawa" href="kagawa_x.html">香川</a>
+<a class="b sk f-kochi" href="kochi_x.html">高知</a>
+<a class="b sk f-tokushima" href="tokushima_x.html">徳島</a>
+<a class="b ky f-fukuoka" href="fukuoka_x.html">福岡</a>
+<a class="b ky f-oita" href="oita_x.html">大分</a>
+<a class="b ky f-saga" href="saga_x.html">佐賀</a>
+<a class="b ky f-nagasaki" href="nagasaki_x.html">長崎</a>
+<a class="b ky f-kumamoto" href="kumamoto_x.html">熊本</a>
+<a class="b ky f-miyazaki" href="miyazaki_x.html">宮崎</a>
+<a class="b ky f-kagoshima xs" href="kagoshima_x.html">鹿児島</a>
+<a class="b ok f-okinawa" href="okinawa_x.html">沖縄</a>
+</div>
+      <div class="legend">
+        <div class="leg"><div class="leg-dot" style="background:#7ec8e3"></div>北海道</div>
+        <div class="leg"><div class="leg-dot" style="background:#88cc88"></div>東北</div>
+        <div class="leg"><div class="leg-dot" style="background:#a8bfe8"></div>関東</div>
+        <div class="leg"><div class="leg-dot" style="background:#f5d78e"></div>中部</div>
+        <div class="leg"><div class="leg-dot" style="background:#f5a8c8"></div>近畿</div>
+        <div class="leg"><div class="leg-dot" style="background:#c8a8e8"></div>中国</div>
+        <div class="leg"><div class="leg-dot" style="background:#f5c87a"></div>四国</div>
+        <div class="leg"><div class="leg-dot" style="background:#f59898"></div>九州</div>
+        <div class="leg"><div class="leg-dot" style="background:#7adcd0"></div>沖縄</div>
+      </div>
+    </div>
+  </div>
+
+  <a class="bottom-banner" href="index.html">
+    <div style="font-size:1.7rem;flex-shrink:0;">🐾</div>
+    <div class="bb-text">
+      <strong>全国の保健所・収容施設リンク集も必ず確認してください</strong>
+      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。</span>
+    </div>
+    <div class="bb-arr">›</div>
+  </a>
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+  <p style="margin-top:0.3rem">掲載内容は各自治体・各団体の公式情報をご確認ください</p>
+</footer>
+</body>
+</html>
