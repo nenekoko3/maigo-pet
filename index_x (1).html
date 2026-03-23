@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font:'Kosugi Maru',sans-serif;
+  --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;
+  --kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;
+  --border:#dde;--radius:12px;--cs:50px;
+  /* X版：ダーク黒系 */
+  --header-from:#111;
+  --header-to:#333;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+
+header{
+  background:linear-gradient(135deg,var(--header-from),var(--header-to));
+  color:white;padding:1.4rem 1rem 0;
+}
+.header-inner{max-width:940px;margin:0 auto;}
+.header-top{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.header-icon{width:56px;height:56px;border-radius:50%;background:white;
+  padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text h1{font-size:clamp(1.1rem,3.5vw,1.8rem);letter-spacing:0.08em;margin-bottom:0.3rem;}
+.header-text p{font-size:0.82rem;opacity:0.85;line-height:1.7;}
+
+/* タブナビ */
+.tab-nav{
+  display:flex;gap:0;overflow-x:auto;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:0.5rem;
+}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{
+  display:flex;align-items:center;gap:0.35rem;
+  padding:0.65rem 1.1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;
+  text-decoration:none;white-space:nowrap;border:none;border-radius:10px 10px 0 0;
+  transition:all 0.15s;cursor:pointer;flex-shrink:0;margin-right:3px;
+}
+.tab-btn.active{background:white;color:#111;box-shadow:0 -2px 8px rgba(0,0,0,0.15);}
+.tab-btn.inactive{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);}
+.tab-btn.inactive:hover{background:rgba(255,255,255,0.3);}
+.tab-btn.soon{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.45);cursor:default;}
+.tab-badge{font-size:0.65rem;background:rgba(255,255,255,0.2);border-radius:50px;padding:0.1rem 0.4rem;}
+.tab-btn.active .tab-badge{background:#f0f0f0;color:#555;}
+
+main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
+.guide{text-align:center;font-size:0.86rem;color:#555;margin-bottom:1rem;
+  padding:0.55rem 1rem;background:white;border-radius:50px;
+  border:1.5px solid #bbb;box-shadow:0 1px 5px rgba(0,0,0,0.08);}
+
+/* 保健所案内バナー */
+.shelter-banner{display:flex;align-items:flex-start;gap:0.8rem;
+  background:#e8f5e9;border:2px solid #81c784;border-radius:var(--radius);
+  padding:0.85rem 1.1rem;margin-bottom:1.2rem;text-decoration:none;color:#1b5e20;
+  transition:border-color 0.15s,background 0.15s;}
+.shelter-banner:hover{border-color:#2a7a4a;background:#c8e6c9;}
+.shelter-banner .si{font-size:1.5rem;flex-shrink:0;padding-top:0.1rem;}
+.shelter-banner .st strong{display:block;font-size:0.9rem;margin-bottom:0.2rem;}
+.shelter-banner .st span{font-size:0.78rem;color:#2e7d32;line-height:1.7;}
+.shelter-banner .sa{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
+
+/* ブロック地図 */
+.map-wrap{background:white;border-radius:var(--radius);
+  box-shadow:0 4px 24px rgba(0,0,0,0.11);
+  padding:1.2rem 0.8rem 1rem;margin-bottom:1.4rem;overflow-x:auto;}
+.jmap{display:grid;grid-template-columns:repeat(15,var(--cs));
+  grid-template-rows:repeat(10,var(--cs));gap:2px;width:max-content;margin:0 auto;}
+.b{display:flex;align-items:center;justify-content:center;
+  font-family:var(--font);font-weight:700;font-size:12px;
+  border:2px solid #444;border-radius:4px;cursor:pointer;text-decoration:none;color:#222;
+  transition:filter 0.13s,transform 0.11s;text-align:center;line-height:1.25;
+  padding:2px;user-select:none;}
+.b:hover{filter:brightness(0.78);transform:scale(1.07);z-index:20;position:relative;
+  box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+.xs{font-size:9px;}.sm{font-size:10.5px;}
+.hk{background:var(--hk);}.th{background:var(--th);}.kt{background:var(--kt);}
+.cb{background:var(--cb);}.kk{background:var(--kk);}.cg{background:var(--cg);}
+.sk{background:var(--sk);}.ky{background:var(--ky);}.ok{background:var(--ok);}
+.f-hokkaido{grid-column:14/16;grid-row:1/3;font-size:15px;}
+.f-aomori{grid-column:14/16;grid-row:3;}.f-akita{grid-column:14;grid-row:4;}.f-iwate{grid-column:15;grid-row:4;}
+.f-yamagata{grid-column:14;grid-row:5;}.f-miyagi{grid-column:15;grid-row:5;}
+.f-fukushima{grid-column:13/15;grid-row:6;}
+.f-gunma{grid-column:13;grid-row:7;}.f-tochigi{grid-column:14;grid-row:7;}.f-ibaraki{grid-column:15;grid-row:7;}
+.f-saitama{grid-column:13;grid-row:8;}.f-tokyo{grid-column:14;grid-row:8;}.f-chiba{grid-column:15;grid-row:8;}
+.f-kanagawa{grid-column:13;grid-row:9;}.f-niigata{grid-column:12;grid-row:5/7;}
+.f-toyama{grid-column:11;grid-row:6;}.f-ishikawa{grid-column:10;grid-row:6;}.f-fukui{grid-column:9;grid-row:6;}
+.f-nagano{grid-column:10;grid-row:7;}.f-yamanashi{grid-column:11;grid-row:7;}.f-gifu{grid-column:9;grid-row:7;}
+.f-aichi{grid-column:10;grid-row:8;}.f-shizuoka{grid-column:11;grid-row:8;}
+.f-hyogo{grid-column:7;grid-row:6/8;}.f-kyoto{grid-column:8;grid-row:6;}
+.f-shiga{grid-column:8;grid-row:7;}.f-osaka{grid-column:8;grid-row:8;}
+.f-nara{grid-column:8;grid-row:9;}.f-mie{grid-column:9;grid-row:8;}.f-wakayama{grid-column:7;grid-row:9;}
+.f-shimane{grid-column:5;grid-row:6;}.f-tottori{grid-column:6;grid-row:6;}
+.f-hiroshima{grid-column:5;grid-row:7;}.f-okayama{grid-column:6;grid-row:7;}.f-yamaguchi{grid-column:4;grid-row:7;}
+.f-ehime{grid-column:5;grid-row:8;}.f-kagawa{grid-column:6;grid-row:8;}
+.f-kochi{grid-column:5;grid-row:9;}.f-tokushima{grid-column:6;grid-row:9;}
+.f-fukuoka{grid-column:3;grid-row:7;}.f-oita{grid-column:3;grid-row:8;}
+.f-saga{grid-column:2;grid-row:7;}.f-nagasaki{grid-column:1;grid-row:8;}
+.f-kumamoto{grid-column:2;grid-row:8;}.f-miyazaki{grid-column:2;grid-row:9;}
+.f-kagoshima{grid-column:1;grid-row:9/11;}.f-okinawa{grid-column:14/16;grid-row:10;}
+
+.legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
+
+/* テキストリスト */
+.region-nav h2{font-family:var(--font);font-size:0.95rem;color:#666;
+  margin-bottom:0.9rem;text-align:center;letter-spacing:0.1em;}
+.regions{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:0.5rem;
+  margin-bottom:1.6rem;}
+.region-block h3{font-size:0.7rem;font-weight:700;color:white;
+  padding:0.28rem 0.5rem;border-radius:50px;margin-bottom:0.28rem;}
+.rh-hk{background:#4aaac8;}.rh-th{background:#3a9a3a;}.rh-kt{background:#5070b8;}
+.rh-cb{background:#c89818;}.rh-kk{background:#c0508a;}.rh-cg{background:#7040a8;}
+.rh-sk{background:#c07818;}.rh-ky{background:#c03838;}.rh-ok{background:#18a090;}
+.pref-btn{display:block;width:100%;text-align:left;background:white;border:1px solid #dde;
+  border-radius:50px;padding:0.38rem 0.7rem;font-size:0.79rem;color:#333;
+  cursor:pointer;text-decoration:none;margin-bottom:0.2rem;
+  transition:background 0.13s,border-color 0.13s;font-family:var(--font);}
+.pref-btn:hover{background:#f0f0f0;border-color:#888;color:#111;}
+
+/* 特別セクション */
+.special-section{background:white;border-radius:var(--radius);
+  box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:1.2rem;margin-bottom:1.4rem;}
+.special-section h2{font-size:1rem;font-weight:700;margin-bottom:0.8rem;}
+.special-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.6rem;}
+.special-card{display:flex;align-items:center;gap:0.8rem;
+  background:#fafafa;border:1.5px solid var(--border);border-radius:10px;
+  padding:0.8rem 1rem;text-decoration:none;color:#333;
+  transition:border-color 0.15s,background 0.15s;}
+.special-card:hover{border-color:#111;background:#f0f0f0;}
+.special-card .sc-icon{font-size:2rem;flex-shrink:0;}
+.special-card .sc-text strong{display:block;font-size:0.88rem;margin-bottom:0.12rem;}
+.special-card .sc-text span{font-size:0.75rem;color:#666;}
+.special-card .sc-arrow{margin-left:auto;background:#111;color:white;
+  padding:0.3rem 0.7rem;border-radius:50px;font-size:0.75rem;font-weight:700;white-space:nowrap;}
+
+/* キーワード検索 */
+.search-section{background:white;border-radius:var(--radius);
+  box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:1.2rem;margin-bottom:1.4rem;}
+.search-section h2{font-size:1rem;font-weight:700;margin-bottom:0.4rem;}
+.search-note{font-size:0.8rem;color:#888;margin-bottom:1rem;line-height:1.65;}
+.search-group{margin-bottom:1.2rem;}
+.search-group:last-child{margin-bottom:0;}
+.search-group-label{display:inline-flex;align-items:center;gap:0.35rem;
+  font-size:0.82rem;font-weight:700;background:#222;color:white;
+  border-radius:50px;padding:0.22rem 0.8rem;margin-bottom:0.6rem;}
+.search-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:0.4rem;}
+.s-card{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;
+  background:#fafafa;border:1px solid var(--border);border-radius:8px;padding:0.5rem 0.65rem;}
+.s-word{font-size:0.82rem;font-weight:700;color:#222;flex:1;}
+.s-word span{font-size:0.7rem;font-weight:400;color:#888;display:block;margin-top:0.08rem;}
+.s-btn{display:inline-flex;align-items:center;background:#111;color:white;
+  padding:0.26rem 0.62rem;border-radius:50px;font-size:0.73rem;font-weight:700;
+  text-decoration:none;flex-shrink:0;transition:background 0.13s;
+  font-family:var(--font);white-space:nowrap;}
+.s-btn:hover{background:#444;}
+.s-btn.ht{background:#1a6a3a;}
+.s-btn.ht:hover{background:#0e4226;}
+
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
+      <div class="header-text">
+        <h1>全国迷子情報リンク集</h1>
+        <p>迷子のペット情報を一元化｜保健所・X（Twitter）・ジモティ</p>
+      </div>
+    </div>
+    <nav class="tab-nav">
+      <a class="tab-btn inactive" href="index.html">🐾 保健所リンク集</a>
+      <a class="tab-btn active"   href="index_x.html">𝕏 X迷子情報</a>
+      <span class="tab-btn soon">💡 迷子を探すコツ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">🎉 見つかりました！ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">📋 迷子掲示板 <span class="tab-badge">準備中</span></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="guide">𝕏 都道府県をクリックしてXの迷子情報まとめポストを確認できます</div>
+
+  <a class="shelter-banner" href="index.html">
+    <div class="si">🐾</div>
+    <div class="st">
+      <strong>保健所・収容施設リンク集もチェック！</strong>
+      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。</span>
+    </div>
+    <div class="sa">›</div>
+  </a>
+
+  <!-- ブロック地図 -->
+  <div class="map-wrap">
+    <div class="jmap">
+      <a class="b hk f-hokkaido" href="https://x.com/i/status/1190950811376869376" target="_blank" rel="noopener">北海道</a>
+      <a class="b th f-aomori"    href="https://x.com/i/status/1185541339435266053" target="_blank" rel="noopener">青森</a>
+      <a class="b th f-akita"     href="https://x.com/i/status/1191232347481370624" target="_blank" rel="noopener">秋田</a>
+      <a class="b th f-iwate"     href="https://x.com/i/status/1191321180872949760" target="_blank" rel="noopener">岩手</a>
+      <a class="b th f-yamagata"  href="https://x.com/i/status/1181533518792286208" target="_blank" rel="noopener">山形</a>
+      <a class="b th f-miyagi"    href="https://x.com/i/status/1183154466633089024" target="_blank" rel="noopener">宮城</a>
+      <a class="b th f-fukushima" href="https://x.com/i/status/1190411948086575105" target="_blank" rel="noopener">福島</a>
+      <a class="b kt f-gunma"     href="https://x.com/i/status/1181818828914745344" target="_blank" rel="noopener">群馬</a>
+      <a class="b kt f-tochigi"   href="https://x.com/i/status/1181537551158370304" target="_blank" rel="noopener">栃木</a>
+      <a class="b kt f-ibaraki"   href="https://x.com/i/status/1181339120787832832" target="_blank" rel="noopener">茨城</a>
+      <a class="b kt f-saitama"   href="https://x.com/i/status/1181711534679969792" target="_blank" rel="noopener">埼玉</a>
+      <a class="b kt f-tokyo"     href="https://x.com/i/status/1183155168767963136" target="_blank" rel="noopener">東京</a>
+      <a class="b kt f-chiba"     href="https://x.com/i/status/1181340296283471872" target="_blank" rel="noopener">千葉</a>
+      <a class="b kt f-kanagawa sm" href="https://x.com/i/status/1183155962024038400" target="_blank" rel="noopener">神奈川</a>
+      <a class="b cb f-niigata"   href="https://x.com/i/status/1196438032187973632" target="_blank" rel="noopener">新潟</a>
+      <a class="b cb f-toyama"    href="https://x.com/i/status/1240165402656698369" target="_blank" rel="noopener">富山</a>
+      <a class="b cb f-ishikawa"  href="https://x.com/i/status/1243716533127221248" target="_blank" rel="noopener">石川</a>
+      <a class="b cb f-fukui"     href="https://x.com/i/status/1211102170449248256" target="_blank" rel="noopener">福井</a>
+      <a class="b cb f-nagano"    href="https://x.com/i/status/1181524465181609984" target="_blank" rel="noopener">長野</a>
+      <a class="b cb f-yamanashi" href="https://x.com/i/status/1188325668028727296" target="_blank" rel="noopener">山梨</a>
+      <a class="b cb f-gifu"      href="https://x.com/i/status/1211018587437072384" target="_blank" rel="noopener">岐阜</a>
+      <a class="b cb f-aichi"     href="https://x.com/i/status/1181518779060121601" target="_blank" rel="noopener">愛知</a>
+      <a class="b cb f-shizuoka"  href="https://x.com/i/status/1181495306329849856" target="_blank" rel="noopener">静岡</a>
+      <a class="b kk f-hyogo"     href="https://x.com/i/status/1181936434741014528" target="_blank" rel="noopener">兵庫</a>
+      <a class="b kk f-kyoto"     href="https://x.com/i/status/1181498947019214848" target="_blank" rel="noopener">京都</a>
+      <a class="b kk f-shiga"     href="https://x.com/i/status/1189185315103109121" target="_blank" rel="noopener">滋賀</a>
+      <a class="b kk f-osaka"     href="https://x.com/i/status/1181713770021711872" target="_blank" rel="noopener">大阪</a>
+      <a class="b kk f-nara"      href="https://x.com/i/status/1182033936026726400" target="_blank" rel="noopener">奈良</a>
+      <a class="b kk f-mie"       href="https://x.com/i/status/1181944839102849025" target="_blank" rel="noopener">三重</a>
+      <a class="b kk f-wakayama xs" href="https://x.com/i/status/1181566534143094784" target="_blank" rel="noopener">和歌山</a>
+      <a class="b cg f-shimane"   href="https://x.com/i/status/1220637942294577153" target="_blank" rel="noopener">島根</a>
+      <a class="b cg f-tottori"   href="https://x.com/i/status/1181943593771995137" target="_blank" rel="noopener">鳥取</a>
+      <a class="b cg f-hiroshima" href="https://x.com/i/status/1187846978043957248" target="_blank" rel="noopener">広島</a>
+      <a class="b cg f-okayama"   href="https://x.com/i/status/1181933894972502016" target="_blank" rel="noopener">岡山</a>
+      <a class="b cg f-yamaguchi" href="https://x.com/i/status/1190502690482049025" target="_blank" rel="noopener">山口</a>
+      <a class="b sk f-ehime"     href="https://x.com/i/status/1239184088197554176" target="_blank" rel="noopener">愛媛</a>
+      <a class="b sk f-kagawa"    href="https://x.com/i/status/1181482272630792192" target="_blank" rel="noopener">香川</a>
+      <a class="b sk f-kochi"     href="https://x.com/i/status/1244117921195896832" target="_blank" rel="noopener">高知</a>
+      <a class="b sk f-tokushima" href="https://x.com/i/status/1197026595061452800" target="_blank" rel="noopener">徳島</a>
+      <a class="b ky f-fukuoka"   href="https://x.com/i/status/1181493374970253312" target="_blank" rel="noopener">福岡</a>
+      <a class="b ky f-oita"      href="https://x.com/i/status/1189489861650042882" target="_blank" rel="noopener">大分</a>
+      <a class="b ky f-saga"      href="https://x.com/i/status/1190504881766858752" target="_blank" rel="noopener">佐賀</a>
+      <a class="b ky f-nagasaki"  href="https://x.com/i/status/1218309350466342913" target="_blank" rel="noopener">長崎</a>
+      <a class="b ky f-kumamoto"  href="https://x.com/i/status/1185823930516307968" target="_blank" rel="noopener">熊本</a>
+      <a class="b ky f-miyazaki"  href="https://x.com/i/status/1187845393297494016" target="_blank" rel="noopener">宮崎</a>
+      <a class="b ky f-kagoshima xs" href="https://x.com/i/status/1181945519502954496" target="_blank" rel="noopener">鹿児島</a>
+      <a class="b ok f-okinawa"   href="https://x.com/i/status/1183338866519863297" target="_blank" rel="noopener">沖縄</a>
+    </div>
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:#7ec8e3"></div>北海道</div>
+      <div class="leg"><div class="leg-dot" style="background:#88cc88"></div>東北</div>
+      <div class="leg"><div class="leg-dot" style="background:#a8bfe8"></div>関東</div>
+      <div class="leg"><div class="leg-dot" style="background:#f5d78e"></div>中部</div>
+      <div class="leg"><div class="leg-dot" style="background:#f5a8c8"></div>近畿</div>
+      <div class="leg"><div class="leg-dot" style="background:#c8a8e8"></div>中国</div>
+      <div class="leg"><div class="leg-dot" style="background:#f5c87a"></div>四国</div>
+      <div class="leg"><div class="leg-dot" style="background:#f59898"></div>九州</div>
+      <div class="leg"><div class="leg-dot" style="background:#7adcd0"></div>沖縄</div>
+    </div>
+  </div>
+
+  <!-- テキストリスト -->
+  <div class="region-nav">
+    <h2>── 地域から探す ──</h2>
+    <div class="regions" id="regionList"></div>
+  </div>
+
+  <!-- 保護情報まとめ -->
+  <div class="special-section">
+    <h2>🔔 保護情報まとめポスト</h2>
+    <div class="special-cards">
+      <a class="special-card" href="https://x.com/i/status/1210516335295262723" target="_blank" rel="noopener">
+        <div class="sc-icon">🐱</div>
+        <div class="sc-text"><strong>🐱 猫 保護情報まとめポスト</strong><span>全国の猫の保護情報</span></div>
+        <div class="sc-arrow">𝕏 見る</div>
+      </a>
+      <a class="special-card" href="https://x.com/i/status/1236489259470610432" target="_blank" rel="noopener">
+        <div class="sc-icon">🐦</div>
+        <div class="sc-text"><strong>🐦 鳥 保護情報まとめポスト</strong><span>全国の鳥の保護情報</span></div>
+        <div class="sc-arrow">𝕏 見る</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 全国キーワード検索 -->
+  <div class="search-section">
+    <h2>🔍 全国キーワード・ハッシュタグ検索</h2>
+    <p class="search-note">💡 <strong>県名が書かれていない投稿もキーワード検索で見つかることがあります。</strong>すべて最新順で表示されます。</p>
+    <div class="search-group">
+      <div class="search-group-label">🐕 犬</div>
+      <div class="search-grid">
+        <div class="s-card"><div class="s-word">迷子犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=迷子犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">迷い犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=迷い犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">脱走　犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=脱走+犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">保護しました　犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=保護しました+犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">保護しています　犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=保護しています+犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">飼い主　保護　犬<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=飼い主+保護+犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">#迷子犬<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23迷子犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">#迷い犬<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23迷い犬&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+      </div>
+    </div>
+    <div class="search-group">
+      <div class="search-group-label">🐈 猫</div>
+      <div class="search-grid">
+        <div class="s-card"><div class="s-word">迷子猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=迷子猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">迷い猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=迷い猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">脱走　猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=脱走+猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">保護しました　猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=保護しました+猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">保護しています　猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=保護しています+猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">飼い主　保護　猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=飼い主+保護+猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">#迷子猫<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23迷子猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+        <div class="s-card"><div class="s-word">#迷い猫<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23迷い猫&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+  <p style="margin-top:0.3rem">掲載内容は各自治体・各団体の公式情報をご確認ください</p>
+</footer>
+<script>
+const names={
+  hokkaido:"北海道",aomori:"青森",iwate:"岩手",miyagi:"宮城",akita:"秋田",
+  yamagata:"山形",fukushima:"福島",ibaraki:"茨城",tochigi:"栃木",gunma:"群馬",
+  saitama:"埼玉",chiba:"千葉",tokyo:"東京",kanagawa:"神奈川",niigata:"新潟",
+  toyama:"富山",ishikawa:"石川",fukui:"福井",yamanashi:"山梨",nagano:"長野",
+  shizuoka:"静岡",aichi:"愛知",gifu:"岐阜",mie:"三重",shiga:"滋賀",kyoto:"京都",
+  osaka:"大阪",hyogo:"兵庫",nara:"奈良",wakayama:"和歌山",tottori:"鳥取",
+  shimane:"島根",okayama:"岡山",hiroshima:"広島",yamaguchi:"山口",
+  tokushima:"徳島",kagawa:"香川",ehime:"愛媛",kochi:"高知",
+  fukuoka:"福岡",saga:"佐賀",nagasaki:"長崎",kumamoto:"熊本",
+  oita:"大分",miyazaki:"宮崎",kagoshima:"鹿児島",okinawa:"沖縄"
+};
+const data={
+  hokkaido:"1190950811376869376",aomori:"1185541339435266053",iwate:"1191321180872949760",
+  miyagi:"1183154466633089024",akita:"1191232347481370624",yamagata:"1181533518792286208",
+  fukushima:"1190411948086575105",ibaraki:"1181339120787832832",tochigi:"1181537551158370304",
+  gunma:"1181818828914745344",saitama:"1181711534679969792",chiba:"1181340296283471872",
+  tokyo:"1183155168767963136",kanagawa:"1183155962024038400",niigata:"1196438032187973632",
+  toyama:"1240165402656698369",ishikawa:"1243716533127221248",fukui:"1211102170449248256",
+  yamanashi:"1188325668028727296",nagano:"1181524465181609984",shizuoka:"1181495306329849856",
+  gifu:"1211018587437072384",aichi:"1181518779060121601",mie:"1181944839102849025",
+  shiga:"1189185315103109121",kyoto:"1181498947019214848",osaka:"1181713770021711872",
+  hyogo:"1181936434741014528",nara:"1182033936026726400",wakayama:"1181566534143094784",
+  tottori:"1181943593771995137",shimane:"1220637942294577153",okayama:"1181933894972502016",
+  hiroshima:"1187846978043957248",yamaguchi:"1190502690482049025",tokushima:"1197026595061452800",
+  kagawa:"1181482272630792192",ehime:"1239184088197554176",kochi:"1244117921195896832",
+  fukuoka:"1181493374970253312",saga:"1190504881766858752",nagasaki:"1218309350466342913",
+  kumamoto:"1185823930516307968",oita:"1189489861650042882",miyazaki:"1187845393297494016",
+  kagoshima:"1181945519502954496",okinawa:"1183338866519863297"
+};
+const regions=[
+  {name:"北海道",cls:"hk",prefs:["hokkaido"]},
+  {name:"東北",cls:"th",prefs:["aomori","iwate","miyagi","akita","yamagata","fukushima"]},
+  {name:"関東",cls:"kt",prefs:["ibaraki","tochigi","gunma","saitama","chiba","tokyo","kanagawa"]},
+  {name:"中部",cls:"cb",prefs:["niigata","toyama","ishikawa","fukui","yamanashi","nagano","shizuoka","gifu","aichi"]},
+  {name:"近畿",cls:"kk",prefs:["mie","shiga","kyoto","osaka","hyogo","nara","wakayama"]},
+  {name:"中国",cls:"cg",prefs:["tottori","shimane","okayama","hiroshima","yamaguchi"]},
+  {name:"四国",cls:"sk",prefs:["tokushima","kagawa","ehime","kochi"]},
+  {name:"九州・沖縄",cls:"ky",prefs:["fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","okinawa"]},
+];
+const list=document.getElementById('regionList');
+regions.forEach(r=>{
+  const d=document.createElement('div');
+  d.className='region-block';
+  d.innerHTML=`<h3 class="rh-${r.cls}">${r.name}</h3>`;
+  r.prefs.forEach(id=>{
+    const a=document.createElement('a');
+    a.className='pref-btn';
+    a.href=`https://x.com/i/status/${data[id]}`;
+    a.target='_blank';a.rel='noopener';
+    a.textContent='𝕏 '+(names[id]||id);
+    d.appendChild(a);
+  });
+  list.appendChild(d);
+});
+</script>
+</body>
+</html>
