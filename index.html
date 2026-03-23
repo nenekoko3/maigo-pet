@@ -11,35 +11,69 @@
   --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;
   --kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;
   --border:#dde;--radius:12px;--cs:50px;
+  /* 保健所版：明るい緑系 */
+  --header-from:#2a7a4a;
+  --header-to:#3aaa6a;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--font);background:#f0f4f8;color:#333;min-height:100vh;}
 
-header{background:linear-gradient(135deg,#2c5282,#2b6cb0);color:white;padding:1.6rem 1rem 1.2rem;}
+/* ===== ヘッダー ===== */
+header{
+  background:linear-gradient(135deg,var(--header-from),var(--header-to));
+  color:white;padding:1.4rem 1rem 0;
+}
 .header-inner{max-width:940px;margin:0 auto;}
-.header-top{display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem;}
-.header-icon{width:58px;height:58px;border-radius:50%;background:white;
+.header-top{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.header-icon{width:56px;height:56px;border-radius:50%;background:white;
   padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
-.header-text h1{font-size:clamp(1.2rem,3.8vw,2rem);letter-spacing:0.08em;margin-bottom:0.35rem;
-  text-shadow:0 1px 4px rgba(0,0,0,0.25);}
-.header-text p{font-size:0.83rem;opacity:0.88;line-height:1.75;}
+.header-text h1{font-size:clamp(1.1rem,3.5vw,1.8rem);letter-spacing:0.08em;margin-bottom:0.3rem;
+  text-shadow:0 1px 4px rgba(0,0,0,0.2);}
+.header-text p{font-size:0.82rem;opacity:0.88;line-height:1.7;}
 
-.top-nav{display:flex;gap:0.8rem;flex-wrap:wrap;}
-.nav-btn{display:flex;align-items:center;gap:0.5rem;padding:0.65rem 1.4rem;border-radius:50px;
-  font-family:var(--font);font-size:0.95rem;font-weight:700;
-  text-decoration:none;border:2.5px solid transparent;transition:all 0.16s;}
-.nav-btn.active{background:#fff;color:#2b6cb0;border-color:#fff;
-  box-shadow:0 2px 10px rgba(43,108,176,0.25);}
-.nav-btn.inactive{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);
-  border-color:rgba(255,255,255,0.5);}
-.nav-btn.inactive:hover{background:rgba(255,255,255,0.32);}
+/* ===== タブナビ ===== */
+.tab-nav{
+  display:flex;gap:0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  margin-top:0.5rem;
+}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{
+  display:flex;align-items:center;gap:0.35rem;
+  padding:0.65rem 1.1rem;
+  font-family:var(--font);font-size:0.85rem;font-weight:700;
+  text-decoration:none;white-space:nowrap;
+  border:none;border-radius:10px 10px 0 0;
+  transition:all 0.15s;cursor:pointer;flex-shrink:0;
+  margin-right:3px;
+}
+.tab-btn.active{
+  background:white;color:#2a7a4a;
+  box-shadow:0 -2px 8px rgba(0,0,0,0.1);
+}
+.tab-btn.inactive{
+  background:rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);
+}
+.tab-btn.inactive:hover{background:rgba(255,255,255,0.35);}
+.tab-btn.soon{
+  background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.55);
+  cursor:default;
+}
+.tab-badge{
+  font-size:0.65rem;background:rgba(255,255,255,0.3);
+  border-radius:50px;padding:0.1rem 0.4rem;
+}
+.tab-btn.active .tab-badge{background:#e8f5e9;color:#2a7a4a;}
 
 main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .guide{text-align:center;font-size:0.86rem;color:#555;margin-bottom:1rem;
   padding:0.55rem 1rem;background:white;border-radius:50px;
-  border:1.5px solid #f6ad55;box-shadow:0 1px 5px rgba(0,0,0,0.08);}
+  border:1.5px solid #a8d5a8;box-shadow:0 1px 5px rgba(0,0,0,0.08);}
 
+/* ブロック地図 */
 .map-wrap{background:white;border-radius:var(--radius);
   box-shadow:0 4px 24px rgba(0,0,0,0.11);
   padding:1.5rem 0.8rem 1.2rem;margin-bottom:1.8rem;overflow-x:auto;}
@@ -85,7 +119,7 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .region-nav h2{font-family:var(--font);font-size:0.95rem;color:#666;
   margin-bottom:0.9rem;text-align:center;letter-spacing:0.1em;}
 .regions{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:0.5rem;}
-.region-block h3{font-size:0.7rem;font-weight:700;color:white;font-family:var(--font);
+.region-block h3{font-size:0.7rem;font-weight:700;color:white;
   padding:0.28rem 0.5rem;border-radius:50px;margin-bottom:0.28rem;}
 .rh-hk{background:#4aaac8;}.rh-th{background:#3a9a3a;}.rh-kt{background:#5070b8;}
 .rh-cb{background:#c89818;}.rh-kk{background:#c0508a;}.rh-cg{background:#7040a8;}
@@ -94,7 +128,7 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
   border-radius:50px;padding:0.38rem 0.75rem;font-size:0.79rem;color:#333;
   cursor:pointer;text-decoration:none;margin-bottom:0.2rem;
   transition:background 0.13s,border-color 0.13s;font-family:var(--font);}
-.pref-btn:hover{background:#fef3e2;border-color:#f6ad55;color:#7a4000;}
+.pref-btn:hover{background:#e8f5e9;border-color:#4a9a4a;color:#1a5a1a;}
 
 footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
   border-top:1px solid var(--border);font-family:var(--font);}
@@ -110,12 +144,17 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
         <p>迷子のペット情報を一元化｜保健所・X（Twitter）・ジモティ</p>
       </div>
     </div>
-    <div class="top-nav">
-      <a class="nav-btn active"   href="index.html">🐾 保健所リンク集</a>
-      <a class="nav-btn inactive" href="index_x.html">𝕏 X（Twitter）情報</a>
-    </div>
+    <!-- タブナビ -->
+    <nav class="tab-nav">
+      <a class="tab-btn active" href="index.html">🐾 保健所リンク集</a>
+      <a class="tab-btn inactive" href="index_x.html">𝕏 X迷子情報</a>
+      <span class="tab-btn soon">💡 迷子を探すコツ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">🎉 見つかりました！ <span class="tab-badge">準備中</span></span>
+      <span class="tab-btn soon">📋 迷子掲示板 <span class="tab-badge">準備中</span></span>
+    </nav>
   </div>
 </header>
+
 <main>
   <div class="guide">🗾 都道府県をクリックして保健所・収容情報を確認できます</div>
   <div class="map-wrap">
