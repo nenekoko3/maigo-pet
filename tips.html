@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷子にさせたら今すぐやること｜全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+:root{--font:'Kosugi Maru',sans-serif;--radius:12px;--border:#dde;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+
+header{background:linear-gradient(135deg,#c0392b,#e74c3c);color:white;padding:1.4rem 1rem 0;}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
+.header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
+.header-text p{font-size:0.8rem;opacity:0.88;line-height:1.6;}
+
+.tab-nav{max-width:900px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.35rem;padding:0.65rem 1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.7);border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.15s;flex-shrink:0;}
+.tab-btn:hover{color:white;border-bottom-color:rgba(255,255,255,0.5);}
+.tab-btn.active{color:white;border-bottom-color:white;background:rgba(255,255,255,0.15);}
+.tab-btn.soon{color:rgba(255,255,255,0.35);cursor:default;}
+
+main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+
+/* 緊急バナー */
+.emergency{background:#fff0f0;border:2.5px solid #e74c3c;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:center;}
+.emergency p{font-size:0.88rem;color:#c0392b;line-height:1.8;font-weight:700;}
+
+/* ステップカード */
+.step-card{background:white;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:1.5rem;overflow:hidden;}
+.step-head{display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;}
+.step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;flex-shrink:0;}
+.s1 .step-num{background:#e74c3c;}
+.s2 .step-num{background:#e67e22;}
+.s3 .step-num{background:#2980b9;}
+.s4 .step-num{background:#27ae60;}
+.step-title{flex:1;}
+.step-title strong{display:block;font-size:1rem;margin-bottom:0.15rem;}
+.step-title span{font-size:0.78rem;color:#666;}
+.step-urgent{background:#e74c3c;color:white;font-size:0.72rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;flex-shrink:0;}
+.step-urgent.orange{background:#e67e22;}
+.step-urgent.blue{background:#2980b9;}
+.step-urgent.green{background:#27ae60;}
+
+.step-body{padding:0 1.3rem 1.2rem;}
+.step-body hr{border:none;border-top:1px solid var(--border);margin:0.8rem 0;}
+
+/* 注意喚起 */
+.alert-box{background:#fff8e1;border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#7a4a00;line-height:1.75;}
+.alert-box strong{color:#c0392b;}
+
+/* リンクボタン */
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.6rem;margin-bottom:0.8rem;}
+.link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;font-family:var(--font);transition:filter 0.13s;}
+.link-btn:hover{filter:brightness(0.88);}
+.link-btn.red{background:#fde8e8;color:#c0392b;border:1.5px solid #f5a0a0;}
+.link-btn.orange{background:#fef3e2;color:#c0560a;border:1.5px solid #f5c87a;}
+.link-btn.blue{background:#ebf4ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
+.link-btn.green{background:#f0fff4;color:#1a5a2a;border:1.5px solid #68d391;}
+.link-btn.dark{background:#333;color:white;border:1.5px solid #333;}
+.link-btn .li{font-size:1.2rem;flex-shrink:0;}
+.link-btn .lt{flex:1;}
+.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
+
+/* 都道府縣警察リスト */
+.pref-police{margin-top:0.5rem;}
+.pref-police summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:#2980b9;padding:0.5rem 0;list-style:none;}
+.pref-police summary::before{content:"▶ ";}
+.pref-police[open] summary::before{content:"▼ ";}
+.police-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.4rem;margin-top:0.6rem;}
+.police-link{display:block;background:#f0f6ff;border:1px solid #bbd4f5;border-radius:8px;padding:0.4rem 0.65rem;font-size:0.78rem;color:#1a4a8a;text-decoration:none;font-family:var(--font);font-weight:700;}
+.police-link:hover{background:#dbeafe;}
+
+/* テンプレ */
+.template-box{background:#f8f8f8;border:1.5px solid #dde;border-radius:10px;padding:1rem 1.1rem;margin-bottom:0.8rem;font-size:0.83rem;line-height:2;position:relative;}
+.template-box pre{white-space:pre-wrap;font-family:var(--font);}
+.copy-btn{position:absolute;top:0.6rem;right:0.6rem;background:#333;color:white;border:none;border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.copy-btn:hover{background:#111;}
+.copy-btn.copied{background:#27ae60;}
+
+/* ハッシュタグ */
+.tag-list{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.8rem;}
+.tag{background:#e8f4ff;border:1.5px solid #90c2f5;border-radius:50px;padding:0.3rem 0.75rem;font-size:0.8rem;color:#1a4a8a;font-weight:700;cursor:pointer;transition:background 0.13s;}
+.tag:hover{background:#dbeafe;}
+.tag.copied{background:#dcfce7;border-color:#68d391;color:#166534;}
+
+/* 捜索tips */
+.tips-list{list-style:none;padding:0;}
+.tips-list li{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.84rem;line-height:1.7;}
+.tips-list li:last-child{border-bottom:none;}
+.tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
+.tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
+
+.coming-soon-btn{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#f0f0f0;border:2px dashed #bbb;border-radius:var(--radius);padding:0.9rem 1.2rem;text-decoration:none;color:#888;font-size:0.84rem;font-weight:700;margin-top:0.8rem;font-family:var(--font);}
+
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
+    <div class="header-text">
+      <h1>🚨 迷子にさせたら今すぐやること！</h1>
+      <p>焦らず順番に！早い行動が見つかる確率を上げます</p>
+    </div>
+  </div>
+  <nav class="tab-nav">
+    <a class="tab-btn"        href="index.html">🐾 保健所リンク集</a>
+    <a class="tab-btn"        href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn active" href="tips.html">💡 迷子にしたら</a>
+    <a class="tab-btn soon"   href="#">🎉 見つかりました！</a>
+    <a class="tab-btn soon"   href="#">📋 迷子掲示板</a>
+  </nav>
+</header>
+
+<main>
+  <div class="emergency">
+    <p>⚠️ 気が動転していても大丈夫！<br>この順番で動いてください。届け出がないと、保護されても会えないことがあります。</p>
+  </div>
+
+  <!-- STEP 1 警察 -->
+  <div class="step-card s1">
+    <div class="step-head">
+      <div class="step-num">1</div>
+      <div class="step-title">
+        <strong>🚔 管轄の警察署に連絡する</strong>
+        <span>迷子届（遺失届）を出す。保護されたとき真っ先に連絡が来ます</span>
+      </div>
+      <div class="step-urgent">最優先！</div>
+    </div>
+    <div class="step-body">
+      <div class="alert-box">
+        ⚠️ <strong>都道府縣をまたぐと情報が共有されない場合があります。</strong><br>
+        迷子になった場所が県境に近い場合は、<strong>隣接する都道府縣の警察にも必ず届けてください。</strong>
+      </div>
+      <div class="link-grid">
+        <a class="link-btn red" href="https://www.npa.go.jp/bureau/community/lost_and_found/index.html" target="_blank" rel="noopener">
+          <div class="li">🚔</div>
+          <div class="lt">遺失届について（警察庁）<span>届け出の手順・方法</span></div>
+        </a>
+        <a class="link-btn red" href="https://www.keishicho.metro.tokyo.lg.jp/smph/sodan/madoguchi/lost.html" target="_blank" rel="noopener">
+          <div class="li">📞</div>
+          <div class="lt">警察署への連絡方法<span>お近くの警察署に電話を</span></div>
+        </a>
+      </div>
+      <details class="pref-police">
+        <summary>都道府縣警察の公式ページ一覧を見る</summary>
+        <div class="police-grid">
+          <a class="police-link" href="https://www.police.pref.hokkaido.lg.jp/" target="_blank" rel="noopener">北海道警察</a>
+          <a class="police-link" href="https://www.police.pref.aomori.jp/" target="_blank" rel="noopener">青森県警察</a>
+          <a class="police-link" href="https://www.police.pref.iwate.jp/" target="_blank" rel="noopener">岩手県警察</a>
+          <a class="police-link" href="https://www.police.pref.miyagi.jp/" target="_blank" rel="noopener">宮城県警察</a>
+          <a class="police-link" href="https://www.police.pref.akita.jp/" target="_blank" rel="noopener">秋田県警察</a>
+          <a class="police-link" href="https://www.police.pref.yamagata.jp/" target="_blank" rel="noopener">山形県警察</a>
+          <a class="police-link" href="https://www.police.pref.fukushima.jp/" target="_blank" rel="noopener">福島県警察</a>
+          <a class="police-link" href="https://www.police.pref.ibaraki.jp/" target="_blank" rel="noopener">茨城県警察</a>
+          <a class="police-link" href="https://www.police.pref.tochigi.jp/" target="_blank" rel="noopener">栃木県警察</a>
+          <a class="police-link" href="https://www.police.pref.gunma.jp/" target="_blank" rel="noopener">群馬県警察</a>
+          <a class="police-link" href="https://www.police.pref.saitama.lg.jp/" target="_blank" rel="noopener">埼玉県警察</a>
+          <a class="police-link" href="https://www.police.pref.chiba.jp/" target="_blank" rel="noopener">千葉県警察</a>
+          <a class="police-link" href="https://www.keishicho.metro.tokyo.lg.jp/" target="_blank" rel="noopener">警視庁（東京）</a>
+          <a class="police-link" href="https://www.police.pref.kanagawa.jp/" target="_blank" rel="noopener">神奈川県警察</a>
+          <a class="police-link" href="https://www.police.pref.niigata.jp/" target="_blank" rel="noopener">新潟県警察</a>
+          <a class="police-link" href="https://www.police.pref.toyama.jp/" target="_blank" rel="noopener">富山県警察</a>
+          <a class="police-link" href="https://www.police.pref.ishikawa.jp/" target="_blank" rel="noopener">石川県警察</a>
+          <a class="police-link" href="https://www.fukui-police.pref.fukui.jp/" target="_blank" rel="noopener">福井県警察</a>
+          <a class="police-link" href="https://www.police.pref.yamanashi.jp/" target="_blank" rel="noopener">山梨県警察</a>
+          <a class="police-link" href="https://www.pref.nagano.lg.jp/police/" target="_blank" rel="noopener">長野県警察</a>
+          <a class="police-link" href="https://www.pref.shizuoka.jp/police/" target="_blank" rel="noopener">静岡県警察</a>
+          <a class="police-link" href="https://www.pref.aichi.jp/police/" target="_blank" rel="noopener">愛知県警察</a>
+          <a class="police-link" href="https://www.pref.gifu.lg.jp/page/1530.html" target="_blank" rel="noopener">岐阜県警察</a>
+          <a class="police-link" href="https://www.police.pref.mie.lg.jp/" target="_blank" rel="noopener">三重県警察</a>
+          <a class="police-link" href="https://www.pref.shiga.lg.jp/police/" target="_blank" rel="noopener">滋賀県警察</a>
+          <a class="police-link" href="https://www.pref.kyoto.jp/fukei/" target="_blank" rel="noopener">京都府警察</a>
+          <a class="police-link" href="https://www.police.pref.osaka.jp/" target="_blank" rel="noopener">大阪府警察</a>
+          <a class="police-link" href="https://www.police.pref.hyogo.lg.jp/" target="_blank" rel="noopener">兵庫県警察</a>
+          <a class="police-link" href="https://www.pref.nara.jp/police/" target="_blank" rel="noopener">奈良県警察</a>
+          <a class="police-link" href="https://www.police.pref.wakayama.lg.jp/" target="_blank" rel="noopener">和歌山県警察</a>
+          <a class="police-link" href="https://www.pref.tottori.lg.jp/police/" target="_blank" rel="noopener">鳥取県警察</a>
+          <a class="police-link" href="https://www.pref.shimane.lg.jp/police/" target="_blank" rel="noopener">島根県警察</a>
+          <a class="police-link" href="https://www.police.pref.okayama.jp/" target="_blank" rel="noopener">岡山県警察</a>
+          <a class="police-link" href="https://www.pref.hiroshima.lg.jp/site/police/" target="_blank" rel="noopener">広島県警察</a>
+          <a class="police-link" href="https://www.pref.yamaguchi.lg.jp/police/" target="_blank" rel="noopener">山口県警察</a>
+          <a class="police-link" href="https://www.police.pref.tokushima.jp/" target="_blank" rel="noopener">徳島県警察</a>
+          <a class="police-link" href="https://www.police.kagawa.jp/" target="_blank" rel="noopener">香川県警察</a>
+          <a class="police-link" href="https://www.police.pref.ehime.jp/" target="_blank" rel="noopener">愛媛県警察</a>
+          <a class="police-link" href="https://www.police.pref.kochi.lg.jp/" target="_blank" rel="noopener">高知県警察</a>
+          <a class="police-link" href="https://www.police.pref.fukuoka.jp/" target="_blank" rel="noopener">福岡県警察</a>
+          <a class="police-link" href="https://www.police.pref.saga.jp/" target="_blank" rel="noopener">佐賀県警察</a>
+          <a class="police-link" href="https://www.police.pref.nagasaki.jp/" target="_blank" rel="noopener">長崎県警察</a>
+          <a class="police-link" href="https://www.police.pref.kumamoto.jp/" target="_blank" rel="noopener">熊本県警察</a>
+          <a class="police-link" href="https://www.police.pref.oita.jp/" target="_blank" rel="noopener">大分県警察</a>
+          <a class="police-link" href="https://www.police.pref.miyazaki.lg.jp/" target="_blank" rel="noopener">宮崎県警察</a>
+          <a class="police-link" href="https://www.police.pref.kagoshima.jp/" target="_blank" rel="noopener">鹿児島県警察</a>
+          <a class="police-link" href="https://www.police.pref.okinawa.jp/" target="_blank" rel="noopener">沖縄県警察</a>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- STEP 2 保健所 -->
+  <div class="step-card s2">
+    <div class="step-head">
+      <div class="step-num">2</div>
+      <div class="step-title">
+        <strong>🏥 管轄の保健所・動物愛護センターに連絡する</strong>
+        <span>収容されていないか確認＆迷子届を出す</span>
+      </div>
+      <div class="step-urgent orange">必ず届けて！</div>
+    </div>
+    <div class="step-body">
+      <div class="alert-box">
+        ⚠️ <strong>保健所も管轄ごとに情報が共有されない場合があります。</strong><br>
+        お住まいの地域だけでなく、<strong>隣接する市区町村を管轄する保健所・動物愛護センターにも必ず連絡してください。</strong>
+      </div>
+      <div class="link-grid">
+        <a class="link-btn orange" href="index.html">
+          <div class="li">🐾</div>
+          <div class="lt">保健所リンク集（地図）<span>都道府縣をクリックして管轄保健所を確認</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 投稿 -->
+  <div class="step-card s3">
+    <div class="step-head">
+      <div class="step-num">3</div>
+      <div class="step-title">
+        <strong>𝕏 X・各掲示板に投稿する</strong>
+        <span>テンプレをコピーして使ってね</span>
+      </div>
+      <div class="step-urgent blue">拡散を！</div>
+    </div>
+    <div class="step-body">
+      <p style="font-size:0.84rem;color:#555;margin-bottom:0.8rem;">📋 下記のテンプレをコピーして使ってください。【】の中を書き換えてね！</p>
+
+      <!-- 迷子テンプレ -->
+      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">🔴 迷子になった場合</p>
+      <div class="template-box">
+        <button class="copy-btn" onclick="copyTemplate(this)">コピー</button>
+        <pre id="tmpl1">🆘迷子のお知らせ🆘
+●迷子日：【年月日】
+●迷子地：【都道府縣・市区町村・最寄り駅など】
+●犬種/猫種：【例：柴犬・雑種など】
+●毛色：【例：茶色・白黒など】
+●性別・年齢：【例：オス・3歳】
+●身に付けていた物：【例：赤い首輪・迷子札あり】
+●特長：【例：右耳に傷あり・人懐こい】
+●警察・保健所への届け出：済 / 未
+●連絡先：【DMまたは電話番号など】
+
+#迷子犬 #迷子猫 #【都道府縣名】 #【市区町村名】</pre>
+      </div>
+
+      <!-- 保護テンプレ -->
+      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">🟢 保護した場合</p>
+      <div class="template-box">
+        <button class="copy-btn" onclick="copyTemplate(this)">コピー</button>
+        <pre id="tmpl2">🐾保護のお知らせ🐾
+●保護日：【年月日】
+●保護地：【都道府縣・市区町村・最寄り駅など】
+●犬種/猫種：【例：推定トイプードル・雑種など】
+●毛色：【例：クリーム色】
+●性別・特長：【例：オス・首輪なし・人懐こい】
+●現在の保護先：【自宅 / 警察 / 動物病院など】
+●警察・保健所への届け出：済 / 未
+●連絡先：【DMまたは電話番号など】
+
+飼い主さんを探しています🙏
+#保護犬 #保護猫 #迷子犬 #迷子猫 #【都道府縣名】 #【市区町村名】</pre>
+      </div>
+
+      <!-- ハッシュタグ -->
+      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.5rem;">🏷️ よく使うハッシュタグ（タップでコピー）</p>
+      <div class="tag-list">
+        <div class="tag" onclick="copyTag(this)">#迷子犬</div>
+        <div class="tag" onclick="copyTag(this)">#迷子猫</div>
+        <div class="tag" onclick="copyTag(this)">#迷い犬</div>
+        <div class="tag" onclick="copyTag(this)">#迷い猫</div>
+        <div class="tag" onclick="copyTag(this)">#保護犬</div>
+        <div class="tag" onclick="copyTag(this)">#保護猫</div>
+        <div class="tag" onclick="copyTag(this)">#飼い主募集</div>
+        <div class="tag" onclick="copyTag(this)">#拡散希望</div>
+        <div class="tag" onclick="copyTag(this)">#RTお願いします</div>
+      </div>
+
+      <div class="link-grid">
+        <a class="link-btn blue" href="index_x.html">
+          <div class="li">𝕏</div>
+          <div class="lt">X迷子情報を見る<span>都道府縣別まとめポスト</span></div>
+        </a>
+        <a class="link-btn blue" href="https://lostpet.jp/" target="_blank" rel="noopener">
+          <div class="li">🔍</div>
+          <div class="lt">LOSTPET.JP<span>迷子ペットデータベース</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 捜索 -->
+  <div class="step-card s4">
+    <div class="step-head">
+      <div class="step-num">4</div>
+      <div class="step-title">
+        <strong>🔦 暗くなる前に！周辺を念入りに捜索</strong>
+        <span>見落としがちな場所を重点的に</span>
+      </div>
+      <div class="step-urgent green">日没前に！</div>
+    </div>
+    <div class="step-body">
+      <div class="alert-box">
+        ⚠️ <strong>特に側溝・用水路に注意！</strong><br>
+        落ちて這い上がれないワンちゃんが多いです。<br>
+        小さいワンちゃんは<strong>側溝の蓋の裏に前進してしまうことも。蓋の裏まで必ず確認してください。</strong>
+      </div>
+      <ul class="tips-list">
+        <li>
+          <div class="ti">🕳️</div>
+          <div><strong>側溝・用水路の蓋の裏まで確認</strong>小型犬は蓋の裏に入り込んで出られなくなることがあります。懐中電灯で照らしながら確認してください。</div>
+        </li>
+        <li>
+          <div class="ti">🌳</div>
+          <div><strong>茂み・草むら・塀の隙間</strong>怖くて隠れていることが多いです。名前を呼びながらゆっくり確認しましょう。</div>
+        </li>
+        <li>
+          <div class="ti">🌙</div>
+          <div><strong>暗くなったら懐中電灯で目の反射を探す</strong>夜は動物の目が光るので見つけやすくなることも。静かに耳を澄ませて。</div>
+        </li>
+        <li>
+          <div class="ti">🏠</div>
+          <div><strong>近隣住民への声かけ</strong>目撃情報をもらえることがあります。チラシを配ると効果的です。</div>
+        </li>
+        <li>
+          <div class="ti">📷</div>
+          <div><strong>近くの防犯カメラ・ドラレコ映像のお願い</strong>移動方向を絞り込めることがあります。</div>
+        </li>
+      </ul>
+
+      <a class="coming-soon-btn" href="#">
+        💡 詳しい捜索方法・アドバイスはこちら（準備中）
+      </a>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+  <p style="margin-top:0.3rem">掲載内容は各自治体の公式情報をご確認ください</p>
+</footer>
+
+<script>
+function copyTemplate(btn) {
+  const pre = btn.nextElementSibling;
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    btn.textContent = 'コピーした！';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+function copyTag(el) {
+  navigator.clipboard.writeText(el.textContent).then(() => {
+    el.classList.add('copied');
+    const orig = el.textContent;
+    el.textContent = '✅ コピー！';
+    setTimeout(() => { el.textContent = orig; el.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
