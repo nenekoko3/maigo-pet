@@ -47,6 +47,13 @@ td{padding:0.65rem 0.8rem;border-bottom:1px solid var(--border);vertical-align:t
 .bottom-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#333;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}.bottom-banner .bb-text span{font-size:0.79rem;color:#555;line-height:1.65;}.bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+
+.tab-nav{max-width:900px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding-bottom:0;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.35rem;padding:0.65rem 1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.7);border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.15s;flex-shrink:0;}
+.tab-btn:hover{color:white;border-bottom-color:rgba(255,255,255,0.5);}
+.tab-btn.active{color:white;border-bottom-color:white;background:rgba(255,255,255,0.15);}
+.tab-btn.soon{color:rgba(255,255,255,0.35);cursor:default;}
 </style></head><body>
 <header><div class="header-inner">
   <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
@@ -55,7 +62,14 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     <h1>群馬県　保健所・収容施設リンク集</h1>
     <p>管轄市区町村・収容情報・ジモティへのリンク｜最終更新 2024.1.25</p>
   </div>
-</div></header>
+</div>  <nav class="tab-nav">
+    <a class="tab-btn active" href="index.html">🐾 保健所リンク集</a>
+    <a class="tab-btn"        href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn"        href="tips.html">💡 迷子にしたら</a>
+    <a class="tab-btn soon"   href="#">🎉 見つかりました！</a>
+    <a class="tab-btn soon"   href="#">📋 迷子掲示板</a>
+  </nav>
+</header>
 <main>
 <a class="back-btn" href="index.html">← 都道府県マップに戻る</a>
 <a class="x-banner" href="gunma_x.html"><div class="xi">𝕏</div><div class="xt"><strong>群馬県のX（Twitter）迷子情報もチェック！</strong><span>保健所だけでなく、X上の迷子情報・目撃情報も合わせてご確認ください</span></div><div class="xa">›</div></a>

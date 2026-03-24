@@ -147,6 +147,13 @@ tr:hover td{background:#fafbff;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+
+.tab-nav{max-width:900px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding-bottom:0;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.35rem;padding:0.65rem 1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;color:rgba(255,255,255,0.7);border-bottom:3px solid transparent;white-space:nowrap;transition:all 0.15s;flex-shrink:0;}
+.tab-btn:hover{color:white;border-bottom-color:rgba(255,255,255,0.5);}
+.tab-btn.active{color:white;border-bottom-color:white;background:rgba(255,255,255,0.15);}
+.tab-btn.soon{color:rgba(255,255,255,0.35);cursor:default;}
 </style>
 </head>
 <body>
@@ -162,6 +169,13 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       <p>管轄市区町村・収容情報・譲渡情報・ジモティへのリンク｜最終更新 2024.1.24</p>
     </div>
   </div>
+  <nav class="tab-nav">
+    <a class="tab-btn active" href="index.html">🐾 保健所リンク集</a>
+    <a class="tab-btn"        href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn"        href="tips.html">💡 迷子にしたら</a>
+    <a class="tab-btn soon"   href="#">🎉 見つかりました！</a>
+    <a class="tab-btn soon"   href="#">📋 迷子掲示板</a>
+  </nav>
 </header>
 
 <main>
