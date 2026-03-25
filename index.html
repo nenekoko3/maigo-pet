@@ -12,15 +12,15 @@
   --kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;
   --border:#dde;--radius:12px;--cs:50px;
   /* 保健所版：明るい緑系 */
-  --header-from:#81d4fa;
-  --header-to:#b3e5fc;
+  
+  
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--font);background:#f0f4f8;color:#333;min-height:100vh;}
 
 /* ===== ヘッダー ===== */
 header{
-  background:linear-gradient(135deg,var(--header-from),var(--header-to));
+  background:linear-gradient(135deg,#004d7a,#008793);
   color:white;padding:1.4rem 1rem 0;
 }
 .header-inner{max-width:940px;margin:0 auto;}
@@ -118,6 +118,19 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 
 footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
   border-top:1px solid var(--border);font-family:var(--font);}
+
+.map-message{
+  position:absolute;left:10px;top:calc(var(--cs)*1.2);
+  width:calc(var(--cs)*8.5);
+  background:linear-gradient(135deg,rgba(0,77,122,0.92),rgba(0,135,147,0.92));
+  border-radius:20px;display:flex;align-items:center;
+  padding:0.75rem 0.9rem;color:white;gap:0.65rem;
+  box-shadow:0 4px 14px rgba(0,0,0,0.25);
+}
+.map-message img{width:40px;height:40px;border-radius:50%;background:white;padding:3px;flex-shrink:0;}
+.map-message-text{font-size:0.7rem;line-height:1.7;font-weight:700;}
+.map-message-text span{display:block;font-size:0.62rem;font-weight:400;opacity:0.85;margin-top:0.15rem;}
+.map-wrap{position:relative;}
 </style>
 </head>
 <body>
@@ -144,6 +157,13 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
 <main>
   <div class="guide">🗾 都道府県をクリックして保健所・収容情報を確認できます</div>
   <div class="map-wrap">
+    <div class="map-message">
+      <img src="cat_icon.jpg" alt="ねねここ">
+      <div class="map-message-text">
+        全国の保健所の管轄市町村が調べられます🐾
+        <span>都道府県をクリックして管轄保健所・収容施設を確認してね</span>
+      </div>
+    </div>
     <div class="jmap">
       <a class="b hk f-hokkaido" href="hokkaido.html">北海道</a>
       <a class="b th f-aomori"    href="aomori.html">青森</a>
