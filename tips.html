@@ -72,7 +72,7 @@ main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 4rem;}
 .link-btn .lt{flex:1;}
 .link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
 
-/* 都道府縣警察リスト */
+/* 都道府県警察リスト */
 .pref-police{margin-top:0.5rem;}
 .pref-police summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:#2980b9;padding:0.5rem 0;list-style:none;}
 .pref-police summary::before{content:"▶ ";}
@@ -120,7 +120,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   <nav class="tab-nav">
     <a class="tab-btn t-shelter" href="index.html">🐾 保健所</a>
     <a class="tab-btn t-x" href="index_x.html">𝕏 X迷子情報</a>
-    <a class="tab-btn t-tips active" href="tips.html">💡 迷子にしたら</a>
+    <a class="tab-btn t-tips active" href="tips.html">🚨 迷子にしたら</a>
     <a class="tab-btn t-found soon" href="#">🎉 見つかりました！</a>
     <a class="tab-btn t-board soon" href="#">📋 迷子掲示板</a>
   </nav>
@@ -143,8 +143,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     </div>
     <div class="step-body">
       <div class="alert-box">
-        ⚠️ <strong>都道府縣をまたぐと情報が共有されない場合があります。</strong><br>
-        迷子になった場所が県境に近い場合は、<strong>隣接する都道府縣の警察にも必ず届けてください。</strong>
+        ⚠️ <strong>都道府県をまたぐと情報が共有されない場合があります。</strong><br>
+        迷子になった場所が県境に近い場合は、<strong>隣接する都道府県の警察にも必ず届けてください。</strong>
       </div>
       <div class="link-grid">
         <a class="link-btn red" href="https://www.keishicho.metro.tokyo.lg.jp/sodan/otoshimono/lost_found.html" target="_blank" rel="noopener">
@@ -153,11 +153,11 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         </a>
         <a class="link-btn red" href="https://www.npa.go.jp/" target="_blank" rel="noopener">
           <div class="li">📞</div>
-          <div class="lt">警察庁トップページ<span>各都道府縣警察へのリンクもあります</span></div>
+          <div class="lt">警察庁トップページ<span>各都道府県警察へのリンクもあります</span></div>
         </a>
       </div>
       <details class="pref-police">
-        <summary>都道府縣警察の公式ページ一覧を見る</summary>
+        <summary>都道府県警察の公式ページ一覧を見る</summary>
         <div class="police-grid">
           <a class="police-link" href="https://www.police.pref.hokkaido.lg.jp/" target="_blank" rel="noopener">北海道警察</a>
           <a class="police-link" href="https://www.police.pref.aomori.jp/" target="_blank" rel="noopener">青森県警察</a>
@@ -229,7 +229,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       <div class="link-grid">
         <a class="link-btn orange" href="index.html">
           <div class="li">🐾</div>
-          <div class="lt">保健所リンク集（地図）<span>都道府縣をクリックして管轄保健所を確認</span></div>
+          <div class="lt">保健所リンク集（地図）<span>都道府県をクリックして管轄保健所を確認</span></div>
         </a>
       </div>
     </div>
@@ -254,7 +254,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         <button class="copy-btn" onclick="copyTemplate(this)">コピー</button>
         <pre id="tmpl1">🆘迷子のお知らせ🆘
 ●迷子日：【年月日】
-●迷子地：【都道府縣・市区町村・最寄り駅など】
+●迷子地：【都道府県・市区町村・最寄り駅など】
 ●犬種/猫種：【例：柴犬・雑種など】
 ●毛色：【例：茶色・白黒など】
 ●性別・年齢：【例：オス・3歳】
@@ -263,7 +263,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 ●警察・保健所への届け出：済 / 未
 ●連絡先：【DMまたは電話番号など】
 
-#迷子犬 #迷子猫 #【都道府縣名】 #【市区町村名】</pre>
+#迷子犬 #迷子猫 #【都道府県名】 #【市区町村名】</pre>
       </div>
 
       <!-- 保護テンプレ -->
@@ -272,7 +272,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         <button class="copy-btn" onclick="copyTemplate(this)">コピー</button>
         <pre id="tmpl2">🐾保護のお知らせ🐾
 ●保護日：【年月日】
-●保護地：【都道府縣・市区町村・最寄り駅など】
+●保護地：【都道府県・市区町村・最寄り駅など】
 ●犬種/猫種：【例：推定トイプードル・雑種など】
 ●毛色：【例：クリーム色】
 ●性別・特長：【例：オス・首輪なし・人懐こい】
@@ -281,7 +281,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 ●連絡先：【DMまたは電話番号など】
 
 飼い主さんを探しています🙏
-#保護犬 #保護猫 #迷子犬 #迷子猫 #【都道府縣名】 #【市区町村名】</pre>
+#保護犬 #保護猫 #迷子犬 #迷子猫 #【都道府県名】 #【市区町村名】</pre>
       </div>
 
       <!-- ハッシュタグ -->
@@ -311,7 +311,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       <div class="link-grid">
         <a class="link-btn blue" href="index_x.html">
           <div class="li">𝕏</div>
-          <div class="lt">X迷子情報を見る<span>都道府縣別まとめポスト</span></div>
+          <div class="lt">X迷子情報を見る<span>都道府県別まとめポスト</span></div>
         </a>
         <a class="link-btn blue" href="https://lostpet.jp/" target="_blank" rel="noopener">
           <div class="li">🔍</div>
@@ -324,7 +324,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   <!-- STEP 3.5 チラシ -->
   <div class="step-card" style="border-top:4px solid #8e44ad;">
     <div class="step-head">
-      <div class="step-num" style="background:#8e44ad;">📄</div>
+      <div class="step-num" style="background:#8e44ad;">4</div>
       <div class="step-title">
         <strong>📄 チラシを作って配る！</strong>
         <span>地域の方々の目が最大の力になります</span>
@@ -368,7 +368,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   <!-- STEP 4 捜索 -->
   <div class="step-card s4">
     <div class="step-head">
-      <div class="step-num">4</div>
+      <div class="step-num">5</div>
       <div class="step-title">
         <strong>🔦 暗くなる前に！周辺を念入りに捜索</strong>
         <span>見落としがちな場所を重点的に</span>
