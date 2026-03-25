@@ -31,23 +31,26 @@ header{
 .header-text p{font-size:0.82rem;opacity:0.85;line-height:1.7;}
 
 /* タブナビ */
-.tab-nav{
-  display:flex;gap:0;overflow-x:auto;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:0.5rem;
-}
+.tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
 .tab-nav::-webkit-scrollbar{display:none;}
-.tab-btn{
-  display:flex;align-items:center;gap:0.35rem;
-  padding:0.65rem 1.1rem;font-family:var(--font);font-size:0.85rem;font-weight:700;
-  text-decoration:none;white-space:nowrap;border:none;border-radius:10px 10px 0 0;
-  transition:all 0.15s;cursor:pointer;flex-shrink:0;margin-right:3px;
-}
-.tab-btn.active{background:white;color:#111;box-shadow:0 -2px 8px rgba(0,0,0,0.15);}
-.tab-btn.inactive{background:rgba(255,255,255,0.18);color:rgba(255,255,255,0.9);}
-.tab-btn.inactive:hover{background:rgba(255,255,255,0.3);}
-.tab-btn.soon{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.45);cursor:default;}
-.tab-badge{font-size:0.65rem;background:rgba(255,255,255,0.2);border-radius:50px;padding:0.1rem 0.4rem;}
-.tab-btn.active .tab-badge{background:#f0f0f0;color:#555;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn.soon{opacity:0.55;cursor:default;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#333;}
+.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ead5f5;color:#333;}
+.tab-btn.t-tips.active{background:#f5eaff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#f0deff;color:#333;}
+.tab-btn.t-board{background:#e8d6ff;color:#333;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#333;}
+.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ead5f5;color:#333;}
+.tab-btn.t-tips.active{background:#f5eaff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#f0deff;color:#333;}
+.tab-btn.t-board{background:#e8d6ff;color:#333;}
 
 main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .guide{text-align:center;font-size:0.86rem;color:#555;margin-bottom:1rem;
@@ -176,12 +179,12 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         <p>迷子のペット情報を一元化｜保健所・X（Twitter）・ジモティ</p>
       </div>
     </div>
-            <nav class="tab-nav">
+              <nav class="tab-nav">
     <a class="tab-btn t-shelter " href="index.html">🐾 保健所</a>
-    <a class="tab-btn t-x active"       href="index_x.html">𝕏 X迷子情報</a>
-    <a class="tab-btn t-tips "    href="tips.html">💡 迷子にしたら</a>
-    <a class="tab-btn t-found soon"  href="#">🎉 見つかりました！</a>
-    <a class="tab-btn t-board soon"  href="#">📋 迷子掲示板</a>
+    <a class="tab-btn t-x active" href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn t-tips " href="tips.html">💡 迷子にしたら</a>
+    <a class="tab-btn t-found soon" href="#">🎉 見つかりました！</a>
+    <a class="tab-btn t-board soon" href="#">📋 迷子掲示板</a>
   </nav>
   </div>
 </header>
