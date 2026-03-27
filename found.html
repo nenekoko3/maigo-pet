@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷子ちゃんを目撃・保護したら｜全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--font:'M PLUS Rounded 1c',sans-serif;--radius:12px;--border:#dde;--orange:#ff6600;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+header{background:#ff6600;color:#333;padding:1.4rem 1rem 0;}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
+.header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
+.header-text p{font-size:0.8rem;opacity:0.88;line-height:1.6;}
+.tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn.soon{opacity:0.55;cursor:default;}
+.tab-btn.t-shelter{background:#c1e0ff;}
+.tab-btn.t-x{background:#dcd5ff;}
+.tab-btn.t-tips{background:#ffe0b2;}
+.tab-btn.t-found{background:#ffcc00;font-weight:800;}
+.tab-btn.t-found.active{background:#fff3b0;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-board{background:#e8d6ff;}
+main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
+.emergency{background:#fff8e1;border:2.5px solid #ff6600;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.2rem;text-align:center;}
+.emergency p{font-size:0.88rem;color:#c04000;line-height:1.8;font-weight:700;}
+.step-card{background:white;border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,0.09);margin-bottom:1.3rem;overflow:hidden;}
+.step-head{display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;}
+.step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;flex-shrink:0;background:#ff6600;}
+.step-title{flex:1;}
+.step-title strong{display:block;font-size:1rem;margin-bottom:0.15rem;}
+.step-title span{font-size:0.78rem;color:#666;}
+.badge{background:#ff6600;color:white;font-size:0.72rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;flex-shrink:0;}
+.step-body{padding:0 1.3rem 1.2rem;}
+.alert-box{background:#fff8e1;border-left:4px solid #ff9800;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#7a4000;line-height:1.75;}
+.alert-box strong{color:#c04000;}
+.info-box{background:#e8f5e9;border-left:4px solid #4caf50;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#1b5e20;line-height:1.75;}
+.info-box strong{color:#1b5e20;}
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.6rem;margin-bottom:0.8rem;}
+.link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;font-family:var(--font);}
+.link-btn.orange{background:#fff3e0;color:#c04000;border:1.5px solid #ffcc80;}
+.link-btn .li{font-size:1.2rem;flex-shrink:0;}
+.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
+.template-box{background:#f8f8f8;border:1.5px solid #dde;border-radius:10px;padding:1rem 1.1rem;margin-bottom:0.8rem;font-size:0.83rem;line-height:2;position:relative;}
+.template-box pre{white-space:pre-wrap;font-family:var(--font);}
+.copy-btn{position:absolute;top:0.6rem;right:0.6rem;background:#ff6600;color:white;border:none;border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.tips-list{list-style:none;padding:0;}
+.tips-list li{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.84rem;line-height:1.7;}
+.tips-list li:last-child{border-bottom:none;}
+.tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
+.tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+
+.witness-board{background:#e8874a;border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1.3rem;box-shadow:0 4px 14px rgba(200,80,0,0.3);}
+.witness-head{display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem;}
+.witness-head img{width:48px;height:48px;border-radius:50%;background:white;padding:4px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+.witness-title{color:white;font-size:1rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.2);}
+.witness-item{background:white;border-radius:4px;padding:0.85rem 1rem;margin-bottom:0.8rem;color:#333;position:relative;box-shadow:2px 3px 8px rgba(0,0,0,0.2);}
+.witness-item::before{content:'📌';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:1.1rem;}
+.witness-item:last-child{margin-bottom:0;}
+.witness-item .w-num{font-size:0.75rem;font-weight:700;color:#ff6600;display:block;margin-bottom:0.4rem;}
+.witness-item p{font-size:0.78rem;line-height:1.8;color:#333;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-icon"><img src="cat_icon.jpg" alt="ねねここ"></div>
+    <div class="header-text">
+      <h1>🐾 迷子ちゃんを目撃・保護したら</h1>
+      <p>飼い主さんに繋げるために！一緒に探してあげてね</p>
+    </div>
+  </div>
+  <div style="background:#ff6600;padding:0 0.5rem;">
+    <nav class="tab-nav">
+      <a class="tab-btn t-shelter" href="index.html">🐾 保健所</a>
+      <a class="tab-btn t-x" href="index_x.html">𝕏 X迷子情報</a>
+      <a class="tab-btn t-tips" href="tips.html">🚨 迷子にしたら</a>
+      <a class="tab-btn t-found active" href="#">🐾 目撃・保護したら</a>
+      <a class="tab-btn t-board soon" href="#">📋 迷子掲示板</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="emergency">
+    <p>🐾 迷子ちゃんを見かけたら、できることをやってみてね！<br>あなたの一報が飼い主さんとの再会につながります😭</p>
+  </div>
+
+  <!-- 目撃した場合のメッセージボード -->
+  <div class="witness-board">
+    <div class="witness-head">
+      <img src="cat_icon.jpg" alt="ねねここ">
+      <div class="witness-title">🐾 迷子を目撃したら</div>
+    </div>
+    <div class="witness-item">
+      <div class="w-num">1　警察へ連絡を</div>
+      <p>まだ🐶ちゃんがお近くにいて可能でしたら保護を、難しそうでしたら警察に保護依頼を。もう離れてしまっていても、警察・保健所・動物愛護センターへの情報提供をして頂けると、捜索中の飼い主さまに届いたり保護につながりやすくなります🙏</p>
+    </div>
+    <div class="witness-item">
+      <div class="w-num">2　SNSへ投稿を</div>
+      <p>お写真があれば付けて、なくても大丈夫です。目撃された場所・日時・🐶ちゃんの特徴・首輪の有無と色・向かっていった方向などをご投稿頂けると、捜索中の飼い主さまや地域の方に情報が届いたり保護につながりやすくなります🐾</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 保健所 -->
+  <div class="step-card">
+    <div class="step-head">
+      <div class="step-num">2</div>
+      <div class="step-title">
+        <strong>🏥 保健所・動物愛護センターに届け出る</strong>
+        <span>自宅保護の場合も必ず届け出を！</span>
+      </div>
+      <div class="badge">必ず届けて！</div>
+    </div>
+    <div class="step-body">
+      <div class="info-box">
+        💚 <strong>飼い主さんと繋がるために届け出をお願いします！</strong><br>
+        届け出をすることで、飼い主さんが問い合わせたときにすぐ繋がれます🐾<br><br>
+        また、飼い主さんが見つからない場合は<strong>一定期間後に保護者に所有権が移行</strong>し、正式に家族として迎えることもできます✨
+      </div>
+      <div class="link-grid">
+        <a class="link-btn orange" href="index.html"><div class="li">🐾</div><div class="lt">保健所リンク集（地図）<span>管轄保健所を確認してね</span></div></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3 SNS投稿 -->
+  <div class="step-card">
+    <div class="step-head">
+      <div class="step-num">3</div>
+      <div class="step-title">
+        <strong>𝕏 SNSに投稿する</strong>
+        <span>テンプレをコピーして使ってね</span>
+      </div>
+      <div class="badge">拡散を！</div>
+    </div>
+    <div class="step-body">
+      <p style="font-size:0.84rem;color:#555;margin-bottom:0.8rem;">【】の中を書き換えてね！</p>
+      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">👁️ 目撃した場合</p>
+      <div class="template-box">
+        <button class="copy-btn">コピー</button>
+        <pre>👁️目撃情報👁️
+●目撃日：【年月日・時間】
+●目撃場所：【都道府県・市区町村・目印など】
+●犬種/猫種：【例：柴犬・茶トラなど】
+●毛色・特徴：【例：茶色・首輪あり】
+●移動方向：【例：北へ向かっていた】
+●警察への届け出：済 / 未
+
+#迷子犬 #迷子猫 #目撃情報 #【都道府県名】</pre>
+      </div>
+      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">🐾 保護した場合</p>
+      <div class="template-box">
+        <button class="copy-btn">コピー</button>
+        <pre>🐾保護しています🐾
+●保護日：【年月日】
+●保護場所：【都道府県・市区町村・最寄り駅など】
+●犬種/猫種：【例：推定トイプードル・雑種など】
+●毛色・特徴：【例：クリーム色・首輪なし】
+●現在の保護先：自宅保護中
+●警察・保健所への届け出：済 / 未
+
+飼い主さんを探しています🙏
+#保護犬 #保護猫 #迷子犬 #迷子猫 #【都道府県名】</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 地域への声かけ -->
+  <div class="step-card">
+    <div class="step-head">
+      <div class="step-num">4</div>
+      <div class="step-title">
+        <strong>🏘️ 地域への声かけ・ポスター</strong>
+        <span>SNSを使わない飼い主さんにも届けよう</span>
+      </div>
+      <div class="badge">効果大！</div>
+    </div>
+    <div class="step-body">
+      <div class="alert-box">
+        ⚠️ <strong>高齢の飼い主さんはSNSを使っていないことも多い！</strong><br>
+        警察・保健所への届け出をしていないケースも。地域への声かけがとても大切です。
+      </div>
+      <ul class="tips-list">
+        <li><div class="ti">📋</div><div><strong>保護地周辺にポスターを貼る</strong>近隣の方の目に触れることで飼い主さんに情報が届くことがあります。</div></li>
+        <li><div class="ti">🏥</div><div><strong>近くの動物病院に連絡する</strong>かかりつけ病院から飼い主さんに連絡できることがあります。写真と特徴を伝えて。</div></li>
+        <li><div class="ti">🐕</div><div><strong>散歩中のワンちゃん連れに声かけ</strong>地域のペット事情に詳しい方が多く、飼い主さんをご存知なことも。</div></li>
+        <li><div class="ti">📮</div><div><strong>町内会・回覧板を活用する</strong>高齢の飼い主さんへの情報拡散に効果的です。町内会長に相談してみて。</div></li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+</footer>
+</body>
+</html>
