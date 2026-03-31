@@ -96,6 +96,22 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .bottom-banner .bb-text span{font-size:0.79rem;color:#2c5282;line-height:1.7;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+
+.sns-section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
+.sns-section-head{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
+.sns-body{padding:0.8rem 1rem 1rem;}
+.sns-platform{margin-bottom:1rem;}
+.sns-platform:last-child{margin-bottom:0;}
+.sns-platform-label{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.82rem;font-weight:700;border-radius:50px;padding:0.22rem 0.8rem;margin-bottom:0.5rem;color:white;}
+.sns-platform-label.ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.sns-platform-label.th{background:#000;}
+.sns-grid-sm{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.38rem;}
+.sns-card{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:#fafafa;border:1px solid var(--border);border-radius:8px;padding:0.48rem 0.65rem;}
+.sns-btn{display:inline-flex;align-items:center;background:#555;color:white;padding:0.25rem 0.6rem;border-radius:50px;font-size:0.72rem;font-weight:700;text-decoration:none;flex-shrink:0;white-space:nowrap;font-family:var(--font);}
+.sns-btn:hover{background:#333;}
+.other-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5rem;padding:0.8rem 1rem 1rem;}
+.other-link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;background:#f0f6ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
+.other-link-btn:hover{background:#dbeafe;}
 </style>
 </head>
 <body>
@@ -157,6 +173,43 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 <div class="s-card"><div class="s-word">#迷い猫<span>ハッシュタグ検索</span></div><a class="s-btn ht" href="https://x.com/search?q=%23%E8%BF%B7%E3%81%84%E7%8C%AB%20%E7%A7%8B%E7%94%B0%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
 </div>
       </div>
+    </div>
+  </div>
+
+
+  <!-- Instagram・Threadsセクション -->
+  <div class="sns-section">
+    <div class="sns-section-head">📱 Instagram・Threadsでも探す</div>
+    <div class="sns-body">
+      <div class="sns-platform">
+        <div class="sns-platform-label ig">📸 Instagram</div>
+        <div class="sns-grid-sm"><div class="sns-card"><div class="s-word">迷子犬</div><a class="sns-btn ig" href="https://www.instagram.com/explore/search/keyword/?q=%E8%BF%B7%E5%AD%90%E7%8A%AC%20%E7%A7%8B%E7%94%B0%E7%9C%8C" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">迷子猫</div><a class="sns-btn ig" href="https://www.instagram.com/explore/search/keyword/?q=%E8%BF%B7%E5%AD%90%E7%8C%AB%20%E7%A7%8B%E7%94%B0%E7%9C%8C" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">保護犬</div><a class="sns-btn ig" href="https://www.instagram.com/explore/search/keyword/?q=%E4%BF%9D%E8%AD%B7%E7%8A%AC%20%E7%A7%8B%E7%94%B0%E7%9C%8C" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">保護猫</div><a class="sns-btn ig" href="https://www.instagram.com/explore/search/keyword/?q=%E4%BF%9D%E8%AD%B7%E7%8C%AB%20%E7%A7%8B%E7%94%B0%E7%9C%8C" target="_blank" rel="noopener">検索</a></div>
+</div>
+      </div>
+      <div class="sns-platform">
+        <div class="sns-platform-label th">🧵 Threads</div>
+        <div class="sns-grid-sm"><div class="sns-card"><div class="s-word">迷子犬</div><a class="sns-btn th" href="https://www.threads.net/search?q=%E8%BF%B7%E5%AD%90%E7%8A%AC%20%E7%A7%8B%E7%94%B0%E7%9C%8C&serp_type=default" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">迷子猫</div><a class="sns-btn th" href="https://www.threads.net/search?q=%E8%BF%B7%E5%AD%90%E7%8C%AB%20%E7%A7%8B%E7%94%B0%E7%9C%8C&serp_type=default" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">保護犬</div><a class="sns-btn th" href="https://www.threads.net/search?q=%E4%BF%9D%E8%AD%B7%E7%8A%AC%20%E7%A7%8B%E7%94%B0%E7%9C%8C&serp_type=default" target="_blank" rel="noopener">検索</a></div>
+<div class="sns-card"><div class="s-word">保護猫</div><a class="sns-btn th" href="https://www.threads.net/search?q=%E4%BF%9D%E8%AD%B7%E7%8C%AB%20%E7%A7%8B%E7%94%B0%E7%9C%8C&serp_type=default" target="_blank" rel="noopener">検索</a></div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- その他リンク -->
+  <div class="sns-section">
+    <div class="sns-section-head">🔍 その他の迷子情報サイト</div>
+    <div class="other-links">
+      <a class="other-link-btn" href="https://lostpet.jp/" target="_blank" rel="noopener">
+        <span>🔍</span><div><strong>LOSTPET.JP</strong><div style="font-size:0.7rem;font-weight:400;margin-top:0.1rem;">迷子ペットデータベース</div></div>
+      </a>
+      <a class="other-link-btn" href="https://maigo-pet.net/" target="_blank" rel="noopener">
+        <span>🐾</span><div><strong>迷子ペット.NET</strong><div style="font-size:0.7rem;font-weight:400;margin-top:0.1rem;">迷子ペット情報サイト</div></div>
+      </a>
     </div>
   </div>
 
