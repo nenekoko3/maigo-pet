@@ -37,6 +37,13 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .note a{color:#c05a00;font-weight:700;text-decoration:none;}
 .section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
 .section-head{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
+.x-hero{display:flex;align-items:center;gap:1rem;background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.6rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.28);transition:transform 0.12s,box-shadow 0.12s;}
+.x-hero:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.x-hero .xh-cat{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.x-hero .xh-text{min-width:0;}
+.x-hero .xh-text strong{display:block;font-size:1.05rem;line-height:1.35;margin-bottom:0.5rem;}
+.x-hero .xh-btn{display:inline-block;background:#fff;color:#111;font-weight:700;font-size:0.95rem;padding:0.5rem 1.1rem;border-radius:999px;}
+.x-hero .xh-text small{display:block;font-size:0.72rem;opacity:0.8;margin-top:0.4rem;}
 .post-card{position:relative;background:#1a1a2e;border-radius:12px;padding:0.9rem 1.1rem;margin-bottom:0.3rem;}
 .cat-row{display:flex;align-items:center;gap:0.75rem;}
 .cat-thumb{width:44px;height:44px;border-radius:50%;object-fit:contain;background:white;padding:4px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.4);}
@@ -134,6 +141,10 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </nav>
 </header>
 <main>
+  <a class="x-hero" href="https://twitter.com/i/status/1239184088197554176?lang=ja" target="_blank" rel="noopener">
+    <img class="xh-cat" src="cat_icon.jpg" alt="ねねここ">
+    <div class="xh-text"><strong>愛媛県の迷子情報まとめポスト</strong><span class="xh-btn">𝕏 まとめポストを見る</span><small>ブラウザで開いてね</small></div>
+  </a>
   <a class="back-btn" href="index_x.html">← 都道府県マップに戻る</a>
 
   <a class="shelter-banner" href="ehime.html">
@@ -151,17 +162,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 
   <!-- まとめポスト -->
   <div class="section">
-    <div class="section-head">𝕏 愛媛県 迷子情報まとめポスト</div>
-                <div class="post-card">
-      <div class="cat-row">
-        <img src="cat_icon.jpg" alt="ねねここ" class="cat-thumb">
-        <div class="post-info">
-          <strong>愛媛県の迷子情報まとめポスト</strong>
-          <span>X上の、迷子ちゃんをお探し、保護、目撃のポストを集めています🐾<br>迷子ちゃん達が早く無事におうちに帰れますように<br>情報の拡散にご協力下さい</span>
-          <a class="post-link" href="https://twitter.com/i/status/1239184088197554176?lang=ja" target="_blank" rel="noopener">𝕏 まとめポストを見る（ブラウザで開いてね）</a>
-        </div>
-      </div>
-    </div>
+    <div class="section-head">𝕏 愛媛県 犬・猫・鳥のX検索リンク</div>
       <div class="search-group">
         <div class="search-group-label">🐈 猫</div>
         <div class="search-grid"><div class="s-card"><div class="s-word">迷子猫<span>キーワード検索</span></div><a class="s-btn" href="https://x.com/search?q=%E8%BF%B7%E5%AD%90%E7%8C%AB%20%E6%84%9B%E5%AA%9B%E7%9C%8C&src=typed_query&f=live" target="_blank" rel="noopener">𝕏 検索</a></div>
