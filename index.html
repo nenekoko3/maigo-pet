@@ -119,6 +119,14 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
   border-top:1px solid var(--border);font-family:var(--font);}
 
+.pref-list{display:none;background:#fff;border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:0.9rem 0.9rem 0.5rem;margin-bottom:1.2rem;}
+.pref-list h2{font-size:0.95rem;margin:0 0 0.6rem;}
+.pl-row{display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.55rem;}
+.pl-reg{flex:0 0 3.4em;font-size:0.78rem;font-weight:700;padding-top:0.5rem;color:#444;}
+.pl-btns{display:flex;flex-wrap:wrap;gap:0.35rem;min-width:0;}
+.pl-btns a{display:inline-block;padding:0.5rem 0.75rem;border:2px solid #555;border-radius:8px;font-size:0.88rem;font-weight:700;color:#222;text-decoration:none;}
+.pl-btns a:active{opacity:0.7;}
+@media(max-width:640px){.pref-list{display:block;}}
 .map-hero{display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#004d7a,#008793);color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.7rem;box-shadow:0 4px 14px rgba(0,0,0,0.25);}
 .map-hero img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .map-hero strong{display:block;font-size:1.02rem;line-height:1.4;margin-bottom:0.3rem;}
@@ -176,6 +184,19 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
     <span><strong>X（Twitter）の迷子情報もあわせて確認してね</strong><br>各県のまとめポストを、都道府県ごとに見られます。</span>
     <span class="x-a">›</span>
   </a>
+  <div class="pref-list">
+    <h2>📱 地方から選ぶ</h2>
+    <div class="pl-row"><div class="pl-reg">北海道</div><div class="pl-btns"><a href="hokkaido.html" style="background:#7ec8e3">北海道</a></div></div>
+    <div class="pl-row"><div class="pl-reg">東北</div><div class="pl-btns"><a href="aomori.html" style="background:#88cc88">青森</a><a href="akita.html" style="background:#88cc88">秋田</a><a href="iwate.html" style="background:#88cc88">岩手</a><a href="yamagata.html" style="background:#88cc88">山形</a><a href="miyagi.html" style="background:#88cc88">宮城</a><a href="fukushima.html" style="background:#88cc88">福島</a></div></div>
+    <div class="pl-row"><div class="pl-reg">関東</div><div class="pl-btns"><a href="gunma.html" style="background:#a8bfe8">群馬</a><a href="tochigi.html" style="background:#a8bfe8">栃木</a><a href="ibaraki.html" style="background:#a8bfe8">茨城</a><a href="saitama.html" style="background:#a8bfe8">埼玉</a><a href="tokyo.html" style="background:#a8bfe8">東京</a><a href="chiba.html" style="background:#a8bfe8">千葉</a><a href="kanagawa.html" style="background:#a8bfe8">神奈川</a></div></div>
+    <div class="pl-row"><div class="pl-reg">中部</div><div class="pl-btns"><a href="niigata.html" style="background:#f5d78e">新潟</a><a href="toyama.html" style="background:#f5d78e">富山</a><a href="ishikawa.html" style="background:#f5d78e">石川</a><a href="fukui.html" style="background:#f5d78e">福井</a><a href="nagano.html" style="background:#f5d78e">長野</a><a href="yamanashi.html" style="background:#f5d78e">山梨</a><a href="gifu.html" style="background:#f5d78e">岐阜</a><a href="aichi.html" style="background:#f5d78e">愛知</a><a href="shizuoka.html" style="background:#f5d78e">静岡</a></div></div>
+    <div class="pl-row"><div class="pl-reg">近畿</div><div class="pl-btns"><a href="hyogo.html" style="background:#f5a8c8">兵庫</a><a href="kyoto.html" style="background:#f5a8c8">京都</a><a href="shiga.html" style="background:#f5a8c8">滋賀</a><a href="osaka.html" style="background:#f5a8c8">大阪</a><a href="nara.html" style="background:#f5a8c8">奈良</a><a href="mie.html" style="background:#f5a8c8">三重</a><a href="wakayama.html" style="background:#f5a8c8">和歌山</a></div></div>
+    <div class="pl-row"><div class="pl-reg">中国</div><div class="pl-btns"><a href="shimane.html" style="background:#c8a8e8">島根</a><a href="tottori.html" style="background:#c8a8e8">鳥取</a><a href="hiroshima.html" style="background:#c8a8e8">広島</a><a href="okayama.html" style="background:#c8a8e8">岡山</a><a href="yamaguchi.html" style="background:#c8a8e8">山口</a></div></div>
+    <div class="pl-row"><div class="pl-reg">四国</div><div class="pl-btns"><a href="ehime.html" style="background:#f5c87a">愛媛</a><a href="kagawa.html" style="background:#f5c87a">香川</a><a href="kochi.html" style="background:#f5c87a">高知</a><a href="tokushima.html" style="background:#f5c87a">徳島</a></div></div>
+    <div class="pl-row"><div class="pl-reg">九州</div><div class="pl-btns"><a href="fukuoka.html" style="background:#f59898">福岡</a><a href="oita.html" style="background:#f59898">大分</a><a href="saga.html" style="background:#f59898">佐賀</a><a href="nagasaki.html" style="background:#f59898">長崎</a><a href="kumamoto.html" style="background:#f59898">熊本</a><a href="miyazaki.html" style="background:#f59898">宮崎</a><a href="kagoshima.html" style="background:#f59898">鹿児島</a></div></div>
+    <div class="pl-row"><div class="pl-reg">沖縄</div><div class="pl-btns"><a href="okinawa.html" style="background:#7adcd0">沖縄</a></div></div>
+  </div>
+
   <div class="map-wrap">
     <div class="jmap">
       <a class="b hk f-hokkaido" href="hokkaido.html">北海道</a>
