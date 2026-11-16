@@ -119,6 +119,15 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
   border-top:1px solid var(--border);font-family:var(--font);}
 
+.map-hero{display:flex;align-items:center;gap:1rem;background:linear-gradient(135deg,#004d7a,#008793);color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.7rem;box-shadow:0 4px 14px rgba(0,0,0,0.25);}
+.map-hero img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.map-hero strong{display:block;font-size:1.02rem;line-height:1.4;margin-bottom:0.3rem;}
+.map-hero span{display:block;font-size:0.8rem;line-height:1.6;opacity:0.95;}
+.x-bar{display:flex;align-items:center;gap:0.6rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:0.6rem 0.9rem;margin-bottom:0.9rem;text-decoration:none;color:#333;font-size:0.84rem;line-height:1.5;}
+.x-bar:hover{background:#eee;border-color:#555;}
+.x-bar .x-i{font-size:1.3rem;flex-shrink:0;font-weight:700;}
+.x-bar strong{font-weight:700;}
+.x-bar .x-a{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 .map-message{
   position:absolute;left:10px;top:calc(var(--cs)*1.2);
   width:calc(var(--cs)*8.5);
@@ -155,15 +164,19 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
 </header>
 
 <main>
-  <div class="guide">🗾 都道府県をクリックして保健所・収容情報を確認できます</div>
-  <div class="map-wrap">
-    <div class="map-message">
-      <img src="cat_icon.jpg" alt="ねねここ">
-      <div class="map-message-text">
-        全国の保健所の管轄市町村が調べられます🐾
-        <span>都道府県をクリックして管轄保健所・収容施設を確認してね</span>
-      </div>
+  <div class="map-hero">
+    <img src="cat_icon.jpg" alt="ねねここ">
+    <div>
+      <strong>全国の保健所の管轄市町村が調べられます🐾</strong>
+      <span>都道府県をタップすると、管轄の保健所・収容施設を確認できます。</span>
     </div>
+  </div>
+  <a class="x-bar" href="index_x.html">
+    <span class="x-i">𝕏</span>
+    <span><strong>X（Twitter）の迷子情報もあわせて確認してね</strong><br>各県のまとめポストを、都道府県ごとに見られます。</span>
+    <span class="x-a">›</span>
+  </a>
+  <div class="map-wrap">
     <div class="jmap">
       <a class="b hk f-hokkaido" href="hokkaido.html">北海道</a>
       <a class="b th f-aomori"    href="aomori.html">青森</a>
