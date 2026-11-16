@@ -160,6 +160,16 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
 
+.map-hero{display:flex;align-items:center;gap:1rem;background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.7rem;box-shadow:0 4px 14px rgba(0,0,0,0.28);}
+.map-hero img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.map-hero strong{display:block;font-size:1.02rem;line-height:1.4;margin-bottom:0.3rem;}
+.map-hero span{display:block;font-size:0.8rem;line-height:1.6;opacity:0.92;}
+.map-hero .mh-warn{display:inline-block;margin-top:0.4rem;background:rgba(255,255,255,0.18);border-radius:6px;padding:0.2rem 0.5rem;font-size:0.74rem;font-weight:700;}
+.hk-bar{display:flex;align-items:center;gap:0.6rem;background:#e8f5e9;border:2px solid #81c784;border-radius:var(--radius);padding:0.6rem 0.9rem;margin-bottom:0.9rem;text-decoration:none;color:#1b5e20;font-size:0.84rem;line-height:1.5;}
+.hk-bar:hover{background:#c8e6c9;}
+.hk-bar .hk-i{font-size:1.3rem;flex-shrink:0;}
+.hk-bar strong{font-weight:700;}
+.hk-bar .hk-a{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 .map-message{
   position:absolute;left:10px;top:calc(var(--cs)*1.2);
   width:calc(var(--cs)*8.5);
@@ -195,28 +205,24 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 </header>
 
 <main>
-  <div class="guide">𝕏 都道府県をクリックしてXの迷子情報まとめポストを確認できます</div>
 
-  <a class="shelter-banner" href="index.html">
-    <div class="si">🐾</div>
-    <div class="st">
-      <strong>保健所・収容施設リンク集もチェック！</strong>
-      <span>お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。</span>
+  <div class="map-hero">
+    <img src="cat_icon.jpg" alt="ねねここ">
+    <div>
+      <strong>X上の捜索・目撃・保護情報を探しましょう🐾</strong>
+      <span>都道府県をタップすると、その県のXまとめポストが開けます。<br>Instagram・Threadsの検索も、各県のページからできるよ📱</span>
+      <span class="mh-warn">⚠️ まとめポストはブラウザで開いてね！</span>
     </div>
-    <div class="sa">›</div>
+  </div>
+  <a class="hk-bar" href="index.html">
+    <span class="hk-i">🐾</span>
+    <span><strong>保健所・収容施設の情報もあわせて確認してね</strong><br>周辺の市町村を管轄する保健所も、必ずチェックしてください。</span>
+    <span class="hk-a">›</span>
   </a>
 
   <!-- ブロック地図 -->
   <div class="map-wrap">
     <div class="jmap">
-      <div class="map-message">
-        <img src="cat_icon.jpg" alt="ねねここ">
-        <div class="map-message-text">
-          X上の捜索、目撃、保護情報を探しましょう🐾
-          <span>都道府県をクリックしてXのまとめポストを確認してね<br>Instagram・Threadsの検索も各県ページからできるよ📱</span>
-          <span style="margin-top:0.3rem;background:rgba(255,255,255,0.2);border-radius:6px;padding:0.2rem 0.4rem;font-size:0.65rem;font-weight:700;">⚠️ まとめポストはブラウザで開いてね！</span>
-        </div>
-      </div>
       <a class="b hk f-hokkaido" href="hokkaido_x.html">北海道</a>
       <a class="b th f-aomori"    href="aomori_x.html">青森</a>
       <a class="b th f-akita"     href="akita_x.html">秋田</a>
