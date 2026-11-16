@@ -92,6 +92,16 @@ tr:hover td{background:#fafbff;}
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;padding-bottom:0.5rem;}
 .leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
+.x-hero{display:flex;align-items:center;gap:1rem;background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.6rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.28);transition:transform 0.12s,box-shadow 0.12s;}
+.x-hero:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.x-hero .xh-cat{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.x-hero .xh-text{min-width:0;}
+.x-hero .xh-text strong{display:block;font-size:1.05rem;line-height:1.35;margin-bottom:0.5rem;}
+.x-hero .xh-btn{display:inline-block;background:#fff;color:#111;font-weight:700;font-size:0.95rem;padding:0.5rem 1.1rem;border-radius:999px;}
+.x-hero .xh-text small{display:block;font-size:0.72rem;opacity:0.8;margin-top:0.4rem;}
+.x-subrow{display:flex;flex-wrap:wrap;gap:0.4rem 1rem;justify-content:space-between;font-size:0.8rem;margin:0 0 1rem;}
+.x-subrow a{color:#444;}
+.x-subrow .here{color:#2d5a2d;font-weight:700;}
 .bottom-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#333;transition:border-color 0.15s;}
 .bottom-banner:hover{border-color:#555;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
@@ -119,19 +129,19 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
       <nav class="tab-nav">
     <a class="tab-btn t-shelter active" href="index.html">🐾 保健所</a>
-    <a class="tab-btn t-x "       href="index_x.html">𝕏 X迷子情報</a>
+    <a class="tab-btn t-x "       href="nagano_x.html">𝕏 X迷子情報</a>
     <a class="tab-btn t-tips "    href="tips.html">🚨 迷子にしたら</a>
     <a class="tab-btn t-found soon"  href="#">🎉 見つかりました！</a>
     <a class="tab-btn t-board soon"  href="#">📋 迷子掲示板</a>
   </nav>
 </header>
 <main>
-  <a class="back-btn" href="index.html">← 都道府県マップに戻る</a>
-  <a class="x-banner" href="nagano_x.html">
-    <div class="xi">𝕏</div>
-    <div class="xt"><strong>長野県のX（Twitter）迷子情報もチェック！</strong><span>保健所だけでなく、X上の迷子情報・目撃情報も合わせてご確認ください</span></div>
-    <div class="xa">›</div>
+  <a class="x-hero" href="https://twitter.com/i/status/1181524465181609984?lang=ja" target="_blank" rel="noopener">
+    <img class="xh-cat" src="cat_icon.jpg" alt="ねねここ">
+    <div class="xh-text"><strong>長野県の迷子情報まとめポスト</strong><span class="xh-btn">𝕏 まとめポストを見る</span><small>ブラウザで開いてね</small></div>
   </a>
+  <div class="x-subrow"><span class="here">🐾 このページ：保健所・収容</span><a href="nagano_x.html">犬・猫・鳥のX検索リンク ›</a></div>
+  <a class="back-btn" href="index.html">← 都道府県マップに戻る</a>
   <div class="note">⚠️ お住まいの市区町村だけでなく、<strong>周辺の市町村を管轄する保健所</strong>も必ずご確認ください。<br>迷子のペットが別の管轄エリアで保護されている場合があります。</div>
   <div class="section">
     <div class="section-head"><img src="cat_icon.jpg" alt="">長野県 保健所・収容施設一覧</div>
@@ -291,11 +301,6 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       </div>
     </div>
   </div>
-  <a class="bottom-banner" href="index_x.html">
-    <div style="font-size:1.7rem;flex-shrink:0;">𝕏</div>
-    <div class="bb-text"><strong>X（Twitter）の迷子情報もあわせてチェックしてください</strong><span>保健所に収容されていない場合でも、X上で目撃情報や保護情報が発信されていることがあります。</span></div>
-    <div class="bb-arr">›</div>
-  </a>
 </main>
 <footer><p>🐾 迷子のペットが早く見つかりますように</p><p style="margin-top:0.3rem">掲載内容は各自治体の公式情報をご確認ください</p></footer>
 </body>
