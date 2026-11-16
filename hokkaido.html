@@ -112,15 +112,15 @@ tr:hover td{background:#fafbff;}
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;padding-bottom:0.5rem;}
 .leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
-.entry-btns{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.5rem;}
-.eb{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.15rem;padding:0.8rem 0.6rem;border-radius:var(--radius);border:2px solid #bbb;text-decoration:none;font-weight:700;font-size:0.92rem;line-height:1.35;}
-.eb small{font-size:0.7rem;font-weight:400;}
-.eb-now{background:#eef7ee;border-color:#6aa86a;color:#2d5a2d;cursor:default;}
-.eb-x{background:#111;border-color:#111;color:#fff;}
-.eb-x:hover{background:#333;}
-.eb-sub{font-size:0.78rem;margin:0 0 1rem;text-align:right;}
-.eb-sub a{color:#555;}
-@media(max-width:420px){.eb{font-size:0.84rem;padding:0.7rem 0.4rem;}}
+.x-hero{display:flex;align-items:center;gap:0.9rem;background:#111;color:#fff;border:3px solid #111;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.6rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.28);transition:transform 0.12s,box-shadow 0.12s;}
+.x-hero:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
+.x-hero .xh-icon{font-size:2.1rem;font-weight:700;flex-shrink:0;line-height:1;}
+.x-hero .xh-text strong{display:block;font-size:1.1rem;line-height:1.35;}
+.x-hero .xh-text span{display:block;font-size:0.76rem;opacity:0.85;margin-top:0.2rem;}
+.x-hero .xh-arrow{margin-left:auto;font-size:1.6rem;flex-shrink:0;}
+.x-subrow{display:flex;flex-wrap:wrap;gap:0.4rem 1rem;justify-content:space-between;font-size:0.8rem;margin:0 0 1rem;}
+.x-subrow a{color:#444;}
+.x-subrow .here{color:#2d5a2d;font-weight:700;}
 .bottom-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#333;transition:border-color 0.15s;}
 .bottom-banner:hover{border-color:#555;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
@@ -155,13 +155,14 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </nav>
 </header>
 <main>
+  <a class="x-hero" href="https://twitter.com/i/status/1190950811376869376?lang=ja" target="_blank" rel="noopener">
+    <div class="xh-icon">𝕏</div>
+    <div class="xh-text"><strong>北海道の迷子まとめポストを見る</strong><span>探している子・保護された子の情報があつまっています（ブラウザで開いてね）</span></div>
+    <div class="xh-arrow">›</div>
+  </a>
+  <div class="x-subrow"><span class="here">🐾 このページ：保健所・収容</span><a href="hokkaido_x.html">犬・猫・鳥のX検索リンク ›</a></div>
   <a class="back-btn" href="index.html">← 都道府県マップに戻る</a>
 
-  <div class="entry-btns">
-    <div class="eb eb-now">🐾 保健所・収容<small>いま見ているページ</small></div>
-    <a class="eb eb-x" href="https://twitter.com/i/status/1190950811376869376?lang=ja" target="_blank" rel="noopener">𝕏 北海道の<br>迷子まとめポスト<small>ブラウザで開いてね</small></a>
-  </div>
-  <p class="eb-sub"><a href="hokkaido_x.html">犬・猫・鳥のX検索リンクはこちら ›</a></p>
 
   <!-- 更新中バナー -->
   <div class="update-banner">
