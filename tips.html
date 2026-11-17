@@ -134,6 +134,30 @@ body{line-height:1.8;}
 .coming-soon-btn{font-size:0.92rem;}
 @media(max-width:640px){.step-head{display:grid;grid-template-columns:48px 1fr;column-gap:1rem;row-gap:0.4rem;align-items:center;}.step-num{grid-row:1/3;align-self:start;}.step-title{grid-column:2;min-width:0;}.step-urgent{grid-column:2;justify-self:start;}.th-top img{width:64px;height:64px;}.th-top strong{font-size:1.05rem;}}
 
+/* 追加カード */
+.cat-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.3rem 0.4rem;}
+.cat-head img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid #eee;}
+.cat-head strong{display:block;font-size:1.12rem;line-height:1.5;}
+.cat-head span{display:block;font-size:0.88rem;color:#666;line-height:1.6;}
+.plain-list{list-style:none;padding:0;margin:0.2rem 0 0.4rem;}
+.plain-list li{padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.96rem;line-height:1.85;}
+.plain-list li:last-child{border-bottom:none;}
+.check-list{list-style:none;padding:0;margin:0.3rem 0 0.6rem;}
+.check-list li{border-bottom:1px solid var(--border);}
+.check-list li:last-child{border-bottom:none;}
+.check-list label{display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem 0.2rem;font-size:0.98rem;line-height:1.75;cursor:pointer;}
+.check-list input{width:1.45rem;height:1.45rem;margin-top:0.2rem;flex-shrink:0;accent-color:#e74c3c;}
+.check-list input:checked + span{text-decoration:line-through;color:#999;}
+.ck-note{font-size:0.8rem;color:#777;line-height:1.7;}
+.ck-reset{background:#eee;border:none;border-radius:999px;padding:0.4rem 1rem;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.9rem;}
+.two-col>div{border-radius:10px;padding:0.8rem 0.9rem;font-size:0.94rem;line-height:1.8;}
+.two-col .dog{background:#fff4e5;border:1.5px solid #f5c87a;}
+.two-col .cat{background:#eef3ff;border:1.5px solid #a8bfe8;}
+.two-col strong{display:block;margin-bottom:0.3rem;font-size:1rem;}
+.two-col ul{padding-left:1.1rem;}
+@media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
 </style>
 </head>
@@ -172,8 +196,26 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       <a href="#step3"><b>3</b> X・掲示板</a>
       <a href="#step4"><b>4</b> チラシ</a>
       <a href="#step5"><b>5</b> 捜索</a>
+      <a href="#first30">✅ 最初の30分</a>
+      <a href="#found">🎉 見つかったら</a>
     </div>
   </div>
+  <div class="step-card" id="first30" style="border-top:4px solid #e74c3c;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>✅ まず最初の30分でやること</strong><span>押してチェックしながら進めてね</span></div></div>
+    <div class="step-body">
+      <ul class="check-list" id="ckList">
+        <li><label><input type="checkbox"><span>いなくなった<b>場所と時間</b>をメモする（スマホのメモでOK）</span></label></li>
+        <li><label><input type="checkbox"><span><b>今の写真</b>を用意する（全身・顔・横顔・特徴のある部分）</span></label></li>
+        <li><label><input type="checkbox"><span>首輪・リード・迷子札の<b>有無と色</b>を思い出す</span></label></li>
+        <li><label><input type="checkbox"><span><b>マイクロチップ</b>があるか確認する（登録番号があれば控える）</span></label></li>
+        <li><label><input type="checkbox"><span>いなくなった場所の近くを、まず探す（下の「犬と猫のコツ」を参考に）</span></label></li>
+        <li><label><input type="checkbox"><span>家族や近所の人に連絡して、手分けする</span></label></li>
+        <li><label><input type="checkbox"><span><b>警察に電話</b>する → <a href="#step1">手順1へ</a></span></label></li>
+      </ul>
+      <p class="ck-note">チェックは、このスマホ・パソコンの中だけに保存されます。<button class="ck-reset" type="button" id="ckReset">全部はずす</button></p>
+    </div>
+  </div>
+
   <div class="alert-box" style="background:#fff0f3;border-left-color:#d6336c;color:#5c1a2e;margin:0.9rem 0;">
     💌 <strong>離れて暮らすご家族・ご親戚の方へ</strong><br>
     実家やご親戚のペットがいなくなったことを、あとから知ることがあります。ご家族がまだ届出をしていないこともあるので、<strong>知った時点ですぐ、警察と、管轄の保健所・動物愛護センターに届出や確認をしてください。</strong><br>
@@ -196,6 +238,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         迷子になった場所が県境に近い場合は、<strong>隣接する都道府県の警察にも必ず届けてください。</strong>
       </div>
       <div class="link-grid">
+        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
+        
         <a class="link-btn red" href="https://www.keishicho.metro.tokyo.lg.jp/sodan/otoshimono/lost_found.html" target="_blank" rel="noopener">
           <div class="li">🚔</div>
           <div class="lt">遺失届について（警察庁）<span>届け出の手順・方法</span></div>
@@ -205,7 +249,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
           <div class="lt">警察庁トップページ<span>各都道府県警察へのリンクもあります</span></div>
         </a>
       </div>
-      <details class="pref-police">
+      <details class="pref-police" id="police">
         <summary>都道府県警察の公式ページ一覧を見る</summary>
         <div class="police-grid">
           <a class="police-link" href="https://www.police.pref.hokkaido.lg.jp/" target="_blank" rel="noopener">北海道警察</a>
@@ -281,6 +325,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         保護した方が、届出をする前に里親を探していることがあります。保健所の情報に載らない子もいるため、各県ページの「📌 ジモティ」ボタンもあわせて確認してください。心当たりの子を見つけたら、警察・保健所にも届出をして、やりとりは慎重にしてください。
       </div>
       <div class="link-grid">
+        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
+        
         <a class="link-btn orange" href="index.html">
           <div class="li">🐾</div>
           <div class="lt">保健所リンク集（地図）<span>都道府県をクリックして管轄保健所を確認</span></div>
@@ -290,7 +336,18 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
 
   <!-- STEP 3 投稿 -->
-  <div id="step3" class="step-card s3">
+    <div class="step-card" id="chip" style="border-top:4px solid #16a085;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🔬 マイクロチップが入っているとき</strong><span>見つかる確率を上げる大事なポイント</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li>入っていれば、保護されたときに<b>動物病院や保健所などで読み取り</b>、登録先から飼い主さんに連絡が届くことがあります。</li>
+        <li><b>登録した住所・電話番号が古い</b>と連絡がつきません。引っ越しや番号の変更をしていたら、登録先で変更の手続きをしましょう。</li>
+        <li>警察・保健所に届けるときや、SNSで探すときは、<b>「マイクロチップ装着済み」</b>と伝えると、見つけてもらいやすくなります。</li>
+      </ul>
+    </div>
+  </div>
+
+<div id="step3" class="step-card s3">
     <div class="step-head">
       <div class="step-num">3</div>
       <div class="step-title">
@@ -430,6 +487,10 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
       <div class="step-urgent green">日没前に！</div>
     </div>
     <div class="step-body">
+      <div class="two-col">
+        <div class="dog"><strong>🐶 犬のとき</strong><ul><li>走って<b>遠くまで</b>行くことがあります</li><li>呼び続けると、怖がって逃げることも。<b>静かに</b>近づきましょう</li><li>いつもの散歩道・公園・川沿いを探す</li><li>暗くなる前に動く</li></ul></div>
+        <div class="cat"><strong>🐱 猫のとき</strong><ul><li>遠くへ行かず、<b>家の近くの物陰</b>にひそむことが多いです</li><li>物置・車の下・庭木・側溝のまわり</li><li>夜の静かな時間に、懐中電灯で<b>目の反射</b>を探す</li><li>呼びすぎず、ごはんの音（缶を開ける音など）で静かに誘う</li></ul></div>
+      </div>
       <div class="alert-box">
         ⚠️ <strong>特に側溝・用水路に注意！</strong><br>
         落ちて這い上がれないワンちゃんが多いです。<br>
@@ -464,6 +525,33 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     </div>
   </div>
 
+  <div class="step-card" id="caution" style="border-top:4px solid #c0392b;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🚫 気をつけたいこと</strong><span>焦っているときほど、落とし穴があります</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li>見つけた子を<b>追いかけない</b>。走って逃げて、さらに遠くへ行くことがあります。見失わない位置から静かに近づき、難しければ警察に連絡を。</li>
+        <li>「見つけたので<b>先に謝礼を</b>」「手数料を払えば返す」など、<b>お金を先に求める連絡は詐欺の可能性</b>があります。会う前に振り込まないでください。</li>
+        <li>受け渡しは、<b>人目のある場所で、誰かと一緒に</b>。</li>
+        <li>自宅の住所や電話番号を、SNSに<b>全部は載せない</b>。連絡はDMや、警察・交番を通すと安心です。</li>
+        <li>探偵や捜索サービスに頼むときは、<b>料金や内容をよく確認</b>してから。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-card" id="found" style="border-top:4px solid #27ae60;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🎉 見つかったら</strong><span>おめでとう！最後にやること</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li>① 見つけてくれた方、協力してくれた方に<b>お礼</b>を伝える</li>
+        <li>② 警察・保健所・動物愛護センターに、<b>見つかったと連絡</b>（届出の取り下げ）</li>
+        <li>③ SNSの投稿に<b>「無事に見つかりました」</b>と書いて、拡散してくれた方にお礼を</li>
+        <li>④ 貼ったポスター・チラシを<b>回収</b>して、お世話になった所に報告</li>
+        <li>⑤ 動物病院で、<b>けがや体調</b>を確認してもらう</li>
+        <li>⑥ これから：<b>首輪・迷子札・マイクロチップ</b>の登録情報と、毎年の新しい写真を用意しておくと安心です</li>
+      </ul>
+    </div>
+  </div>
+
 </main>
 <footer>
   <p>🐾 迷子のペットが早く見つかりますように</p>
@@ -487,6 +575,17 @@ function copyTag(el) {
     setTimeout(() => { el.textContent = orig; el.classList.remove('copied'); }, 1500);
   });
 }
+</script>
+<script>
+(function(){
+  var KEY='maigo_first30', list=document.getElementById('ckList'); if(!list) return;
+  var boxes=list.querySelectorAll('input[type=checkbox]');
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY)||'[]');boxes.forEach(function(b,i){b.checked=!!v[i];});}catch(e){}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify([].map.call(boxes,function(b){return b.checked;})));}catch(e){}}
+  boxes.forEach(function(b){b.addEventListener('change',save);});
+  var r=document.getElementById('ckReset'); if(r) r.addEventListener('click',function(){boxes.forEach(function(b){b.checked=false;});save();});
+  load();
+})();
 </script>
 </body>
 </html>
