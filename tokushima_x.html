@@ -124,7 +124,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
 .tab-nav .tab-btn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.1rem;padding:0.5rem 0.1rem 0.5rem;font-size:clamp(0.6rem,2.8vw,0.72rem);line-height:1.25;text-align:center;font-weight:700;text-decoration:none;border-radius:14px 14px 0 0;opacity:1;box-shadow:none;transition:filter 0.15s;}
 .tab-nav .tab-btn .ti{font-size:1.25rem;line-height:1.1;}
-.tab-nav .tab-btn .tl{white-space:nowrap;}
+.tab-nav .tab-btn .tl{white-space:nowrap;line-height:1.25;}
+@media(max-width:640px){.tab-nav .tab-btn{font-size:0.7rem;padding:0.55rem 0 0.5rem;}.tab-nav .tab-btn .ti{font-size:1.3rem;}}
 .tab-nav .tab-btn:hover{filter:brightness(0.96);}
 .tab-nav .tab-btn.t-shelter{background:#cfe9f5;color:#0b5d78;}
 .tab-nav .tab-btn.t-x{background:#dcdcf0;color:#2a2a46;}
@@ -136,7 +137,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .tab-nav .tab-btn.t-tips.active{background:#f5b800;color:#3a2c00;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
 .tab-nav .tab-btn.t-found.active{background:#ee7a2e;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
 .tab-nav .tab-btn.t-poster.active{background:#e0568c;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
-@media(min-width:641px){.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
+@media(min-width:641px){.tab-nav .tab-btn .tl br{display:none;}.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
 </style>
 </head>
 <body>
@@ -150,11 +151,11 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     </div>
   </div>
         <nav class="tab-nav">
-    <a class="tab-btn t-shelter" href="tokushima.html"><span class="ti">🐾</span><span class="tl">保健所</span></a>
-    <a class="tab-btn t-x active" href="tokushima_x.html"><span class="ti">𝕏</span><span class="tl">X迷子情報</span></a>
-    <a class="tab-btn t-tips" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子にしたら</span></a>
-    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・保護</span></a>
-    <a class="tab-btn t-poster" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター</span></a>
+    <a class="tab-btn t-shelter" href="tokushima.html"><span class="ti">🐾</span><span class="tl">保健所<br>&nbsp;</span></a>
+    <a class="tab-btn t-x active" href="tokushima_x.html"><span class="ti">𝕏</span><span class="tl">X迷子<br>情報</span></a>
+    <a class="tab-btn t-tips" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子に<br>したら</span></a>
+    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・<br>保護</span></a>
+    <a class="tab-btn t-poster" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター<br>&nbsp;</span></a>
   </nav>
 </header>
 <main>
