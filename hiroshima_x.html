@@ -120,6 +120,23 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .other-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5rem;padding:0.8rem 1rem 1rem;}
 .other-link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;background:#f0f6ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
 .other-link-btn:hover{background:#dbeafe;}
+/* 新タブ(5つ・全部見える・ページごとの色) */
+.tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
+.tab-nav .tab-btn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.1rem;padding:0.5rem 0.1rem 0.5rem;font-size:clamp(0.6rem,2.8vw,0.72rem);line-height:1.25;text-align:center;font-weight:700;text-decoration:none;border-radius:14px 14px 0 0;opacity:1;box-shadow:none;transition:filter 0.15s;}
+.tab-nav .tab-btn .ti{font-size:1.25rem;line-height:1.1;}
+.tab-nav .tab-btn .tl{white-space:nowrap;}
+.tab-nav .tab-btn:hover{filter:brightness(0.96);}
+.tab-nav .tab-btn.t-shelter{background:#cfe9f5;color:#0b5d78;}
+.tab-nav .tab-btn.t-x{background:#dcdcf0;color:#2a2a46;}
+.tab-nav .tab-btn.t-tips{background:#fff0b3;color:#7a5a00;}
+.tab-nav .tab-btn.t-found{background:#ffd9bf;color:#8a3d0a;}
+.tab-nav .tab-btn.t-poster{background:#ffd3e4;color:#8a1f4f;}
+.tab-nav .tab-btn.t-shelter.active{background:#0b7a9b;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-x.active{background:#2a2a46;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-tips.active{background:#f5b800;color:#3a2c00;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-found.active{background:#ee7a2e;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-poster.active{background:#e0568c;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+@media(min-width:641px){.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
 </style>
 </head>
 <body>
@@ -133,11 +150,11 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     </div>
   </div>
         <nav class="tab-nav">
-    <a class="tab-btn t-shelter" href="index.html">🐾 保健所</a>
-    <a class="tab-btn t-x active" href="index_x.html">𝕏 X迷子情報</a>
-    <a class="tab-btn t-tips" href="tips.html">🚨 迷子にしたら</a>
-    <a class="tab-btn t-found" href="found.html">🐾 目撃・保護</a>
-    <a class="tab-btn t-board soon" href="#">📋 迷子掲示板</a>
+    <a class="tab-btn t-shelter" href="hiroshima.html"><span class="ti">🐾</span><span class="tl">保健所</span></a>
+    <a class="tab-btn t-x active" href="hiroshima_x.html"><span class="ti">𝕏</span><span class="tl">X迷子情報</span></a>
+    <a class="tab-btn t-tips" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子にしたら</span></a>
+    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・保護</span></a>
+    <a class="tab-btn t-poster" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター</span></a>
   </nav>
 </header>
 <main>

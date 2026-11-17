@@ -66,6 +66,23 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .tab-btn:hover{color:white;border-bottom-color:rgba(255,255,255,0.5);}
 .tab-btn.active{color:white;border-bottom-color:white;background:rgba(255,255,255,0.15);}
 .tab-btn.soon{color:rgba(255,255,255,0.35);cursor:default;}
+/* 新タブ(5つ・全部見える・ページごとの色) */
+.tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
+.tab-nav .tab-btn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.1rem;padding:0.5rem 0.1rem 0.5rem;font-size:clamp(0.6rem,2.8vw,0.72rem);line-height:1.25;text-align:center;font-weight:700;text-decoration:none;border-radius:14px 14px 0 0;opacity:1;box-shadow:none;transition:filter 0.15s;}
+.tab-nav .tab-btn .ti{font-size:1.25rem;line-height:1.1;}
+.tab-nav .tab-btn .tl{white-space:nowrap;}
+.tab-nav .tab-btn:hover{filter:brightness(0.96);}
+.tab-nav .tab-btn.t-shelter{background:#cfe9f5;color:#0b5d78;}
+.tab-nav .tab-btn.t-x{background:#dcdcf0;color:#2a2a46;}
+.tab-nav .tab-btn.t-tips{background:#fff0b3;color:#7a5a00;}
+.tab-nav .tab-btn.t-found{background:#ffd9bf;color:#8a3d0a;}
+.tab-nav .tab-btn.t-poster{background:#ffd3e4;color:#8a1f4f;}
+.tab-nav .tab-btn.t-shelter.active{background:#0b7a9b;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-x.active{background:#2a2a46;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-tips.active{background:#f5b800;color:#3a2c00;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-found.active{background:#ee7a2e;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-poster.active{background:#e0568c;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+@media(min-width:641px){.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
 </style></head><body>
 <header><div class="header-inner">
   <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
@@ -75,11 +92,11 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     <p>管轄市区町村・収容情報・ジモティへのリンク｜最終更新 2024.1.25</p>
   </div>
 </div>      <nav class="tab-nav">
-    <a class="tab-btn t-shelter active" href="index.html">🐾 保健所</a>
-    <a class="tab-btn t-x "       href="gunma_x.html">𝕏 X迷子情報</a>
-    <a class="tab-btn t-tips "    href="tips.html">🚨 迷子にしたら</a>
-    <a class="tab-btn t-found soon"  href="#">🎉 見つかりました！</a>
-    <a class="tab-btn t-board soon"  href="#">📋 迷子掲示板</a>
+    <a class="tab-btn t-shelter active" href="gunma.html"><span class="ti">🐾</span><span class="tl">保健所</span></a>
+    <a class="tab-btn t-x" href="gunma_x.html"><span class="ti">𝕏</span><span class="tl">X迷子情報</span></a>
+    <a class="tab-btn t-tips" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子にしたら</span></a>
+    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・保護</span></a>
+    <a class="tab-btn t-poster" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター</span></a>
   </nav>
 </header>
 <main>
