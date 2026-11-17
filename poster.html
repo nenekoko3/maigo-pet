@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷子チラシ・ポスター作成（無料）｜全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--font:'M PLUS Rounded 1c',sans-serif;--radius:12px;--border:#dde;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+
+header{background:#ffb3cf;color:#333;padding:1.4rem 1rem 0;}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
+.header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
+.header-text p{font-size:0.8rem;opacity:0.88;line-height:1.6;}
+
+.tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn.soon{opacity:0.55;cursor:default;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#333;}
+.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ffe0b2;color:#333;}
+.tab-btn.t-tips.active{background:#fff3e0;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#fff9c4;color:#333;}
+.tab-btn.t-board{background:#ffe0b2;color:#333;}
+
+main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+
+/* 緊急バナー */
+.emergency{background:#fff0f0;border:2.5px solid #e74c3c;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:center;}
+.emergency p{font-size:0.88rem;color:#c0392b;line-height:1.8;font-weight:700;}
+
+/* ステップカード */
+.step-card{background:white;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:1.5rem;overflow:hidden;}
+.step-head{display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;}
+.step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;flex-shrink:0;}
+.s1 .step-num{background:#e74c3c;}
+.s2 .step-num{background:#e67e22;}
+.s3 .step-num{background:#2980b9;}
+.s4 .step-num{background:#27ae60;}
+.step-title{flex:1;}
+.step-title strong{display:block;font-size:1rem;margin-bottom:0.15rem;}
+.step-title span{font-size:0.78rem;color:#666;}
+.step-urgent{background:#e74c3c;color:white;font-size:0.72rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;flex-shrink:0;}
+.step-urgent.orange{background:#e67e22;}
+.step-urgent.blue{background:#2980b9;}
+.step-urgent.green{background:#27ae60;}
+
+.step-body{padding:0 1.3rem 1.2rem;}
+.step-body hr{border:none;border-top:1px solid var(--border);margin:0.8rem 0;}
+
+/* 注意喚起 */
+.alert-box{background:#fff8e1;border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#7a4a00;line-height:1.75;}
+.alert-box strong{color:#c0392b;}
+
+/* リンクボタン */
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.6rem;margin-bottom:0.8rem;}
+.link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;font-family:var(--font);transition:filter 0.13s;}
+.link-btn:hover{filter:brightness(0.88);}
+.link-btn.red{background:#fde8e8;color:#c0392b;border:1.5px solid #f5a0a0;}
+.link-btn.orange{background:#fef3e2;color:#c0560a;border:1.5px solid #f5c87a;}
+.link-btn.blue{background:#ebf4ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
+.link-btn.green{background:#f0fff4;color:#1a5a2a;border:1.5px solid #68d391;}
+.link-btn.dark{background:#333;color:white;border:1.5px solid #333;}
+.link-btn .li{font-size:1.2rem;flex-shrink:0;}
+.link-btn .lt{flex:1;}
+.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
+
+/* 都道府県警察リスト */
+.pref-police{margin-top:0.5rem;}
+.pref-police summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:#2980b9;padding:0.5rem 0;list-style:none;}
+.pref-police summary::before{content:"▶ ";}
+.pref-police[open] summary::before{content:"▼ ";}
+.police-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.4rem;margin-top:0.6rem;}
+.police-link{display:block;background:#f0f6ff;border:1px solid #bbd4f5;border-radius:8px;padding:0.4rem 0.65rem;font-size:0.78rem;color:#1a4a8a;text-decoration:none;font-family:var(--font);font-weight:700;}
+.police-link:hover{background:#dbeafe;}
+
+/* テンプレ */
+.template-box{background:#f8f8f8;border:1.5px solid #dde;border-radius:10px;padding:1rem 1.1rem;margin-bottom:0.8rem;font-size:0.83rem;line-height:2;position:relative;}
+.template-box pre{white-space:pre-wrap;font-family:var(--font);}
+.copy-btn{position:absolute;top:0.6rem;right:0.6rem;background:#333;color:white;border:none;border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.copy-btn:hover{background:#111;}
+.copy-btn.copied{background:#27ae60;}
+
+/* ハッシュタグ */
+.tag-list{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.8rem;}
+.tag{background:#e8f4ff;border:1.5px solid #90c2f5;border-radius:50px;padding:0.3rem 0.75rem;font-size:0.8rem;color:#1a4a8a;font-weight:700;cursor:pointer;transition:background 0.13s;}
+.tag:hover{background:#dbeafe;}
+.tag.copied{background:#dcfce7;border-color:#68d391;color:#166534;}
+
+/* 捜索tips */
+.tips-list{list-style:none;padding:0;}
+.tips-list li{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.84rem;line-height:1.7;}
+.tips-list li:last-child{border-bottom:none;}
+.tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
+.tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
+
+.coming-soon-btn{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#f0f0f0;border:2px dashed #bbb;border-radius:var(--radius);padding:0.9rem 1.2rem;text-decoration:none;color:#888;font-size:0.84rem;font-weight:700;margin-top:0.8rem;font-family:var(--font);}
+
+
+/* デカニャン案内カード */
+.tips-hero{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem 1.1rem 1rem;margin-bottom:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,0.28);}
+.th-top{display:flex;align-items:center;gap:1rem;}
+.th-top img{width:76px;height:76px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.th-top strong{display:block;font-size:1.15rem;line-height:1.5;margin-bottom:0.4rem;}
+.th-top span{display:block;font-size:0.92rem;line-height:1.75;opacity:0.95;}
+.th-steps{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.9rem;}
+.th-steps a{background:#fff;color:#111;text-decoration:none;font-weight:700;font-size:0.92rem;padding:0.45rem 0.9rem;border-radius:999px;}
+.th-steps a b{display:inline-block;background:#e74c3c;color:#fff;border-radius:50%;width:1.4em;height:1.4em;line-height:1.4em;text-align:center;margin-right:0.25rem;font-size:0.85em;}
+.step-card{scroll-margin-top:0.8rem;}
+
+/* 読みやすさ調整 */
+body{line-height:1.8;}
+.header-text p{font-size:0.92rem;}
+.alert-box{font-size:0.96rem;line-height:1.95;}
+.step-title strong{font-size:1.12rem;line-height:1.5;}
+.step-title span{font-size:0.9rem;color:#555;line-height:1.6;}
+.step-urgent{font-size:0.8rem;}
+.step-body{font-size:0.96rem;line-height:1.9;}
+.link-btn{font-size:0.96rem;padding:0.85rem 1rem;}
+.link-btn .lt span{font-size:0.82rem;opacity:0.85;}
+.template-box{font-size:0.96rem;line-height:2.1;}
+.copy-btn{font-size:0.82rem;padding:0.35rem 0.9rem;}
+.tag{font-size:0.9rem;}
+.tips-list li{font-size:0.96rem;line-height:1.9;}
+.pref-police summary{font-size:0.96rem;}
+.police-link{font-size:0.86rem;}
+.coming-soon-btn{font-size:0.92rem;}
+@media(max-width:640px){.step-head{display:grid;grid-template-columns:48px 1fr;column-gap:1rem;row-gap:0.4rem;align-items:center;}.step-num{grid-row:1/3;align-self:start;}.step-title{grid-column:2;min-width:0;}.step-urgent{grid-column:2;justify-self:start;}.th-top img{width:64px;height:64px;}.th-top strong{font-size:1.05rem;}}
+
+/* 追加カード */
+.cat-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.3rem 0.4rem;}
+.cat-head img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid #eee;}
+.cat-head strong{display:block;font-size:1.12rem;line-height:1.5;}
+.cat-head span{display:block;font-size:0.88rem;color:#666;line-height:1.6;}
+.plain-list{list-style:none;padding:0;margin:0.2rem 0 0.4rem;}
+.plain-list li{padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.96rem;line-height:1.85;}
+.plain-list li:last-child{border-bottom:none;}
+.check-list{list-style:none;padding:0;margin:0.3rem 0 0.6rem;}
+.check-list li{border-bottom:1px solid var(--border);}
+.check-list li:last-child{border-bottom:none;}
+.check-list label{display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem 0.2rem;font-size:0.98rem;line-height:1.75;cursor:pointer;}
+.check-list input{width:1.45rem;height:1.45rem;margin-top:0.2rem;flex-shrink:0;accent-color:#e74c3c;}
+.check-list input:checked + span{text-decoration:line-through;color:#999;}
+.ck-note{font-size:0.8rem;color:#777;line-height:1.7;}
+.ck-reset{background:#eee;border:none;border-radius:999px;padding:0.4rem 1rem;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.9rem;}
+.two-col>div{border-radius:10px;padding:0.8rem 0.9rem;font-size:0.94rem;line-height:1.8;}
+.two-col .dog{background:#fff4e5;border:1.5px solid #f5c87a;}
+.two-col .cat{background:#eef3ff;border:1.5px solid #a8bfe8;}
+.two-col strong{display:block;margin-bottom:0.3rem;font-size:1rem;}
+.two-col ul{padding-left:1.1rem;}
+@media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+/* 新タブ(5つ・全部見える・ページごとの色) */
+.tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
+.tab-nav .tab-btn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.1rem;padding:0.5rem 0.1rem 0.5rem;font-size:clamp(0.6rem,2.8vw,0.72rem);line-height:1.25;text-align:center;font-weight:700;text-decoration:none;border-radius:14px 14px 0 0;opacity:1;box-shadow:none;transition:filter 0.15s;}
+.tab-nav .tab-btn .ti{font-size:1.25rem;line-height:1.1;}
+.tab-nav .tab-btn .tl{white-space:nowrap;}
+.tab-nav .tab-btn:hover{filter:brightness(0.96);}
+.tab-nav .tab-btn.t-shelter{background:#cfe9f5;color:#0b5d78;}
+.tab-nav .tab-btn.t-x{background:#dcdcf0;color:#2a2a46;}
+.tab-nav .tab-btn.t-tips{background:#fff0b3;color:#7a5a00;}
+.tab-nav .tab-btn.t-found{background:#ffd9bf;color:#8a3d0a;}
+.tab-nav .tab-btn.t-poster{background:#ffd3e4;color:#8a1f4f;}
+.tab-nav .tab-btn.t-shelter.active{background:#0b7a9b;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-x.active{background:#2a2a46;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-tips.active{background:#f5b800;color:#3a2c00;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-found.active{background:#ee7a2e;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-poster.active{background:#e0568c;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+@media(min-width:641px){.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
+
+/* poster */
+.pz-hero{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem;display:flex;gap:0.9rem;align-items:center;margin-bottom:1rem;}
+.pz-hero img{width:68px;height:68px;border-radius:50%;background:#fff;padding:4px;object-fit:contain;flex-shrink:0;}
+.pz-hero p{font-size:0.95rem;line-height:1.75;}
+.pz-hero b{color:#ffd3e4;}
+.pz-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+@media(min-width:800px){.pz-grid{grid-template-columns:1fr 1fr;align-items:start;}.pz-prev{position:sticky;top:0.8rem;}}
+.pz-card{background:#fff;border-radius:var(--radius);padding:1rem;box-shadow:0 1px 6px rgba(0,0,0,0.07);}
+.pz-card h2{font-size:1.02rem;margin-bottom:0.7rem;}
+.pz-card label{display:block;font-size:0.9rem;font-weight:700;margin:0.8rem 0 0.25rem;}
+.pz-card label small{font-weight:400;color:#777;margin-left:0.3rem;}
+.pz-card input[type=text],.pz-card input[type=tel],.pz-card textarea,.pz-card select{width:100%;font-family:var(--font);font-size:16px;padding:0.55rem 0.7rem;border:1.5px solid #ccd;border-radius:10px;background:#fff;color:#333;}
+.pz-card textarea{min-height:5.2em;resize:vertical;line-height:1.6;}
+.pz-row2{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;}
+.pz-seg{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.pz-seg button{flex:1 1 0;min-width:5.5rem;font-family:var(--font);font-weight:700;font-size:0.9rem;padding:0.6rem 0.4rem;border-radius:10px;border:2px solid #ccd;background:#fff;color:#444;cursor:pointer;}
+.pz-seg button.on{border-color:#e0568c;background:#ffe3ee;color:#8a1f4f;}
+.pz-swatch{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.pz-swatch button{width:2.4rem;height:2.4rem;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #ccd;cursor:pointer;}
+.pz-swatch button.on{box-shadow:0 0 0 3px #333;}
+.pz-file{display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;}
+.pz-btn{font-family:var(--font);font-weight:700;font-size:0.95rem;border:none;border-radius:999px;padding:0.7rem 1.2rem;cursor:pointer;}
+.pz-btn.main{background:#e0568c;color:#fff;}
+.pz-btn.sub{background:#eee;color:#444;}
+.pz-prev canvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.18);background:#fff;}
+.pz-actions{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.8rem;}
+.pz-note{font-size:0.85rem;line-height:1.8;color:#555;margin-top:0.7rem;}
+.pz-tip{background:#fff8e1;border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:0.7rem 1rem;font-size:0.9rem;line-height:1.8;color:#7a4a00;margin-top:1rem;}
+.pz-out{margin-top:0.8rem;text-align:center;}
+.pz-out img{max-width:100%;border-radius:8px;}
+.pz-chk{display:flex;gap:0.5rem;align-items:flex-start;font-size:0.88rem;font-weight:400!important;line-height:1.6;}
+.pz-chk input{margin-top:0.35rem;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
+    <div class="header-text">
+      <h1>🖼️ 迷子チラシ・ポスター作成</h1>
+      <p>無料・登録なし！写真と情報を入れるだけで画像ができます</p>
+    </div>
+  </div>
+  <nav class="tab-nav">
+    <a class="tab-btn t-shelter" href="index.html"><span class="ti">🐾</span><span class="tl">保健所</span></a>
+    <a class="tab-btn t-x" href="index_x.html"><span class="ti">𝕏</span><span class="tl">X迷子情報</span></a>
+    <a class="tab-btn t-tips" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子にしたら</span></a>
+    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・保護</span></a>
+    <a class="tab-btn t-poster active" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター</span></a>
+  </nav>
+</header>
+<main>
+  <div class="pz-hero">
+    <img src="cat_icon.jpg" alt="">
+    <p>入力した内容と写真は<b>この端末の中だけ</b>で使われ、どこにも送信・保存されません。できた画像は<b>保存してコンビニで印刷</b>、またはSNSに投稿できます🐾</p>
+  </div>
+  <div class="pz-grid">
+    <section class="pz-card">
+      <h2>① 情報を入れる</h2>
+      <label>種類</label>
+      <div class="pz-seg" id="kind">
+        <button type="button" data-v="lost" class="on">🔍 迷子を探しています</button>
+        <button type="button" data-v="found">🏠 保護しています</button>
+      </div>
+      <label>動物の種類<small>例：猫・犬・うさぎ</small></label>
+      <input type="text" id="animal" value="猫" maxlength="12">
+      <label>名前<small>(なくても大丈夫)</small></label>
+      <input type="text" id="pname" placeholder="例：ももちゃん" maxlength="16">
+      <div class="pz-row2">
+        <div><label>性別</label>
+          <select id="sex"><option value="">未入力</option><option>オス</option><option>メス</option><option>不明</option></select></div>
+        <div><label>年齢<small>目安</small></label><input type="text" id="age" placeholder="例：3歳" maxlength="10"></div>
+      </div>
+      <label>毛色・大きさ・特徴<small>首輪・しっぽ・性格など</small></label>
+      <textarea id="feat" placeholder="例：白と茶のハチワレ。しっぽが長い。赤い首輪。人見知りで、呼んでも出てこないことがあります。" maxlength="140"></textarea>
+      <div class="pz-row2">
+        <div><label id="dateLabel">いなくなった日</label><input type="text" id="date" placeholder="例：11月15日 夕方" maxlength="16"></div>
+        <div><label id="placeLabel">場所<small>町名まで</small></label><input type="text" id="place" placeholder="例：○○市△△町" maxlength="20"></div>
+      </div>
+      <label>一言<small>(任意)</small></label>
+      <input type="text" id="msg" placeholder="例：家族みんなで待っています。どんな情報でもお願いします" maxlength="40">
+      <label>連絡先の名前<small>(任意)</small></label>
+      <input type="text" id="cname" placeholder="例：山田" maxlength="12">
+      <label>電話番号</label>
+      <input type="tel" id="tel" placeholder="例：090-0000-0000" maxlength="20">
+      <label>SNSなど<small>(任意)</small></label>
+      <input type="text" id="sns" placeholder="例：X @example　／　LINE ID" maxlength="30">
+      <label>写真<small>顔・全身・特徴がわかるものを</small></label>
+      <div class="pz-file">
+        <input type="file" id="photo" accept="image/*">
+        <button type="button" class="pz-btn sub" id="photoClear">写真を外す</button>
+      </div>
+      <label>色</label>
+      <div class="pz-swatch" id="theme"></div>
+      <label class="pz-chk"><input type="checkbox" id="rwd"> 「情報提供をお願いします」の帯を大きく入れる</label>
+    </section>
+    <section class="pz-card pz-prev">
+      <h2>② できあがり</h2>
+      <canvas id="cv" width="1240" height="1754"></canvas>
+      <div class="pz-actions">
+        <button type="button" class="pz-btn main" id="dl">💾 画像を保存</button>
+        <button type="button" class="pz-btn sub" id="open">📱 画像を表示（長押し保存）</button>
+      </div>
+      <div class="pz-out" id="out"></div>
+      <p class="pz-note">A4サイズ（1240×1754px）の縦向き画像です。コンビニのネットプリントやご家庭のプリンターでA4印刷してください。</p>
+    </section>
+  </div>
+  <div class="pz-tip">
+    ⚠️ <b>安全のために</b>：自宅の住所や、お子さまの名前などは載せないのがおすすめです。連絡先は電話番号かSNSだけで十分伝わります。迷子の場所は「町名まで」が目安です。<br>
+    📌 貼る前に、店舗・マンション・電柱などは<b>管理者の許可</b>をもらってね。見つかったら、はがすのを忘れずに！<br>
+    <a href="tips.html#step4">→ チラシの配り方・貼る場所のコツ（迷子にしたら）</a>
+  </div>
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+</footer>
+<script>
+(function(){
+var W=1240,H=1754;
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var $=function(i){return document.getElementById(i);};
+var themes=[['#e74c3c','#fff0ee'],['#f08a24','#fff4e5'],['#2f80d0','#eaf3ff'],['#2e9e6b','#e9f8f0'],['#e0568c','#ffeaf2'],['#6c4fd0','#f1edff']];
+var st={kind:'lost',th:0,img:null};
+var FONT="'M PLUS Rounded 1c','Hiragino Maru Gothic ProN','Noto Sans JP',sans-serif";
+// theme swatches
+var sw=$('theme');
+themes.forEach(function(t,i){var b=document.createElement('button');b.type='button';b.style.background=t[0];b.setAttribute('aria-label','色'+(i+1));if(i==0)b.className='on';b.onclick=function(){st.th=i;[].forEach.call(sw.children,function(c,j){c.className=j==i?'on':'';});draw();};sw.appendChild(b);});
+// kind
+[].forEach.call($('kind').children,function(b){b.onclick=function(){st.kind=b.dataset.v;[].forEach.call($('kind').children,function(c){c.className=c===b?'on':'';});
+ if(st.kind==='found'){$('dateLabel').textContent='保護した日';$('placeLabel').firstChild.textContent='見つけた場所';}else{$('dateLabel').textContent='いなくなった日';$('placeLabel').firstChild.textContent='場所';}
+ draw();};});
+// photo
+$('photo').onchange=function(e){var f=e.target.files&&e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){st.img=im;draw();};im.src=r.result;};r.readAsDataURL(f);};
+$('photoClear').onclick=function(){st.img=null;$('photo').value='';draw();};
+['animal','pname','sex','age','feat','date','place','msg','cname','tel','sns','rwd'].forEach(function(id){$(id).addEventListener('input',draw);$(id).addEventListener('change',draw);});
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function wrap(text,maxW,font){ctx.font=font;var out=[];String(text).split('\n').forEach(function(p){var line='';for(var i=0;i<p.length;i++){var c=p[i];if(ctx.measureText(line+c).width>maxW&&line){out.push(line);line=c;}else line+=c;}out.push(line);});return out;}
+function fitText(text,maxW,size,min,weight){var s=size;while(s>min){ctx.font=weight+' '+s+'px '+FONT;if(ctx.measureText(text).width<=maxW)break;s-=2;}return s;}
+function draw(){
+ var T=themes[st.th],main=T[0],pale=T[1],lost=st.kind==='lost';
+ var v=function(i){return $(i).value.trim();};
+ ctx.clearRect(0,0,W,H);ctx.fillStyle='#fff';ctx.fillRect(0,0,W,H);
+ // frame
+ ctx.fillStyle=main;ctx.fillRect(0,0,W,H);ctx.fillStyle='#fff';rr(36,36,W-72,H-72,34);ctx.fill();
+ // banner
+ ctx.fillStyle=main;ctx.fillRect(0,0,W,296);
+ ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';
+ var head=lost?'さがしています':'保護しています';
+ var animal=v('animal')||'ペット';
+ var sub=lost?(animal+'が迷子になりました'):(animal+'を保護しています');
+ var s=fitText(head,W-200,150,80,'700');ctx.font='700 '+s+'px '+FONT;ctx.fillText(head,W/2,140);
+ s=fitText(sub,W-200,52,30,'700');ctx.font='700 '+s+'px '+FONT;ctx.fillText(sub,W/2,246);
+ // photo
+ var px=120,py=330,pw=W-240,ph=560;
+ ctx.fillStyle=pale;rr(px,py,pw,ph,28);ctx.fill();
+ if(st.img){ctx.save();rr(px,py,pw,ph,28);ctx.clip();var ir=st.img.width/st.img.height,br=pw/ph,sw2,sh2,sx,sy;
+  if(ir>br){sh2=st.img.height;sw2=sh2*br;sx=(st.img.width-sw2)/2;sy=0;}else{sw2=st.img.width;sh2=sw2/br;sx=0;sy=(st.img.height-sh2)/2;}
+  ctx.drawImage(st.img,sx,sy,sw2,sh2,px,py,pw,ph);ctx.restore();
+ }else{ctx.fillStyle=main;ctx.globalAlpha=0.55;ctx.font='700 48px '+FONT;ctx.fillText('ここに写真が入ります',W/2,py+ph/2-20);ctx.font='400 34px '+FONT;ctx.fillText('（写真を選んでね）',W/2,py+ph/2+44);ctx.globalAlpha=1;}
+ ctx.strokeStyle=main;ctx.lineWidth=8;rr(px,py,pw,ph,28);ctx.stroke();
+ // name chips
+ var y=py+ph+70;ctx.textAlign='left';
+ var nm=v('pname'),meta=[v('sex'),v('age')].filter(Boolean).join('・');
+ var title=(nm?nm:animal)+(meta?'　'+meta:'');
+ ctx.fillStyle='#222';s=fitText(title,W-240,76,40,'700');ctx.font='700 '+s+'px '+FONT;ctx.textAlign='center';ctx.fillText(title,W/2,y);
+ y+=70;
+ // features
+ var feat=v('feat');
+ if(feat){var lines=wrap(feat,W-300,'400 42px '+FONT).slice(0,3);ctx.textAlign='left';ctx.fillStyle='#333';ctx.font='400 42px '+FONT;
+  var bh=lines.length*62+40;ctx.fillStyle=pale;rr(120,y-34,W-240,bh,22);ctx.fill();ctx.fillStyle='#333';
+  lines.forEach(function(l,i){ctx.fillText(l,150,y+i*62+10);});y+=bh;}
+ y+=14;
+ // date / place
+ var dp=[];var parts=[];if(v('date'))parts.push('📅 '+v('date'));if(v('place'))parts.push('📍 '+v('place'));if(parts.length)dp.push(parts.join('　'));
+ ctx.textAlign='center';ctx.fillStyle='#222';
+ dp.forEach(function(t){s=fitText(t,W-240,50,28,'700');ctx.font='700 '+s+'px '+FONT;ctx.fillText(t,W/2,y+30);y+=66;});
+ // reward band
+ var big=$('rwd').checked?'情報提供をお願いします':'',m=v('msg');
+ if(big){ctx.fillStyle=main;ctx.globalAlpha=0.13;rr(120,1325,W-240,84,42);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle=main;s=fitText(big,W-300,52,30,'700');ctx.font='700 '+s+'px '+FONT;ctx.fillText(big,W/2,1368);}
+ if(m){ctx.fillStyle='#555';s=fitText(m,W-240,36,22,'400');ctx.font='400 '+s+'px '+FONT;ctx.fillText(m,W/2,big?1437:1385);}
+ // contact
+ ctx.fillStyle=main;rr(80,H-290,W-160,214,30);ctx.fill();ctx.fillStyle='#fff';
+ var cn=v('cname'),tel=v('tel'),sns=v('sns');
+ ctx.font='700 38px '+FONT;ctx.fillText('連絡先'+(cn?'　'+cn:''),W/2,H-250);
+ if(tel){s=fitText('☎ '+tel,W-240,92,44,'700');ctx.font='700 '+s+'px '+FONT;ctx.fillText('☎ '+tel,W/2,H-168);}
+ else{ctx.font='400 40px '+FONT;ctx.fillText('（電話番号を入れてね）',W/2,H-168);}
+ if(sns){s=fitText(sns,W-240,40,24,'400');ctx.font='400 '+s+'px '+FONT;ctx.fillText(sns,W/2,H-108);}
+ ctx.textAlign='left';
+}
+function ready(){draw();}
+if(document.fonts&&document.fonts.load){Promise.all([document.fonts.load("700 40px 'M PLUS Rounded 1c'"),document.fonts.load("400 40px 'M PLUS Rounded 1c'")]).then(ready,ready);}
+draw();
+function dataUrl(){return cv.toDataURL('image/png');}
+$('dl').onclick=function(){var a=document.createElement('a');a.href=dataUrl();a.download='maigo-poster.png';document.body.appendChild(a);a.click();a.remove();};
+$('open').onclick=function(){$('out').innerHTML='<p class="pz-note">↓ 画像を長押し（PCは右クリック）で保存できます</p><img alt="ポスター画像" src="'+dataUrl()+'">';$('out').scrollIntoView({behavior:'smooth',block:'nearest'});};
+})();
+</script>
+</body>
+</html>
