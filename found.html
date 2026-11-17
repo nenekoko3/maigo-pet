@@ -53,6 +53,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .tips-list li:last-child{border-bottom:none;}
 .tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
 .tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
+
 footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
 
 .witness-board{background:#e8874a;border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1.3rem;box-shadow:0 4px 14px rgba(200,80,0,0.3);}
@@ -64,6 +65,37 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .witness-item:last-child{margin-bottom:0;}
 .witness-item .w-num{font-size:0.75rem;font-weight:700;color:#ff6600;display:block;margin-bottom:0.4rem;}
 .witness-item p{font-size:0.78rem;line-height:1.8;color:#333;}
+/* デカニャン案内カード・追加カード */
+.tips-hero{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem 1.1rem 1rem;margin-bottom:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,0.28);}
+.th-top{display:flex;align-items:center;gap:1rem;}
+.th-top img{width:76px;height:76px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.th-top strong{display:block;font-size:1.15rem;line-height:1.5;margin-bottom:0.4rem;}
+.th-top span{display:block;font-size:0.92rem;line-height:1.75;opacity:0.95;}
+.th-choose{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.9rem;}
+.th-choose a{display:block;text-align:center;background:#fff;color:#111;text-decoration:none;font-weight:700;font-size:1rem;line-height:1.5;padding:0.8rem 0.5rem;border-radius:12px;}
+.th-choose a small{display:block;font-size:0.75rem;font-weight:400;color:#555;}
+.cat-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.3rem 0.4rem;}
+.cat-head img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid #eee;}
+.cat-head strong{display:block;font-size:1.12rem;line-height:1.5;}
+.cat-head span{display:block;font-size:0.88rem;color:#666;line-height:1.6;}
+.plain-list{list-style:none;padding:0;margin:0.2rem 0 0.4rem;}
+.plain-list li{padding:0.6rem 0;border-bottom:1px solid var(--border,#dde);font-size:0.96rem;line-height:1.85;}
+.plain-list li:last-child{border-bottom:none;}
+.link-btn.blue{background:#ebf4ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
+.step-card{scroll-margin-top:0.8rem;}
+.witness-board{scroll-margin-top:0.8rem;}
+
+/* 読みやすさ調整 */
+body{line-height:1.8;}
+.info-box,.alert-box{font-size:0.96rem;line-height:1.95;}
+.step-title strong{font-size:1.1rem;line-height:1.5;}
+.step-title span{font-size:0.9rem;line-height:1.6;}
+.step-body{font-size:0.96rem;line-height:1.9;}
+.link-btn{font-size:0.96rem;}
+.link-btn .lt span{font-size:0.82rem;}
+.template-box{font-size:0.96rem;line-height:2.1;}
+.witness-item p{font-size:0.96rem;line-height:1.9;}
+.tips-list li{font-size:0.96rem;line-height:1.9;}
 </style>
 </head>
 <body>
@@ -87,12 +119,22 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 </header>
 
 <main>
-  <div class="emergency">
-    <p>🐾 迷子ちゃんを見かけたら、できることをやってみてね！<br>あなたの一報が飼い主さんとの再会につながります😭</p>
+  <div class="tips-hero">
+    <div class="th-top">
+      <img src="cat_icon.jpg" alt="ねねここ">
+      <div>
+        <strong>迷子ちゃんを見かけたら、<br>できることをやってみてね🐾</strong>
+        <span>あなたの一報が、飼い主さんとの再会につながります😭 どちらに近いか選んでね。</span>
+      </div>
+    </div>
+    <div class="th-choose">
+      <a href="#see">👁️ 見かけた<small>目撃したとき</small></a>
+      <a href="#protect">🐾 保護した<small>連れて帰った・預かった</small></a>
+    </div>
   </div>
 
   <!-- 目撃した場合のメッセージボード -->
-  <div class="witness-board">
+  <div class="witness-board" id="see">
     <div class="witness-head">
       <img src="cat_icon.jpg" alt="ねねここ">
       <div class="witness-title">🐾 迷子を目撃したら</div>
@@ -108,7 +150,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
 
   <!-- STEP 1 警察 -->
-  <div class="step-card">
+  <div class="step-card" id="protect">
     <div class="step-head">
       <div class="step-num">1</div>
       <div class="step-title">
@@ -123,6 +165,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         保護した場所が県境に近い場合は、隣接する都道府県の警察にも届けてください。
       </div>
       <div class="link-grid">
+        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
+        
         <a class="link-btn orange" href="https://www.keishicho.metro.tokyo.lg.jp/sodan/otoshimono/lost_found.html" target="_blank" rel="noopener"><div class="li">🚔</div><div class="lt">拾得物届について<span>届け出の手順・方法</span></div></a>
         <a class="link-btn orange" href="tips.html#police"><div class="li">📋</div><div class="lt">都道府県警察一覧<span>お近くの警察署に連絡を</span></div></a>
       </div>
@@ -146,6 +190,8 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         また、飼い主さんが見つからない場合は<strong>一定期間後に保護者に所有権が移行</strong>し、正式に家族として迎えることもできます✨
       </div>
       <div class="link-grid">
+        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
+        
         <a class="link-btn orange" href="index.html"><div class="li">🐾</div><div class="lt">保健所リンク集（地図）<span>管轄保健所を確認してね</span></div></a>
       </div>
     </div>
@@ -164,6 +210,10 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
     <div class="step-body">
       <p style="font-size:0.84rem;color:#555;margin-bottom:0.8rem;">【】の中を書き換えてね！</p>
       <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">👁️ 目撃した場合</p>
+      <div class="alert-box" style="background:#eef6ff;border-left-color:#2980b9;color:#1a3a5a;">
+        🔒 <strong>投稿には、あえて書かない特徴を残しておきましょう。</strong><br>
+        首輪の細かい特徴、体の傷やあざ、模様の一部、マイクロチップの番号など、<strong>本当の飼い主さんだけが答えられること</strong>を全部は出さず、問い合わせてきた方に質問して確認すると、なりすまし防止になります。
+      </div>
       <div class="template-box">
         <button class="copy-btn">コピー</button>
         <pre>👁️目撃情報👁️
@@ -245,6 +295,40 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
         <li><div class="ti">🏥</div><div><strong>近くの動物病院に連絡する</strong>かかりつけ病院から飼い主さんに連絡できることがあります。写真と特徴を伝えて。</div></li>
         <li><div class="ti">🐕</div><div><strong>散歩中のワンちゃん連れに声かけ</strong>地域のペット事情に詳しい方が多く、飼い主さんをご存知なことも。</div></li>
         <li><div class="ti">📮</div><div><strong>町内会・回覧板を活用する</strong>高齢の飼い主さんへの情報拡散に効果的です。町内会長に相談してみて。</div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐱 猫を見つけたとき</strong><span>連れて行く前に、ちょっと確認してね</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li><b>耳の先がカット</b>されている猫（V字や桜の花びらのような形）は、地域で見守られている<b>地域猫</b>（不妊去勢手術済み）のしるしのことがあります。その場合は、連れて行かず、そっと見守ってください。</li>
+        <li>首輪や迷子札がなくても、<b>室内飼いの猫が脱走した</b>だけのことがあります。元気そうでも飼い猫かもしれません。</li>
+        <li>迷ったら、まず<b>写真・場所・時間</b>を記録して、SNSや警察に情報を。保護するか迷うときは、近くの保健所に相談しましょう。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-card" id="safety" style="border-top:4px solid #e67e22;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🛟 保護するときの安全</strong><span>あなたも、迷子ちゃんも、けがをしないように</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li>怖がっている子は、<b>噛んだり引っかいたり</b>することがあります。素手でつかまず、タオルや毛布でそっと包み、キャリーやケージがあれば入れましょう。</li>
+        <li>犬は、リードや紐があれば使い、<b>車道に出ない</b>よう気をつけて。</li>
+        <li><b>水</b>を用意して、暑さ・寒さを避けられる静かな場所へ。食べ物は体調に合わないこともあるので、少量にしておきましょう。</li>
+        <li>動物病院に連れて行くときは、<b>先に電話</b>で状況を伝えると安心です。</li>
+        <li>自分がけがをしたときは、<b>病院を受診</b>してください。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-card" id="chip" style="border-top:4px solid #16a085;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🔬 マイクロチップを調べてもらう</strong><span>飼い主さんに早くつながる近道</span></div></div>
+    <div class="step-body">
+      <ul class="plain-list">
+        <li>保護した子は、<b>動物病院や保健所・動物愛護センター</b>などで、マイクロチップが入っているか読み取ってもらえることがあります（対応は施設によります）。</li>
+        <li>番号が分かれば、登録先から飼い主さんに連絡が届きます。<b>警察・保健所に届けるときも、読み取りの結果を伝えて</b>ください。</li>
       </ul>
     </div>
   </div>
