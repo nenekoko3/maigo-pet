@@ -44,6 +44,17 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .xs-go{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.9rem;background:#1f1a4a;color:#fff;text-decoration:none;font-weight:700;font-size:0.98rem;padding:0.75rem 1rem;border-radius:999px;}
 .xs-go:hover{background:#34308a;}
 .xs-note{margin-top:0.6rem;font-size:0.72rem;color:#666;line-height:1.6;}
+.xs-box{background:#fff;border:2px solid #b8b0f0;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.4rem;overflow:hidden;}
+.xs-head{display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1rem;background:linear-gradient(90deg,#b8b0f0,#e3dfff);color:#1f1a4a;font-weight:700;font-size:0.95rem;}
+.xs-head img{width:34px;height:34px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 1px 4px rgba(0,0,0,0.2);flex-shrink:0;}
+.xs-body{padding:0.9rem 1rem 1rem;}
+.xs-body p{font-size:0.8rem;line-height:1.7;color:#444;margin-bottom:0.7rem;}
+.xs-body label{display:block;font-size:0.8rem;font-weight:700;color:#1f1a4a;margin:0.5rem 0 0.25rem;}
+.xs-body select,.xs-body input{width:100%;font-size:1rem;padding:0.6rem 0.7rem;border:2px solid #c9c3f5;border-radius:10px;background:#fff;color:#222;font-family:inherit;}
+.xs-body select:focus,.xs-body input:focus{outline:none;border-color:#6c4fd0;}
+.xs-go{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.9rem;background:#1f1a4a;color:#fff;text-decoration:none;font-weight:700;font-size:0.98rem;padding:0.75rem 1rem;border-radius:999px;}
+.xs-go:hover{background:#34308a;}
+.xs-note{margin-top:0.6rem;font-size:0.72rem;color:#666;line-height:1.6;}
 .note{background:#fffbe6;border-left:4px solid #f6ad55;border-radius:0 var(--radius) var(--radius) 0;padding:0.75rem 1rem;font-size:0.82rem;color:#7a4000;margin-bottom:1.3rem;line-height:1.75;}
 .note a{color:#c05a00;font-weight:700;text-decoration:none;}
 .section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
@@ -188,6 +199,35 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   <div class="note">
     💡 下記はX（Twitter）上の情報へのリンクです。収容・保護情報は <a href="fukui.html">🐾 保健所リンク集</a> もあわせてご覧ください。
   </div>
+
+  <!-- Xかんたん検索 -->
+  <div class="xs-box" id="xsBox">
+    <div class="xs-head"><img src="cat_icon.jpg" alt="">Xでかんたん検索</div>
+    <div class="xs-body">
+      <p>さがしたいものを選んで、お住まいの市や区の名前を入れてね。ポストは県名より<b>市や区の名前だけ</b>で書かれていることが多いよ。何も入れないと、全国の新しいポストが出ます。</p>
+      <label for="xsKind">① さがしたいもの</label>
+      <select id="xsKind"><option value="迷子犬 OR 迷い犬 OR 犬 脱走 OR 犬 逃げた">迷子の犬</option><option value="迷子猫 OR 迷い猫 OR 猫 脱走 OR 猫 逃げた">迷子の猫</option><option value="犬 保護しました OR 犬 保護しています OR 迷い犬 保護">保護した犬</option><option value="猫 保護しました OR 猫 保護しています OR 迷い猫 保護">保護した猫</option><option value="迷子鳥 OR インコ 脱走 OR インコ 逃げた OR 鳥 迷子">迷子の鳥（インコなど）</option><option value="拡散希望 迷子 OR 拡散希望 保護 OR 拡散希望 脱走">拡散希望（迷子・すべて）</option></select>
+      <label for="xsArea">② 地域の名前（市・区・町など）</label>
+      <input id="xsArea" type="text" list="xsAreaList" placeholder="例：名古屋　／　豊橋市　／　中区" autocomplete="off" enterkeyhint="search">
+      <datalist id="xsAreaList"><option value="福井県"><option value="福井"></datalist>
+      <a class="xs-go" id="xsGo" href="https://x.com/search?q=%E8%BF%B7%E5%AD%90%E7%8A%AC&amp;src=typed_query&amp;f=live" target="_blank" rel="noopener">𝕏 新しい順に検索する</a>
+      <div class="xs-note">Xが開きます（ログインが必要な場合があります）。見つからないときは、地域の名前を変えたり、「市」を付けたり外したりしてみてね。</div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var k=document.getElementById('xsKind'),a=document.getElementById('xsArea'),g=document.getElementById('xsGo');
+    try{var sv=localStorage.getItem('xsArea');if(sv)a.value=sv;}catch(e){}
+    function upd(){
+      var area=a.value.trim(),q='('+k.value+')'+(area?' '+area:'');
+      g.href='https://x.com/search?q='+encodeURIComponent(q)+'&src=typed_query&f=live';
+      try{localStorage.setItem('xsArea',area);}catch(e){}
+    }
+    k.addEventListener('change',upd);a.addEventListener('input',upd);
+    a.addEventListener('keydown',function(e){if(e.key==='Enter'){upd();g.click();}});
+    upd();
+  })();
+  </script>
 
   <!-- Xかんたん検索 -->
   <div class="xs-box" id="xsBox">
