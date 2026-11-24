@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷子対策｜全国迷子情報リンク集</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--font:'M PLUS Rounded 1c',sans-serif;--radius:12px;--border:#dde;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+
+header{background:#ffcc00;color:#333;padding:1.4rem 1rem 0;}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
+.header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
+.header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
+.header-text p{font-size:0.8rem;opacity:0.88;line-height:1.6;}
+
+.tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn.soon{opacity:0.55;cursor:default;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#333;}
+.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ffe0b2;color:#333;}
+.tab-btn.t-tips.active{background:#fff3e0;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#fff9c4;color:#333;}
+.tab-btn.t-board{background:#ffe0b2;color:#333;}
+
+main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+
+/* 緊急バナー */
+.emergency{background:#fff0f0;border:2.5px solid #e74c3c;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:center;}
+.emergency p{font-size:0.88rem;color:#c0392b;line-height:1.8;font-weight:700;}
+
+/* ステップカード */
+.step-card{background:white;border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:1.5rem;overflow:hidden;}
+.step-head{display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;}
+.step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;flex-shrink:0;}
+.s1 .step-num{background:#e74c3c;}
+.s2 .step-num{background:#e67e22;}
+.s3 .step-num{background:#2980b9;}
+.s4 .step-num{background:#27ae60;}
+.step-title{flex:1;}
+.step-title strong{display:block;font-size:1rem;margin-bottom:0.15rem;}
+.step-title span{font-size:0.78rem;color:#666;}
+.step-urgent{background:#e74c3c;color:white;font-size:0.72rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;flex-shrink:0;}
+.step-urgent.orange{background:#e67e22;}
+.step-urgent.blue{background:#2980b9;}
+.step-urgent.green{background:#27ae60;}
+
+.step-body{padding:0 1.3rem 1.2rem;}
+.step-body hr{border:none;border-top:1px solid var(--border);margin:0.8rem 0;}
+
+/* 注意喚起 */
+.alert-box{background:#fff8e1;border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#7a4a00;line-height:1.75;}
+.alert-box strong{color:#c0392b;}
+
+/* リンクボタン */
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.6rem;margin-bottom:0.8rem;}
+.link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;font-family:var(--font);transition:filter 0.13s;}
+.link-btn:hover{filter:brightness(0.88);}
+.link-btn.red{background:#fde8e8;color:#c0392b;border:1.5px solid #f5a0a0;}
+.link-btn.orange{background:#fef3e2;color:#c0560a;border:1.5px solid #f5c87a;}
+.link-btn.blue{background:#ebf4ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
+.link-btn.green{background:#f0fff4;color:#1a5a2a;border:1.5px solid #68d391;}
+.link-btn.dark{background:#333;color:white;border:1.5px solid #333;}
+.link-btn .li{font-size:1.2rem;flex-shrink:0;}
+.link-btn .lt{flex:1;}
+.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
+
+/* 都道府県警察リスト */
+.pref-police{margin-top:0.5rem;}
+.pref-police summary{cursor:pointer;font-size:0.84rem;font-weight:700;color:#2980b9;padding:0.5rem 0;list-style:none;}
+.pref-police summary::before{content:"▶ ";}
+.pref-police[open] summary::before{content:"▼ ";}
+.police-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.4rem;margin-top:0.6rem;}
+.police-link{display:block;background:#f0f6ff;border:1px solid #bbd4f5;border-radius:8px;padding:0.4rem 0.65rem;font-size:0.78rem;color:#1a4a8a;text-decoration:none;font-family:var(--font);font-weight:700;}
+.police-link:hover{background:#dbeafe;}
+
+/* テンプレ */
+.template-box{background:#f8f8f8;border:1.5px solid #dde;border-radius:10px;padding:1rem 1.1rem;margin-bottom:0.8rem;font-size:0.83rem;line-height:2;position:relative;}
+.template-box pre{white-space:pre-wrap;font-family:var(--font);}
+.copy-btn{position:absolute;top:0.6rem;right:0.6rem;background:#333;color:white;border:none;border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.copy-btn:hover{background:#111;}
+.copy-btn.copied{background:#27ae60;}
+
+/* ハッシュタグ */
+.tag-list{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.8rem;}
+.tag{background:#e8f4ff;border:1.5px solid #90c2f5;border-radius:50px;padding:0.3rem 0.75rem;font-size:0.8rem;color:#1a4a8a;font-weight:700;cursor:pointer;transition:background 0.13s;}
+.tag:hover{background:#dbeafe;}
+.tag.copied{background:#dcfce7;border-color:#68d391;color:#166534;}
+
+/* 捜索tips */
+.tips-list{list-style:none;padding:0;}
+.tips-list li{display:flex;gap:0.7rem;padding:0.65rem 0;border-bottom:1px solid var(--border);font-size:0.84rem;line-height:1.7;}
+.tips-list li:last-child{border-bottom:none;}
+.tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
+.tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
+
+.coming-soon-btn{display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#f0f0f0;border:2px dashed #bbb;border-radius:var(--radius);padding:0.9rem 1.2rem;text-decoration:none;color:#888;font-size:0.84rem;font-weight:700;margin-top:0.8rem;font-family:var(--font);}
+
+
+/* デカニャン案内カード */
+.tips-hero{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem 1.1rem 1rem;margin-bottom:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,0.28);}
+.th-top{display:flex;align-items:center;gap:1rem;}
+.th-top img{width:76px;height:76px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.th-top strong{display:block;font-size:1.15rem;line-height:1.5;margin-bottom:0.4rem;}
+.th-top span{display:block;font-size:0.92rem;line-height:1.75;opacity:0.95;}
+.th-steps{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.9rem;}
+.th-steps a{background:#fff;color:#111;text-decoration:none;font-weight:700;font-size:0.92rem;padding:0.45rem 0.9rem;border-radius:999px;}
+.th-steps a b{display:inline-block;background:#e74c3c;color:#fff;border-radius:50%;width:1.4em;height:1.4em;line-height:1.4em;text-align:center;margin-right:0.25rem;font-size:0.85em;}
+.step-card{scroll-margin-top:0.8rem;}
+
+/* 読みやすさ調整 */
+body{line-height:1.8;}
+.header-text p{font-size:0.92rem;}
+.alert-box{font-size:0.96rem;line-height:1.95;}
+.step-title strong{font-size:1.12rem;line-height:1.5;}
+.step-title span{font-size:0.9rem;color:#555;line-height:1.6;}
+.step-urgent{font-size:0.8rem;}
+.step-body{font-size:0.96rem;line-height:1.9;}
+.link-btn{font-size:0.96rem;padding:0.85rem 1rem;}
+.link-btn .lt span{font-size:0.82rem;opacity:0.85;}
+.template-box{font-size:0.96rem;line-height:2.1;}
+.copy-btn{font-size:0.82rem;padding:0.35rem 0.9rem;}
+.tag{font-size:0.9rem;}
+.tips-list li{font-size:0.96rem;line-height:1.9;}
+.pref-police summary{font-size:0.96rem;}
+.police-link{font-size:0.86rem;}
+.coming-soon-btn{font-size:0.92rem;}
+@media(max-width:640px){.step-head{display:grid;grid-template-columns:48px 1fr;column-gap:1rem;row-gap:0.4rem;align-items:center;}.step-num{grid-row:1/3;align-self:start;}.step-title{grid-column:2;min-width:0;}.step-urgent{grid-column:2;justify-self:start;}.th-top img{width:64px;height:64px;}.th-top strong{font-size:1.05rem;}}
+
+/* 追加カード */
+.cat-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.3rem 0.4rem;}
+.cat-head img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid #eee;}
+.cat-head strong{display:block;font-size:1.12rem;line-height:1.5;}
+.cat-head span{display:block;font-size:0.88rem;color:#666;line-height:1.6;}
+.plain-list{list-style:none;padding:0;margin:0.2rem 0 0.4rem;}
+.plain-list li{padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.96rem;line-height:1.85;}
+.plain-list li:last-child{border-bottom:none;}
+.check-list{list-style:none;padding:0;margin:0.3rem 0 0.6rem;}
+.check-list li{border-bottom:1px solid var(--border);}
+.check-list li:last-child{border-bottom:none;}
+.check-list label{display:flex;gap:0.8rem;align-items:flex-start;padding:0.8rem 0.2rem;font-size:0.98rem;line-height:1.75;cursor:pointer;}
+.check-list input{width:1.45rem;height:1.45rem;margin-top:0.2rem;flex-shrink:0;accent-color:#e74c3c;}
+.check-list input:checked + span{text-decoration:line-through;color:#999;}
+.ck-note{font-size:0.8rem;color:#777;line-height:1.7;}
+.ck-reset{background:#eee;border:none;border-radius:999px;padding:0.4rem 1rem;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--font);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.9rem;}
+.two-col>div{border-radius:10px;padding:0.8rem 0.9rem;font-size:0.94rem;line-height:1.8;}
+.two-col .dog{background:#fff4e5;border:1.5px solid #f5c87a;}
+.two-col .cat{background:#eef3ff;border:1.5px solid #a8bfe8;}
+.two-col strong{display:block;margin-bottom:0.3rem;font-size:1rem;}
+.two-col ul{padding-left:1.1rem;}
+@media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+/* 新タブ(5つ・全部見える・ページごとの色) */
+.tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
+.tab-nav .tab-btn{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.1rem;padding:0.5rem 0.1rem 0.5rem;font-size:clamp(0.6rem,2.8vw,0.72rem);line-height:1.25;text-align:center;font-weight:700;text-decoration:none;border-radius:14px 14px 0 0;opacity:1;box-shadow:none;transition:filter 0.15s;}
+.tab-nav .tab-btn .ti{font-size:1.25rem;line-height:1.1;}
+.tab-nav .tab-btn .tl{white-space:nowrap;line-height:1.25;}
+@media(max-width:640px){header .tab-nav,div>.tab-nav{max-width:none;margin:0;padding:0.5rem 0.25rem 0;gap:3px;}.tab-nav .tab-btn{font-size:0.7rem;padding:0.5rem 0 0.45rem;border-radius:12px 12px 0 0;}.tab-nav .tab-btn .ti{font-size:1.3rem;}}
+.tab-nav .tab-btn:hover{filter:brightness(0.96);}
+.tab-nav .tab-btn.t-shelter{background:#cfe9f5;color:#0b5d78;}
+.tab-nav .tab-btn.t-x{background:#dcdcf0;color:#2a2a46;}
+.tab-nav .tab-btn.t-tips{background:#ffdf80;color:#6b4a00;}
+.tab-nav .tab-btn.t-found{background:#ffd3b0;color:#8a3d0a;}
+.tab-nav .tab-btn.t-poster{background:#ffd3e4;color:#8a1f4f;}
+.tab-nav .tab-btn.t-shelter.active{background:#0b7a9b;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-x.active{background:#2a2a46;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-tips.active{background:#f0a800;color:#3a2600;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-found.active{background:#ee7a2e;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+.tab-nav .tab-btn.t-poster.active{background:#e0568c;color:#fff;box-shadow:0 -2px 6px rgba(0,0,0,0.18);}
+@media(min-width:641px){.tab-nav .tab-btn .tl br{display:none;}.tab-nav .tab-btn{flex-direction:row;gap:0.4rem;font-size:0.92rem;padding:0.6rem 0.8rem;}.tab-nav .tab-btn .ti{font-size:1.1rem;}}
+/* 色の統一：デカニャンのボードに合わせて、はっきりした色に */
+.alert-box{background:#1a1a2e!important;color:#fff!important;border:none!important;border-radius:var(--radius)!important;padding:0.9rem 1.1rem!important;}
+.alert-box strong,.alert-box b{color:#ffd54f!important;}
+.alert-box a{color:#ffd54f!important;}
+.emergency{background:#c0392b!important;border:none!important;border-radius:var(--radius)!important;}
+.emergency p{color:#fff!important;}
+.emergency b,.emergency strong{color:#ffe27a!important;}
+.link-btn,.link-btn.red,.link-btn.orange,.link-btn.blue,.link-btn.green,.link-btn.dark{border:none!important;color:#fff!important;}
+.link-btn.red{background:#d6453a!important;}
+.link-btn.orange{background:#e8821e!important;}
+.link-btn.blue{background:#2f6fb5!important;}
+.link-btn.green{background:#2e9e6b!important;}
+.link-btn.dark{background:#1a1a2e!important;}
+.link-btn[style*="ffe3ee"]{background:#e0568c!important;}
+.link-btn[style*="background:white"]{background:#2f6fb5!important;}
+.link-btn .lt span{opacity:0.92!important;}
+.tag{background:#2f6fb5!important;border-color:#2f6fb5!important;color:#fff!important;}
+.police-link{background:#fff!important;border:2px solid #1a1a2e!important;color:#1a1a2e!important;font-weight:700;}
+.police-link:hover{background:#eef0ff!important;}
+.th-police{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:0.9rem 1.1rem;margin-top:1rem;font-size:0.96rem;line-height:1.9;}
+.th-police strong{display:block;color:#ffd54f;font-size:1.02rem;margin-bottom:0.2rem;}
+.th-police b{color:#ffd54f;}
+/* やさしい黄色ボード（読みやすく） */
+.alert-box{background:#fff6c9!important;color:#4a3b00!important;border:none!important;border-left:5px solid #f5b800!important;border-radius:0 12px 12px 0!important;font-weight:400!important;}
+.alert-box strong,.alert-box b{color:#a14a00!important;font-weight:700!important;}
+.alert-box a{color:#1a4a8a!important;}
+.emergency{background:#fff3f0!important;border:2px solid #e0685c!important;}
+.emergency p{color:#8a2a20!important;font-weight:500!important;}
+.emergency b,.emergency strong{color:#c0392b!important;font-weight:700!important;}
+.th-police{background:#fff6c9;color:#4a3b00;border:2px solid #f5b800;font-weight:400;}
+.th-police strong{color:#a14a00;}
+.th-police b{color:#a14a00;}
+.tips-hero{background:#ffd84a!important;color:#3a2c00!important;box-shadow:0 4px 14px rgba(180,130,0,0.3)!important;}
+.tips-hero .th-top span,.tips-hero .th-top strong{color:#3a2c00!important;}
+.tips-hero .th-choose a,.tips-hero .th-steps a{background:#fff!important;color:#3a2c00!important;}
+/* 迷子にしたら：黄色で統一 */
+.step-card{border-top-color:#f5b800!important;}
+.step-num,.s1 .step-num,.s2 .step-num,.s3 .step-num,.s4 .step-num{background:#f5b800!important;color:#3a2c00!important;}
+.step-urgent,.step-urgent.orange,.step-urgent.blue,.step-urgent.green{background:#f5b800!important;color:#3a2c00!important;}
+.link-btn,.link-btn.red,.link-btn.orange,.link-btn.blue,.link-btn.green,.link-btn.dark{background:#ffd84a!important;color:#3a2c00!important;}
+.link-btn[style*="ffe3ee"]{background:#e0568c!important;color:#fff!important;}
+.tag{background:#f5b800!important;border-color:#f5b800!important;color:#3a2c00!important;}
+.police-link{border-color:#f5b800!important;color:#5a4300!important;}
+.emergency{background:#fff6c9!important;border:2px solid #f5b800!important;}
+.emergency p{color:#5a4300!important;}
+.emergency b,.emergency strong{color:#a14a00!important;}
+.th-steps a b{background:#f5b800!important;color:#3a2c00!important;}
+.tips-list li .ti,.plain-list li::marker{color:#c78a00;}
+
+/* ひらく・とじる */
+details.fold>summary{list-style:none;cursor:pointer;position:relative;padding-right:3.4rem!important}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary .fold-ic{position:absolute;right:1rem;top:1.1rem;width:2rem;height:2rem;border-radius:50%;background:var(--fold,#e74c3c);color:#fff;display:grid;place-items:center;font-size:1.1rem;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+details.fold>summary .fold-ic::before{content:"＋"}
+details.fold[open]>summary .fold-ic::before{content:"－"}
+.fold-hint{font-size:.88rem;color:#666;margin:.2rem .3rem .7rem}
+/* ニャンの案内ボード */
+.go-board{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem;margin:1.4rem 0;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+.go-board .gb-top{display:flex;gap:1rem;align-items:center}
+.go-board .gb-top img{width:72px;height:72px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.go-board .gb-top strong{display:block;font-size:1.2rem;line-height:1.5;color:#ffd54f;margin-bottom:.2rem}
+.go-board .gb-top span{display:block;font-size:1.02rem;line-height:1.75}
+.go-list{display:grid;gap:.7rem;margin-top:1rem}
+.go-list a,.go-list div{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff;border-radius:12px;padding:.9rem 1rem;font-weight:700;line-height:1.45;font-size:1.15rem}
+.go-list .ic{font-size:1.9rem;flex-shrink:0}
+.go-list small{display:block;font-weight:400;font-size:.95rem;opacity:.95;margin-top:2px}
+.go-list .ar{margin-left:auto;font-size:1.4rem}
+.go-list .g-search{background:#1f9a63}.go-list .g-guard{background:#6c45c9}.go-list .g-spread{background:#3a3a55;color:#cfcfe0}
+.go-list .soon{display:inline-block;font-size:.72rem;background:#fff;color:#3a3a55;border-radius:999px;padding:0 .5rem;margin-left:.3rem;vertical-align:middle}
+:root{--fold:#e74c3c}
+
+.np-lead{font-size:1rem;line-height:1.85;margin:.2rem .2rem 1rem}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.3rem}
+.toc a{text-decoration:none;color:#222;background:#fff;border-radius:12px;padding:.7rem .7rem;font-weight:700;font-size:.92rem;line-height:1.4;display:flex;gap:.5rem;align-items:center;box-shadow:0 1px 6px rgba(0,0,0,.08);border-left:6px solid var(--np)}
+.toc a .ic{font-size:1.35rem;flex-shrink:0}
+.toc a:last-child:nth-child(odd){grid-column:1/-1}
+.sec{background:#fff;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1rem;overflow:hidden;scroll-margin-top:.8rem}
+.sec h2{margin:0;font-size:1.1rem;padding:.75rem 1rem;line-height:1.45;color:#fff;background:var(--np)}
+.sec .sb{padding:.6rem 1rem 1rem;font-size:.98rem;line-height:1.85}
+.sec ul.dot{margin:.3rem 0;padding-left:1.2rem}.sec ul.dot li{margin:.3rem 0}
+.voice{display:flex;gap:.7rem;align-items:flex-start;margin:.8rem 0}
+.voice img{width:54px;height:54px;border-radius:50%;background:#fff;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.2);object-fit:cover}
+.voice p{position:relative;margin:0;background:#fff8e1;border:2px solid #ffd54f;border-radius:14px;padding:.6rem .8rem;font-size:.97rem;line-height:1.75}
+.voice p::before{content:"";position:absolute;left:-10px;top:16px;border:8px solid transparent;border-right-color:#ffd54f;border-left:0}
+.big{background:#c0392b;color:#fff;border-radius:12px;padding:.8rem 1rem;margin:.4rem 0 .6rem;font-weight:700;line-height:1.7}
+.big small{display:block;font-weight:400;opacity:.95}
+.lk{display:inline-block;margin:.35rem .4rem 0 0;text-decoration:none;color:#fff!important;background:var(--np);border-radius:999px;padding:.35rem .9rem;font-size:.9rem;font-weight:700}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin:.4rem 0 .6rem}
+.days div{background:var(--np-l);color:var(--np-d);border-radius:10px;text-align:center;padding:.5rem .1rem;font-weight:700;font-size:.86rem;line-height:1.3}
+.days div i{display:block;font-style:normal;font-size:1.5rem}
+.np-note{font-size:.84rem;color:#777}
+.back-board{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem;margin:1.4rem 0;display:flex;gap:.9rem;align-items:center}
+.back-board img{width:60px;height:60px;border-radius:50%;background:#fff;flex-shrink:0;object-fit:cover}
+.back-board a{color:#ffd54f;font-weight:700}
+:root{--np:#6c45c9;--np-l:#e2d6fb;--np-d:#3d2380}
+header{background:#6c45c9!important;color:#fff!important}
+.header-text p{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-icon"><img src="cat_icon.jpg" alt="猫アイコン"></div>
+    <div class="header-text">
+      <h1>🛡️ 迷子対策</h1>
+      <p>「うちの子は大丈夫」が一番あぶない</p>
+    </div>
+  </div>
+</header>
+<div style="background:#6c45c9;padding:0;">
+  <nav class="tab-nav">
+    <a class="tab-btn t-shelter" href="index.html"><span class="ti">🐾</span><span class="tl">保健所<br>&nbsp;</span></a>
+    <a class="tab-btn t-x" href="index_x.html"><span class="ti">𝕏</span><span class="tl">X迷子<br>情報</span></a>
+    <a class="tab-btn t-tips active" href="tips.html"><span class="ti">🚨</span><span class="tl">迷子に<br>したら</span></a>
+    <a class="tab-btn t-found" href="found.html"><span class="ti">👀</span><span class="tl">目撃・<br>保護</span></a>
+    <a class="tab-btn t-poster" href="poster.html"><span class="ti">🖼️</span><span class="tl">ポスター<br>&nbsp;</span></a>
+  </nav>
+</div>
+
+<main>
+<p class="np-lead">今日からできる、迷子にさせないための備えをまとめました。気になるところを押してね。</p>
+<div class="toc"><a href="#days"><span class="ic">🎆</span>こんな日は特に注意</a><a href="#mon"><span class="ic">🚪</span>門・玄関から逃がさない</a><a href="#kubiwa"><span class="ic">🏷️</span>首輪・迷子札・マイクロチップ</a><a href="#kuma"><span class="ic">🐻</span>地域ならではの注意</a><a href="#jichitai"><span class="ic">🏛️</span>自治体の熱い資料</a></div>
+<section class="sec" id="days"><h2>🎆 こんな日は特に注意</h2><div class="sb"><div class="days"><div><i>🌏</i>地震</div><div><i>🌀</i>災害時</div><div><i>🌪️</i>台風</div><div><i>🎆</i>花火</div></div><div class="voice"><img src="cat_icon.jpg" alt="ねねここ"><p>迷子のポストがブワッと増えるのが、地震・災害時・台風・花火の日。雷の日も気をつけてね。</p></div><ul class="dot"><li>花火大会にワンちゃんを連れて行かない</li><li>外飼いの子は、その日は玄関の中へ</li><li><b>網戸を突き破っての迷子</b>も多いです。窓は閉めて</li><li>室内の子も、鑑札・迷子札をつけておく</li></ul><a class="lk" href="https://www.pref.fukushima.lg.jp/sec/21620a/kaminarihanabi.html" target="_blank" rel="noopener">福島県「雷・花火」の注意</a></div></section>
+<section class="sec" id="mon"><h2>🚪 門・玄関から逃がさない</h2><div class="sb"><div class="voice"><img src="cat_icon.jpg" alt="ねねここ"><p>宅配便の方や来客が門を開けっぱなしにして脱走、っていうポストをとても多く見かけるの。</p></div><ul class="dot"><li>門はカギをかけて、チャイムや宅配ボックスを</li><li><b>門の開け閉めを他の人にさせない</b></li><li><b>敷地の中でも放し飼いにしない</b></li><li>室内飼いなら、玄関に脱走防止の柵を</li></ul></div></section>
+<section class="sec" id="kubiwa"><h2>🏷️ 首輪・迷子札・マイクロチップ</h2><div class="sb"><ul class="dot"><li>首輪は<b>指2本</b>がやっと入るくらいに。ゆるいと、ふんばったときに抜けてしまいます</li><li>金具(ナスカン)やワイヤーは古くなると壊れます。点検して早めに交換を</li><li>マイクロチップは<b>登録情報の変更</b>も忘れずに(引っ越し・電話番号が変わったとき)</li></ul><a class="lk" href="https://www.pref.fukushima.lg.jp/sec/21620a/maigo-taisaku.html" target="_blank" rel="noopener">福島県「犬逸走原因事例集」</a><a class="lk" href="https://www.pref.gunma.jp/uploaded/attachment/644291.pdf" target="_blank" rel="noopener">群馬県 チップ登録のチラシ</a></div></section>
+<section class="sec" id="kuma"><h2>🐻 地域ならではの注意</h2><div class="sb"><p style="margin:.2rem 0">クマが出る地域では、犬はなるべく屋内で(むずかしければ夜だけでも玄関や車庫へ)、エサやエサ皿は片づけて、散歩は鈴を持って薄暗い時間・川沿い・見通しの悪いヤブをさけましょう。</p><a class="lk" href="https://www.pref.fukushima.lg.jp/sec/21045e/kaiinu-kuma.html" target="_blank" rel="noopener">福島県「飼い犬をクマから守るために」</a></div></section>
+<section class="sec" id="jichitai"><h2>🏛️ 自治体の熱い資料</h2><div class="sb"><p style="margin:.2rem 0">職員さんの「迷子にさせたくない」が伝わる資料です。</p><a class="lk" href="https://www.pref.fukushima.lg.jp/sec/21620a/maigo-taisaku.html" target="_blank" rel="noopener">福島県 迷子にさせないために</a><a class="lk" href="https://www.pref.gunma.jp/04/bogg_00007.html" target="_blank" rel="noopener">群馬県 猫に首輪と迷子札を</a><a class="lk" href="https://www.douai.pref.tochigi.lg.jp/wp/wp-content/uploads/2026/01/1643a78ecc3115a8092abbc964988e52.pdf" target="_blank" rel="noopener">栃木県 返還率のチラシ</a><a class="lk" href="https://www.pref.hiroshima.lg.jp/site/apc/aigocenternonichijo37.html" target="_blank" rel="noopener">広島県 センターの日常</a><a class="lk" href="https://www.pref.tottori.lg.jp/241521.htm" target="_blank" rel="noopener">鳥取県 室内飼いこそ迷子札を</a></div></section>
+<div class="back-board"><img src="cat_icon.jpg" alt="ねねここ"><div>もし迷子にしてしまったら<br><a href="tips.html">🚨 迷子にしたら今すぐやること</a></div></div>
+</main>
+<footer>
+  <p>🐾 迷子のペットが早く見つかりますように</p>
+  <p style="margin-top:0.3rem">掲載内容は各自治体の公式情報をご確認ください</p>
+
+  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/guard.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
+</footer>
+</body>
+</html>
