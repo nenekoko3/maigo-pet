@@ -153,6 +153,28 @@ body{line-height:1.8;}
 .link-btn[style*="background:white"]{background:#d96a0c!important;}
 .tag{background:#ee7a2e!important;border-color:#ee7a2e!important;color:#fff!important;}
 .police-link{border-color:#ee7a2e!important;color:#6a3000!important;}
+
+/* ひらく・とじる */
+details.fold>summary{list-style:none;cursor:pointer;position:relative;padding-right:3.4rem!important}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary .fold-ic{position:absolute;right:1rem;top:1.1rem;width:2rem;height:2rem;border-radius:50%;background:var(--fold,#e74c3c);color:#fff;display:grid;place-items:center;font-size:1.1rem;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+details.fold>summary .fold-ic::before{content:"＋"}
+details.fold[open]>summary .fold-ic::before{content:"－"}
+.fold-hint{font-size:.88rem;color:#666;margin:.2rem .3rem .7rem}
+/* ニャンの案内ボード */
+.go-board{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem;margin:1.4rem 0;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+.go-board .gb-top{display:flex;gap:1rem;align-items:center}
+.go-board .gb-top img{width:72px;height:72px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.go-board .gb-top strong{display:block;font-size:1.2rem;line-height:1.5;color:#ffd54f;margin-bottom:.2rem}
+.go-board .gb-top span{display:block;font-size:1.02rem;line-height:1.75}
+.go-list{display:grid;gap:.7rem;margin-top:1rem}
+.go-list a,.go-list div{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff;border-radius:12px;padding:.9rem 1rem;font-weight:700;line-height:1.45;font-size:1.15rem}
+.go-list .ic{font-size:1.9rem;flex-shrink:0}
+.go-list small{display:block;font-weight:400;font-size:.95rem;opacity:.95;margin-top:2px}
+.go-list .ar{margin-left:auto;font-size:1.4rem}
+.go-list .g-search{background:#1f9a63}.go-list .g-guard{background:#6c45c9}.go-list .g-spread{background:#3a3a55;color:#cfcfe0}
+.go-list .soon{display:inline-block;font-size:.72rem;background:#fff;color:#3a3a55;border-radius:999px;padding:0 .5rem;margin-left:.3rem;vertical-align:middle}
+:root{--fold:#ee7a2e}
 </style>
 </head>
 <body>
@@ -207,15 +229,16 @@ body{line-height:1.8;}
   </div>
 
   <!-- STEP 1 警察 -->
-  <div class="step-card" id="protect">
-    <div class="step-head">
+  <p class="fold-hint">👇 それぞれ押すと、くわしい中身がひらくよ</p>
+  <details class="fold step-card" id="protect">
+    <summary class="step-head">
       <div class="step-num">1</div>
       <div class="step-title">
         <strong>🚔 警察に届け出る（拾得物届）</strong>
         <span>保護した場合は必ず届け出を！</span>
       </div>
       <div class="badge">最優先！</div>
-    </div>
+    <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <div class="alert-box">
         ⚠️ <strong>都道府県をまたぐと情報が共有されない場合があります。</strong><br>
@@ -228,18 +251,18 @@ body{line-height:1.8;}
         <a class="link-btn orange" href="tips.html#police"><div class="li">📋</div><div class="lt">都道府県警察一覧<span>お近くの警察署に連絡を</span></div></a>
       </div>
     </div>
-  </div>
+  </details>
 
   <!-- STEP 2 保健所 -->
-  <div class="step-card">
-    <div class="step-head">
+  <details class="fold step-card">
+    <summary class="step-head">
       <div class="step-num">2</div>
       <div class="step-title">
         <strong>🏥 保健所・動物愛護センターに届け出る</strong>
         <span>自宅保護の場合も必ず届け出を！</span>
       </div>
       <div class="badge">必ず届けて！</div>
-    </div>
+    <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <div class="info-box">
         💚 <strong>飼い主さんと繋がるために届け出をお願いします！</strong><br>
@@ -252,18 +275,18 @@ body{line-height:1.8;}
         <a class="link-btn orange" href="index.html"><div class="li">🐾</div><div class="lt">保健所リンク集（地図）<span>管轄保健所を確認してね</span></div></a>
       </div>
     </div>
-  </div>
+  </details>
 
   <!-- STEP 3 SNS投稿 -->
-  <div class="step-card">
-    <div class="step-head">
+  <details class="fold step-card">
+    <summary class="step-head">
       <div class="step-num">3</div>
       <div class="step-title">
         <strong>𝕏 SNSに投稿する</strong>
         <span>テンプレをコピーして使ってね</span>
       </div>
       <div class="badge">拡散を！</div>
-    </div>
+    <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <p style="font-size:0.84rem;color:#555;margin-bottom:0.8rem;">【】の中を書き換えてね！</p>
       <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">👁️ 目撃した場合</p>
@@ -298,17 +321,17 @@ body{line-height:1.8;}
 #保護犬 #保護猫 #迷子犬 #迷子猫 #【都道府県名】</pre>
       </div>
     </div>
-  </div>
+  </details>
 
   <!-- 飼い主さんを探す -->
-  <div class="step-card">
-    <div class="step-head">
+  <details class="fold step-card">
+    <summary class="step-head">
       <div class="step-num" style="background:#333;font-size:0.9rem;">🔍</div>
       <div class="step-title">
         <strong>飼い主さんの捜索情報を探す</strong>
         <span>SNSや掲示板で飼い主さんが探しているかも</span>
       </div>
-    </div>
+    <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <div class="link-grid">
         <a class="link-btn orange" href="index_x.html">
@@ -330,18 +353,18 @@ body{line-height:1.8;}
         </a>
       </div>
     </div>
-  </div>
+  </details>
 
   <!-- STEP 4 地域への声かけ -->
-  <div class="step-card">
-    <div class="step-head">
+  <details class="fold step-card">
+    <summary class="step-head">
       <div class="step-num">4</div>
       <div class="step-title">
         <strong>🏘️ 地域への声かけ・ポスター</strong>
         <span>SNSを使わない飼い主さんにも届けよう</span>
       </div>
       <div class="badge">効果大！</div>
-    </div>
+    <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <div class="alert-box">
         ⚠️ <strong>高齢の飼い主さんはSNSを使っていないことも多い！</strong><br>
@@ -354,10 +377,10 @@ body{line-height:1.8;}
         <li><div class="ti">📮</div><div><strong>町内会・回覧板を活用する</strong>高齢の飼い主さんへの情報拡散に効果的です。町内会長に相談してみて。</div></li>
       </ul>
     </div>
-  </div>
+  </details>
 
-  <div class="step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
-    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐱 猫を見つけたとき</strong><span>連れて行く前に、ちょっと確認してね</span></div></div>
+  <details class="fold step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
+    <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐱 猫を見つけたとき</strong><span>連れて行く前に、ちょっと確認してね</span></div><span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <ul class="plain-list">
         <li><b>耳の先がカット</b>されている猫（V字や桜の花びらのような形）は、地域で見守られている<b>地域猫</b>（不妊去勢手術済み）のしるしのことがあります。その場合は、連れて行かず、そっと見守ってください。</li>
@@ -365,10 +388,10 @@ body{line-height:1.8;}
         <li>迷ったら、まず<b>写真・場所・時間</b>を記録して、SNSや警察に情報を。保護するか迷うときは、近くの保健所に相談しましょう。</li>
       </ul>
     </div>
-  </div>
+  </details>
 
-  <div class="step-card" id="safety" style="border-top:4px solid #e67e22;">
-    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🛟 保護するときの安全</strong><span>あなたも、迷子ちゃんも、けがをしないように</span></div></div>
+  <details class="fold step-card" id="safety" style="border-top:4px solid #e67e22;">
+    <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🛟 保護するときの安全</strong><span>あなたも、迷子ちゃんも、けがをしないように</span></div><span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <ul class="plain-list">
         <li>怖がっている子は、<b>噛んだり引っかいたり</b>することがあります。素手でつかまず、タオルや毛布でそっと包み、キャリーやケージがあれば入れましょう。</li>
@@ -382,17 +405,17 @@ body{line-height:1.8;}
         保護した子を飼い主さんにお返しするときは、<b>警察署で一緒に確認してもらう</b>と、お互いに安心です。まずは警察署に電話して、受け渡しできるか相談してみてね。
       </div>
     </div>
-  </div>
+  </details>
 
-  <div class="step-card" id="chip" style="border-top:4px solid #16a085;">
-    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🔬 マイクロチップを調べてもらう</strong><span>飼い主さんに早くつながる近道</span></div></div>
+  <details class="fold step-card" id="chip" style="border-top:4px solid #16a085;">
+    <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🔬 マイクロチップを調べてもらう</strong><span>飼い主さんに早くつながる近道</span></div><span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <ul class="plain-list">
         <li>保護した子は、<b>動物病院や保健所・動物愛護センター</b>などで、マイクロチップが入っているか読み取ってもらえることがあります（対応は施設によります）。</li>
         <li>番号が分かれば、登録先から飼い主さんに連絡が届きます。<b>警察・保健所に届けるときも、読み取りの結果を伝えて</b>ください。</li>
       </ul>
     </div>
-  </div>
+  </details>
 
   <!-- 保健所メッセージボード -->
   <div class="witness-board" style="background:linear-gradient(135deg,#004d7a,#008793);margin-top:0.5rem;">
@@ -419,11 +442,20 @@ body{line-height:1.8;}
     </div>
   </div>
 
+<div class="go-board"><div class="gb-top"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>飼い主さんは、こんなふうに探しているよ</strong><span>どこを探して、何を頼りにしているか知っておくと、見かけた情報がもっと届きやすくなるよ🐾</span></div></div><div class="go-list"><a class="g-search" href="search.html"><span class="ic">🔎</span><span>詳しい探し方<small>飼い主さんがやっていること・見落としやすいこと</small></span><span class="ar">›</span></a></div></div>
 </main>
 <footer>
   <p>🐾 迷子のペットが早く見つかりますように</p>
 
   <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/found.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
 </footer>
+<script>
+(function(){
+  function openTarget(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);if(el&&el.tagName==='DETAILS'){el.open=true;setTimeout(function(){el.scrollIntoView({block:'start'})},30)}}
+  window.addEventListener('hashchange',openTarget);
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var el=document.getElementById(a.getAttribute('href').slice(1));if(el&&el.tagName==='DETAILS'){el.open=true}});
+  openTarget();
+})();
+</script>
 </body>
 </html>
