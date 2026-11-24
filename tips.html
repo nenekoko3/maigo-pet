@@ -264,6 +264,11 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
 .step-group .sg-title{margin:0;padding:.9rem 1rem .3rem;font-size:1.1rem;font-weight:700;line-height:1.45}
 .step-group .sg-hint{margin:0;padding:0 1rem .5rem;font-size:.85rem;color:#777}
 .step-group>details.fold.step-card{margin:0!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-top:1px solid #ececf3!important}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:0 0 1.2rem}
+.toc a{text-decoration:none;color:#222;background:#fff;border-radius:12px;padding:.65rem .6rem;font-weight:700;font-size:.92rem;line-height:1.4;display:flex;gap:.5rem;align-items:center;box-shadow:0 1px 6px rgba(0,0,0,.08);border-left:6px solid var(--toc)}
+.toc a .ic{font-size:1.3rem;flex-shrink:0}
+.toc a:last-child:nth-child(odd){grid-column:1/-1}
+:root{--toc:#f0a800}
 </style>
 </head>
 <body>
@@ -287,49 +292,15 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
 </div>
 
 <main>
-  <div class="tips-hero">
-    <div class="th-top">
-      <img src="cat_icon.jpg" alt="ねねここ">
-      <div>
-        <strong>気が動転していても大丈夫！<br>いっしょに順番にやりましょう🐾</strong>
-        <span>届け出がないと、保護されても会えないことがあります。まずは「警察」から動きましょう。</span>
-      </div>
-    </div>
-    <div class="th-steps">
-      <a href="#step1"><b>1</b> 警察</a>
-      <a href="#step2"><b>2</b> 保健所</a>
-      <a href="#step3"><b>3</b> X・掲示板</a>
-      <a href="#step4"><b>4</b> チラシ</a>
-      <a href="#step5"><b>5</b> 捜索</a>
-      <a href="#first30">✅ 最初の30分</a>
-      <a href="#found">🎉 見つかったら</a>
-    </div>
-  </div>
-  <div class="step-card" id="first30" style="border-top:4px solid #e74c3c;">
-    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>✅ まず最初の30分でやること</strong><span>押してチェックしながら進めてね</span></div></div>
-    <div class="step-body">
-      <ul class="check-list" id="ckList">
-        <li><label><input type="checkbox"><span>いなくなった<b>場所と時間</b>をメモする（スマホのメモでOK）</span></label></li>
-        <li><label><input type="checkbox"><span><b>今の写真</b>を用意する（全身・顔・横顔・特徴のある部分）</span></label></li>
-        <li><label><input type="checkbox"><span>首輪・リード・迷子札の<b>有無と色</b>を思い出す</span></label></li>
-        <li><label><input type="checkbox"><span><b>マイクロチップ</b>があるか確認する（登録番号があれば控える）</span></label></li>
-        <li><label><input type="checkbox"><span>いなくなった場所の近くを、まず探す（下の「犬と猫のコツ」を参考に）</span></label></li>
-        <li><label><input type="checkbox"><span>家族や近所の人に連絡して、手分けする</span></label></li>
-        <li><label><input type="checkbox"><span><b>警察に電話</b>する → <a href="#step1">手順1へ</a></span></label></li>
-      </ul>
-      <p class="ck-note">チェックは、このスマホ・パソコンの中だけに保存されます。<button class="ck-reset" type="button" id="ckReset">全部はずす</button></p>
-    </div>
-  </div>
+  
+  
 
-  <div class="alert-box" style="background:#fff0f3;border-left-color:#d6336c;color:#5c1a2e;margin:0.9rem 0;">
-    💌 <strong>離れて暮らすご家族・ご親戚の方へ</strong><br>
-    実家やご親戚のペットがいなくなったことを、あとから知ることがあります。ご家族がまだ届出をしていないこともあるので、<strong>知った時点ですぐ、警察と、管轄の保健所・動物愛護センターに届出や確認をしてください。</strong><br>
-    収容期間は自治体ごとに決まっていて、短い所もあります。「落ち着いてから」ではなく、<strong>今日のうちに</strong>が合言葉です。
-  </div>
+  
 
   <!-- STEP 1 警察 -->
   
-  <div class="step-group"><p class="sg-title">🚨 この順番で動こう</p><p class="sg-hint">👇 押すと、くわしい中身がひらくよ</p>
+  <div class="toc"><a href="#step1"><span class="ic">🚔</span>警察に連絡</a><a href="#step2"><span class="ic">🏥</span>保健所・センターに連絡</a><a href="#step3"><span class="ic">𝕏</span>X・掲示板に投稿</a><a href="#step4"><span class="ic">📄</span>チラシを配る</a><a href="#step5"><span class="ic">🔦</span>暗くなる前に捜索</a><a href="#first30"><span class="ic">✅</span>最初の30分</a><a href="#family"><span class="ic">💌</span>離れて暮らすご家族へ</a><a href="#found"><span class="ic">🎉</span>見つかったら</a></div>
+<div class="step-group"><p class="sg-title">🚨 この順番で動こう</p><p class="sg-hint">👇 押すと、くわしい中身がひらくよ</p>
 <details id="step1" class="fold step-card s1">
     <summary class="step-head">
       <div class="step-num">1</div>
@@ -627,7 +598,29 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
   </details>
 </div>
 
+
+
   <div class="go-board"><div class="gb-top"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>もっと詳しく知りたいときは</strong><span>探し方のコツや、もう迷子にさせないための対策を、別のページにまとめたよ🐾</span></div></div><div class="go-list"><a class="g-search" href="search.html"><span class="ic">🔎</span><span>詳しい探し方<small>首輪が違っても確認を・マイクロチップ・気をつけたいこと</small></span><span class="ar">›</span></a><a class="g-guard" href="guard.html"><span class="ic">🛡️</span><span>迷子対策<small>花火・地震の日の備え、首輪・迷子札・マイクロチップ</small></span><span class="ar">›</span></a><div class="g-spread"><span class="ic">📣</span><span>迷子情報を地域に広める<span class="soon">準備中</span><small>公開はもう少し先</small></span></div></div></div>
+<div id="family" class="alert-box" style="background:#fff0f3;border-left-color:#d6336c;color:#5c1a2e;margin:0.9rem 0;">
+    💌 <strong>離れて暮らすご家族・ご親戚の方へ</strong><br>
+    実家やご親戚のペットがいなくなったことを、あとから知ることがあります。ご家族がまだ届出をしていないこともあるので、<strong>知った時点ですぐ、警察と、管轄の保健所・動物愛護センターに届出や確認をしてください。</strong><br>
+    収容期間は自治体ごとに決まっていて、短い所もあります。「落ち着いてから」ではなく、<strong>今日のうちに</strong>が合言葉です。
+  </div>
+<div class="step-card" id="first30" style="border-top:4px solid #e74c3c;">
+    <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>✅ まず最初の30分でやること</strong><span>押してチェックしながら進めてね</span></div></div>
+    <div class="step-body">
+      <ul class="check-list" id="ckList">
+        <li><label><input type="checkbox"><span>いなくなった<b>場所と時間</b>をメモする（スマホのメモでOK）</span></label></li>
+        <li><label><input type="checkbox"><span><b>今の写真</b>を用意する（全身・顔・横顔・特徴のある部分）</span></label></li>
+        <li><label><input type="checkbox"><span>首輪・リード・迷子札の<b>有無と色</b>を思い出す</span></label></li>
+        <li><label><input type="checkbox"><span><b>マイクロチップ</b>があるか確認する（登録番号があれば控える）</span></label></li>
+        <li><label><input type="checkbox"><span>いなくなった場所の近くを、まず探す（下の「犬と猫のコツ」を参考に）</span></label></li>
+        <li><label><input type="checkbox"><span>家族や近所の人に連絡して、手分けする</span></label></li>
+        <li><label><input type="checkbox"><span><b>警察に電話</b>する → <a href="#step1">手順1へ</a></span></label></li>
+      </ul>
+      <p class="ck-note">チェックは、このスマホ・パソコンの中だけに保存されます。<button class="ck-reset" type="button" id="ckReset">全部はずす</button></p>
+    </div>
+  </div>
 
   <div class="step-card" id="found" style="border-top:4px solid #27ae60;">
     <div class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🎉 見つかったら</strong><span>おめでとう！最後にやること</span></div></div>
