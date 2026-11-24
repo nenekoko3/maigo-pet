@@ -206,6 +206,13 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
 .toc a .ic{font-size:1.3rem;flex-shrink:0}
 .toc a:last-child:nth-child(odd){grid-column:1/-1}
 :root{--toc:#ee7a2e}
+.step-group>details.fold.step-card[style*="border-top"]{border-left:0!important;border-top:1px solid #ececf3!important}
+details.fold>summary .pink-tag{grid-column:2;justify-self:start;display:inline-block;background:#e0568c;color:#fff;font-weight:700;font-size:.72rem;border-radius:50px;padding:.1rem .55rem;margin-top:.15rem}
+.link-btn.nyan-link{background:#0b7a9b!important;color:#fff!important;border:none!important;box-shadow:0 3px 10px rgba(11,122,155,.35)}
+.link-btn.nyan-link .li img{width:46px;height:46px;border-radius:50%;background:#fff;object-fit:cover;display:block}
+.link-btn.nyan-link .lt{font-size:1.02rem}
+.go-list .g-shelter{background:#0b7a9b}.go-list .g-poster{background:#e0568c}
+.go-board .gb-tip{margin-top:.9rem;background:rgba(255,255,255,.1);border-radius:10px;padding:.7rem .85rem;font-size:.95rem;line-height:1.75}
 </style>
 </head>
 <body>
@@ -278,9 +285,9 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
         また、飼い主さんが見つからない場合は<strong>一定期間後に保護者に所有権が移行</strong>し、正式に家族として迎えることもできます✨
       </div>
       <div class="link-grid">
-        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
+        <a class="link-btn nyan-link" href="index.html"><div class="li"><img src="cat_icon.jpg" alt="ねねここ"></div><div class="lt">🐾 ねねここの保健所リンク集<span>管轄保健所を確認してね</span></div></a>
         
-        <a class="link-btn orange" href="index.html"><div class="li">🐾</div><div class="lt">保健所リンク集（地図）<span>管轄保健所を確認してね</span></div></a>
+        <a class="link-btn blue" href="https://uub.jp/cpf/rinsetsu.html" target="_blank" rel="noopener"><div class="li">🗺️</div><div class="lt">隣接する市区町村を調べる<span>外部サイト（uub.jp）・県ごとの表があります</span></div></a>
       </div>
     </div>
   </details>
@@ -371,7 +378,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
         <strong>🏘️ 地域への声かけ・ポスター</strong>
         <span>SNSを使わない飼い主さんにも届けよう</span>
       </div>
-      <div class="badge">効果大！</div>
+      <div class="badge">効果大！</div><span class="pink-tag">🖼️ 無料ポスター作成</span>
     <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <div class="alert-box">
@@ -384,11 +391,15 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
         <li><div class="ti">🐕</div><div><strong>散歩中のワンちゃん連れに声かけ</strong>地域のペット事情に詳しい方が多く、飼い主さんをご存知なことも。</div></li>
         <li><div class="ti">📮</div><div><strong>町内会・回覧板を活用する</strong>高齢の飼い主さんへの情報拡散に効果的です。町内会長に相談してみて。</div></li>
       </ul>
-    </div>
+    <p style="margin:.8rem 0 .3rem">保護した子の飼い主さんを探すときは、写真つきのポスターが役立ちます。無料で作れます🐾</p><a class="link-btn" href="poster.html" style="background:#e0568c;color:#fff;border:none;margin-top:0.6rem;display:inline-flex;">
+        <div class="li">🖼️</div>
+        <div class="lt">保護のポスターを作る<span>「保護しています」を選んでね</span></div>
+      </a></div>
   </details>
 </div>
 
-  <details class="fold step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
+  <div class="step-group"><p class="sg-title">📋 保護したときに知っておきたいこと</p><p class="sg-hint">👇 押すと、くわしい中身がひらくよ</p>
+<details class="fold step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
     <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐱 猫を見つけたとき</strong><span>連れて行く前に、ちょっと確認してね</span></div><span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
       <ul class="plain-list">
@@ -425,33 +436,21 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
       </ul>
     </div>
   </details>
-
-  <!-- 保健所メッセージボード -->
-  <div class="witness-board" id="f-shuyo" style="background:linear-gradient(135deg,#004d7a,#008793);margin-top:0.5rem;">
-    <div class="witness-head">
-      <img src="cat_icon.jpg" alt="ねねここ">
-      <div class="witness-title">🐾 保護したコが保健所に収容された場合</div>
-    </div>
-    <div class="witness-item">
-      <p>保護してくださったワンちゃん・猫ちゃんが保健所に収容された場合、管轄の保健所・収容施設情報はこちらから検索できます。飼い主さんへの情報提供にもお役立てください🙏</p>
-      <a class="link-btn" href="index.html" style="background:white;color:#004d7a;border:none;margin-top:0.6rem;display:inline-flex;">
+<details class="fold step-card" id="f-shuyo">
+    <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐾 保護したコが保健所に収容されたら</strong><span>収容先は保健所リンク集で探せます</span></div><span class="fold-ic" aria-hidden="true"></span></summary>
+    <div class="step-body"><p style="margin:.2rem 0 .4rem">保護してくださったワンちゃん・猫ちゃんが保健所に収容された場合、管轄の保健所・収容施設情報はこちらから検索できます。飼い主さんへの情報提供にもお役立てください🙏</p><a class="link-btn" href="index.html" style="background:#0b7a9b;color:#fff;border:none;margin-top:0.6rem;display:inline-flex;">
         <div class="li">🐾</div>
         <div class="lt">保健所・収容施設リンク集<span>都道府県別に検索できます</span></div>
-      </a>
-    </div>
-  </div>
+      </a></div>
+  </details>
+</div>
 
-  <div class="card" style="border-top:4px solid #e0568c;">
-    <div class="witness-item">
-      <p>保護した子の飼い主さんを探すときは、写真つきのポスターが役立ちます。無料で作れます🐾</p>
-      <a class="link-btn" href="poster.html" style="background:#ffe3ee;color:#8a1f4f;border:2px solid #e0568c;margin-top:0.6rem;display:inline-flex;">
-        <div class="li">🖼️</div>
-        <div class="lt">保護のポスターを作る<span>「保護しています」を選んでね</span></div>
-      </a>
-    </div>
-  </div>
+  <!-- 保健所メッセージボード -->
+  
 
-<div class="go-board"><div class="gb-top"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>飼い主さんに情報を届けよう</strong><span>飼い主さんがどんなふうに探しているか知っておくと、見かけた情報が届きやすくなるよ🐾</span></div></div><div class="go-list"><a class="g-search" href="search.html"><span class="ic">🔎</span><span>詳しい探し方<small>飼い主さんがやっていること・見落としやすいこと</small></span><span class="ar">›</span></a></div></div>
+  
+
+<div class="go-board"><div class="gb-top"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>飼い主さんに情報を届けよう</strong><span>警察と保健所への届け出が、いちばんの近道です。<br>もし可能でしたら、ポスターも貼っていただけると助かります。SNSを使っていない飼い主さん(ご高齢の方など)にも届きやすくなります🐾</span></div></div><div class="gb-tip">📌 貼ると届きやすい場所:保護した場所の近く・近くの動物病院・ペットショップ・スーパーやコンビニの掲示板(お店の方にひと声かけてください)</div><div class="go-list"><a class="g-shelter" href="index.html"><span class="ic">🐾</span><span>保健所リンク集<small>届け出先の保健所・センターを県ごとに</small></span><span class="ar">›</span></a><a class="g-poster" href="poster.html"><span class="ic">🖼️</span><span>無料ポスター作成<small>「保護しています」を選んでください</small></span><span class="ar">›</span></a></div></div>
 </main>
 <footer>
   <p>🐾 迷子のペットが早く見つかりますように</p>
