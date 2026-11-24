@@ -201,6 +201,11 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
 .see-board img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 .see-board strong{display:block;color:#ffd54f;font-size:1.2rem;line-height:1.5;margin-bottom:.2rem}
 .see-board p{margin:.1rem 0;font-size:1rem;line-height:1.75}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin:0 0 1.2rem}
+.toc a{text-decoration:none;color:#222;background:#fff;border-radius:12px;padding:.65rem .6rem;font-weight:700;font-size:.92rem;line-height:1.4;display:flex;gap:.5rem;align-items:center;box-shadow:0 1px 6px rgba(0,0,0,.08);border-left:6px solid var(--toc)}
+.toc a .ic{font-size:1.3rem;flex-shrink:0}
+.toc a:last-child:nth-child(odd){grid-column:1/-1}
+:root{--toc:#ee7a2e}
 </style>
 </head>
 <body>
@@ -227,7 +232,8 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   
 
   <!-- 目撃した場合のメッセージボード -->
-  <div class="see-board" id="see"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐾 迷子を目撃したら</strong><p>①まだ近くにいれば保護を。難しければ警察に保護をお願い。離れてしまっても、警察・保健所・センターに情報を。</p><p>②SNSに、場所・日時・特徴・首輪の色・向かった方向を投稿してね。</p></div></div>
+  <div class="toc"><a href="#see"><span class="ic">👁️</span>目撃したら</a><a href="#protect"><span class="ic">🚔</span>警察に届け出る</a><a href="#f-hokenjo"><span class="ic">🏥</span>保健所・センターに届け出る</a><a href="#f-sns"><span class="ic">𝕏</span>SNSに投稿</a><a href="#f-owner"><span class="ic">🔍</span>飼い主さんの捜索情報</a><a href="#f-poster"><span class="ic">🏘️</span>声かけ・ポスター</a><a href="#cat-tips"><span class="ic">🐱</span>猫を見つけたとき</a><a href="#safety"><span class="ic">🛟</span>保護するときの安全</a><a href="#chip"><span class="ic">🔬</span>マイクロチップ</a><a href="#f-shuyo"><span class="ic">🐾</span>保健所に収容されたら</a></div>
+<div class="see-board" id="see"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐾 迷子を目撃したら</strong><p>①まだ近くにいれば保護を。難しければ警察に保護をお願い。離れてしまっても、警察・保健所・センターに情報を。</p><p>②SNSに、場所・日時・特徴・首輪の色・向かった方向を投稿してね。</p></div></div>
 
   <!-- STEP 1 警察 -->
   
@@ -256,7 +262,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   </details>
 
   <!-- STEP 2 保健所 -->
-  <details class="fold step-card">
+  <details class="fold step-card" id="f-hokenjo">
     <summary class="step-head">
       <div class="step-num">2</div>
       <div class="step-title">
@@ -280,7 +286,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   </details>
 
   <!-- STEP 3 SNS投稿 -->
-  <details class="fold step-card">
+  <details class="fold step-card" id="f-sns">
     <summary class="step-head">
       <div class="step-num">3</div>
       <div class="step-title">
@@ -326,7 +332,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   </details>
 
   <!-- 飼い主さんを探す -->
-  <details class="fold step-card">
+  <details class="fold step-card" id="f-owner">
     <summary class="step-head">
       <div class="step-num" style="background:#333;font-size:0.9rem;">🔍</div>
       <div class="step-title">
@@ -358,7 +364,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   </details>
 
   <!-- STEP 4 地域への声かけ -->
-  <details class="fold step-card">
+  <details class="fold step-card" id="f-poster">
     <summary class="step-head">
       <div class="step-num">4</div>
       <div class="step-title">
@@ -421,7 +427,7 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
   </details>
 
   <!-- 保健所メッセージボード -->
-  <div class="witness-board" style="background:linear-gradient(135deg,#004d7a,#008793);margin-top:0.5rem;">
+  <div class="witness-board" id="f-shuyo" style="background:linear-gradient(135deg,#004d7a,#008793);margin-top:0.5rem;">
     <div class="witness-head">
       <img src="cat_icon.jpg" alt="ねねここ">
       <div class="witness-title">🐾 保護したコが保健所に収容された場合</div>
