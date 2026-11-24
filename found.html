@@ -191,6 +191,12 @@ details.fold>summary.cat-head img{width:42px!important;height:42px!important}
 details.fold>summary.cat-head strong{font-size:1.05rem!important}
 details.fold>summary.cat-head span{font-size:.86rem!important}
 details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height:1.8rem!important}
+.step-group{background:#fff;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;margin-bottom:1.3rem}
+.step-group .sg-title{margin:0;padding:.9rem 1rem .3rem;font-size:1.1rem;font-weight:700;line-height:1.45}
+.step-group .sg-hint{margin:0;padding:0 1rem .5rem;font-size:.85rem;color:#777}
+.step-group>details.fold.step-card{margin:0!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-top:1px solid #ececf3!important}
+details.fold>summary.cat-head img{display:none!important}
+details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5px solid #ee7a2e!important}
 </style>
 </head>
 <body>
@@ -245,8 +251,9 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
   </div>
 
   <!-- STEP 1 警察 -->
-  <p class="fold-hint">👇 それぞれ押すと、くわしい中身がひらくよ</p>
-  <details class="fold step-card" id="protect">
+  
+  <div class="step-group"><p class="sg-title">🐾 保護したら、この順番で</p><p class="sg-hint">👇 押すと、くわしい中身がひらくよ</p>
+<details class="fold step-card" id="protect">
     <summary class="step-head">
       <div class="step-num">1</div>
       <div class="step-title">
@@ -394,6 +401,7 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
       </ul>
     </div>
   </details>
+</div>
 
   <details class="fold step-card" id="cat-tips" style="border-top:4px solid #8e44ad;">
     <summary class="cat-head"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐱 猫を見つけたとき</strong><span>連れて行く前に、ちょっと確認してね</span></div><span class="fold-ic" aria-hidden="true"></span></summary>

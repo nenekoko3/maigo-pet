@@ -260,6 +260,10 @@ details.fold>summary.cat-head img{width:42px!important;height:42px!important}
 details.fold>summary.cat-head strong{font-size:1.05rem!important}
 details.fold>summary.cat-head span{font-size:.86rem!important}
 details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height:1.8rem!important}
+.step-group{background:#fff;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;margin-bottom:1.3rem}
+.step-group .sg-title{margin:0;padding:.9rem 1rem .3rem;font-size:1.1rem;font-weight:700;line-height:1.45}
+.step-group .sg-hint{margin:0;padding:0 1rem .5rem;font-size:.85rem;color:#777}
+.step-group>details.fold.step-card{margin:0!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-top:1px solid #ececf3!important}
 </style>
 </head>
 <body>
@@ -324,8 +328,9 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
   </div>
 
   <!-- STEP 1 警察 -->
-  <p class="fold-hint">👇 それぞれ押すと、くわしい中身がひらくよ</p>
-  <details id="step1" class="fold step-card s1">
+  
+  <div class="step-group"><p class="sg-title">🚨 この順番で動こう</p><p class="sg-hint">👇 押すと、くわしい中身がひらくよ</p>
+<details id="step1" class="fold step-card s1">
     <summary class="step-head">
       <div class="step-num">1</div>
       <div class="step-title">
@@ -620,6 +625,7 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
       </a>
     </div>
   </details>
+</div>
 
   <div class="go-board"><div class="gb-top"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>もっと詳しく知りたいときは</strong><span>探し方のコツや、もう迷子にさせないための対策を、別のページにまとめたよ🐾</span></div></div><div class="go-list"><a class="g-search" href="search.html"><span class="ic">🔎</span><span>詳しい探し方<small>首輪が違っても確認を・マイクロチップ・気をつけたいこと</small></span><span class="ar">›</span></a><a class="g-guard" href="guard.html"><span class="ic">🛡️</span><span>迷子対策<small>花火・地震の日の備え、首輪・迷子札・マイクロチップ</small></span><span class="ar">›</span></a><div class="g-spread"><span class="ic">📣</span><span>迷子情報を地域に広める<span class="soon">準備中</span><small>公開はもう少し先</small></span></div></div></div>
 
