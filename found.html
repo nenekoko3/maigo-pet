@@ -197,6 +197,10 @@ details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height
 .step-group>details.fold.step-card{margin:0!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-top:1px solid #ececf3!important}
 details.fold>summary.cat-head img{display:none!important}
 details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5px solid #ee7a2e!important}
+.see-board{display:flex;gap:.9rem;align-items:center;background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem;margin-bottom:1.3rem;box-shadow:0 4px 14px rgba(0,0,0,.25);scroll-margin-top:.8rem}
+.see-board img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.see-board strong{display:block;color:#ffd54f;font-size:1.2rem;line-height:1.5;margin-bottom:.2rem}
+.see-board p{margin:.1rem 0;font-size:1rem;line-height:1.75}
 </style>
 </head>
 <body>
@@ -220,35 +224,10 @@ details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5
 </header>
 
 <main>
-  <div class="tips-hero">
-    <div class="th-top">
-      <img src="cat_icon.jpg" alt="ねねここ">
-      <div>
-        <strong>迷子ちゃんを見かけたら、<br>できることをやってみてね🐾</strong>
-        <span>あなたの一報が、飼い主さんとの再会につながります😭 どちらに近いか選んでね。</span>
-      </div>
-    </div>
-    <div class="th-choose">
-      <a href="#see">👁️ 見かけた<small>目撃したとき</small></a>
-      <a href="#protect">🐾 保護した<small>連れて帰った・預かった</small></a>
-    </div>
-  </div>
+  
 
   <!-- 目撃した場合のメッセージボード -->
-  <div class="witness-board" id="see">
-    <div class="witness-head">
-      <img src="cat_icon.jpg" alt="ねねここ">
-      <div class="witness-title">🐾 迷子を目撃したら</div>
-    </div>
-    <div class="witness-item">
-      <div class="w-num">1　警察へ連絡を</div>
-      <p>まだ🐶ちゃんがお近くにいて可能でしたら保護を、難しそうでしたら警察に保護依頼を。もう離れてしまっていても、警察・保健所・動物愛護センターへの情報提供をして頂けると、捜索中の飼い主さまに届いたり保護につながりやすくなります🙏</p>
-    </div>
-    <div class="witness-item">
-      <div class="w-num">2　SNSへ投稿を</div>
-      <p>お写真があれば付けて、なくても大丈夫です。目撃された場所・日時・🐶ちゃんの特徴・首輪の有無と色・向かっていった方向などをご投稿頂けると、捜索中の飼い主さまや地域の方に情報が届いたり保護につながりやすくなります🐾</p>
-    </div>
-  </div>
+  <div class="see-board" id="see"><img src="cat_icon.jpg" alt="ねねここ"><div><strong>🐾 迷子を目撃したら</strong><p>①まだ近くにいれば保護を。難しければ警察に保護をお願い。離れてしまっても、警察・保健所・センターに情報を。</p><p>②SNSに、場所・日時・特徴・首輪の色・向かった方向を投稿してね。</p></div></div>
 
   <!-- STEP 1 警察 -->
   
