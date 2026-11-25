@@ -16,7 +16,7 @@
   
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f0f4f8;color:#333;min-height:100vh;}
+body{font-family:var(--font);background:#f0f4f8;color:#1f1f1f;min-height:100vh;}
 
 /* ===== ヘッダー ===== */
 header{
@@ -30,32 +30,32 @@ header{
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
 .header-text h1{font-size:clamp(1.1rem,3.5vw,1.8rem);letter-spacing:0.08em;margin-bottom:0.3rem;
   text-shadow:0 1px 4px rgba(0,0,0,0.2);}
-.header-text p{font-size:0.82rem;opacity:0.88;line-height:1.7;}
+.header-text p{font-size:0.82rem;opacity:1;line-height:1.7;}
 
 /* ===== タブナビ ===== */
 .tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
 .tab-nav::-webkit-scrollbar{display:none;}
-.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#1f1f1f;}
 .tab-btn.soon{opacity:0.55;cursor:default;}
-.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
-.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-x{background:#dcd5ff;color:#333;}
-.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-tips{background:#ead5f5;color:#333;}
-.tab-btn.t-tips.active{background:#f5eaff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-found{background:#f0deff;color:#333;}
-.tab-btn.t-board{background:#e8d6ff;color:#333;}
-.tab-btn.t-shelter{background:#c1e0ff;color:#333;}
-.tab-btn.t-shelter.active{background:#e8f4ff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-x{background:#dcd5ff;color:#333;}
-.tab-btn.t-x.active{background:#eeeeff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-tips{background:#ead5f5;color:#333;}
-.tab-btn.t-tips.active{background:#f5eaff;color:#333;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
-.tab-btn.t-found{background:#f0deff;color:#333;}
-.tab-btn.t-board{background:#e8d6ff;color:#333;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#1f1f1f;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#1f1f1f;}
+.tab-btn.t-x.active{background:#eeeeff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ead5f5;color:#1f1f1f;}
+.tab-btn.t-tips.active{background:#f5eaff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#f0deff;color:#1f1f1f;}
+.tab-btn.t-board{background:#e8d6ff;color:#1f1f1f;}
+.tab-btn.t-shelter{background:#c1e0ff;color:#1f1f1f;}
+.tab-btn.t-shelter.active{background:#e8f4ff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-x{background:#dcd5ff;color:#1f1f1f;}
+.tab-btn.t-x.active{background:#eeeeff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-tips{background:#ead5f5;color:#1f1f1f;}
+.tab-btn.t-tips.active{background:#f5eaff;color:#1f1f1f;box-shadow:0 -2px 6px rgba(0,0,0,0.15);}
+.tab-btn.t-found{background:#f0deff;color:#1f1f1f;}
+.tab-btn.t-board{background:#e8d6ff;color:#1f1f1f;}
 
 main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
-.guide{text-align:center;font-size:0.86rem;color:#555;margin-bottom:1rem;
+.guide{text-align:center;font-size:0.86rem;color:#333;margin-bottom:1rem;
   padding:0.55rem 1rem;background:white;border-radius:50px;
   border:1.5px solid #a8d5a8;box-shadow:0 1px 5px rgba(0,0,0,0.08);}
 
@@ -99,10 +99,10 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .f-kagoshima{grid-column:1;grid-row:9/11;}.f-okinawa{grid-column:14/16;grid-row:10;}
 
 .legend{display:flex;flex-wrap:wrap;gap:0.4rem 0.85rem;justify-content:center;margin-top:1rem;}
-.leg{display:flex;align-items:center;gap:0.26rem;font-size:0.72rem;color:#555;}
+.leg{display:flex;align-items:center;gap:0.26rem;font-size:0.72rem;color:#333;}
 .leg-dot{width:12px;height:12px;border-radius:3px;border:1.5px solid #666;}
 
-.region-nav h2{font-family:var(--font);font-size:0.95rem;color:#666;
+.region-nav h2{font-family:var(--font);font-size:0.95rem;color:#3d3d3d;
   margin-bottom:0.9rem;text-align:center;letter-spacing:0.1em;}
 .regions{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:0.5rem;}
 .region-block h3{font-size:0.7rem;font-weight:700;color:white;
@@ -111,18 +111,18 @@ main{max-width:940px;margin:0 auto;padding:1.2rem 0.8rem 3rem;}
 .rh-cb{background:#c89818;}.rh-kk{background:#c0508a;}.rh-cg{background:#7040a8;}
 .rh-sk{background:#c07818;}.rh-ky{background:#c03838;}.rh-ok{background:#18a090;}
 .pref-btn{display:block;width:100%;text-align:left;background:white;border:1.5px solid #dde;
-  border-radius:50px;padding:0.38rem 0.75rem;font-size:0.79rem;color:#333;
+  border-radius:50px;padding:0.38rem 0.75rem;font-size:0.79rem;color:#1f1f1f;
   cursor:pointer;text-decoration:none;margin-bottom:0.2rem;
   transition:background 0.13s,border-color 0.13s;font-family:var(--font);}
 .pref-btn:hover{background:#e8f5e9;border-color:#4a9a4a;color:#1a5a1a;}
 
-footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
+footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#555;
   border-top:1px solid var(--border);font-family:var(--font);}
 
 .pref-list{display:none;background:#fff;border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,0.11);padding:0.9rem 0.9rem 0.5rem;margin-bottom:1.2rem;}
 .pref-list h2{font-size:0.95rem;margin:0 0 0.6rem;}
 .pl-row{display:flex;align-items:flex-start;gap:0.5rem;margin-bottom:0.55rem;}
-.pl-reg{flex:0 0 3.4em;font-size:0.78rem;font-weight:700;padding-top:0.5rem;color:#444;}
+.pl-reg{flex:0 0 3.4em;font-size:0.78rem;font-weight:700;padding-top:0.5rem;color:#2b2b2b;}
 .pl-btns{display:flex;flex-wrap:wrap;gap:0.35rem;min-width:0;}
 .pl-btns a{display:inline-block;padding:0.5rem 0.75rem;border:2px solid #555;border-radius:8px;font-size:0.88rem;font-weight:700;color:#222;text-decoration:none;}
 .pl-btns a:active{opacity:0.7;}
@@ -131,7 +131,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
 .map-hero img{width:64px;height:64px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .map-hero strong{display:block;font-size:1.02rem;line-height:1.4;margin-bottom:0.3rem;}
 .map-hero span{display:block;font-size:0.8rem;line-height:1.6;opacity:0.95;}
-.x-bar{display:flex;align-items:center;gap:0.6rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:0.6rem 0.9rem;margin-bottom:0.9rem;text-decoration:none;color:#333;font-size:0.84rem;line-height:1.5;}
+.x-bar{display:flex;align-items:center;gap:0.6rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:0.6rem 0.9rem;margin-bottom:0.9rem;text-decoration:none;color:#1f1f1f;font-size:0.84rem;line-height:1.5;}
 .x-bar:hover{background:#eee;border-color:#555;}
 .x-bar .x-i{font-size:1.3rem;flex-shrink:0;font-weight:700;}
 .x-bar strong{font-weight:700;}
@@ -146,7 +146,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
 }
 .map-message img{width:40px;height:40px;border-radius:50%;background:white;padding:3px;flex-shrink:0;}
 .map-message-text{font-size:0.7rem;line-height:1.7;font-weight:700;}
-.map-message-text span{display:block;font-size:0.62rem;font-weight:400;opacity:0.85;margin-top:0.15rem;}
+.map-message-text span{display:block;font-size:0.62rem;font-weight:400;opacity:1;margin-top:0.15rem;}
 .map-wrap{position:relative;}
 /* 新タブ(5つ・全部見える・ページごとの色) */
 .tab-nav{max-width:940px;margin:0 auto;display:flex;gap:4px;overflow:visible;padding:0.5rem 0.4rem 0;}
@@ -176,13 +176,13 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
 .s-search{background:#1f9a63}.s-spread{background:#0b7a9b}.s-guard{background:#6c45c9}
 .sub-btn.active{box-shadow:inset 0 -4px 0 #ffd54f}
 .pl-nav{margin:1.6rem 0 .6rem}
-.pl-nav h2{font-size:.95rem;color:#666;text-align:center;margin:0 0 .8rem;letter-spacing:.1em}
+.pl-nav h2{font-size:.95rem;color:#3d3d3d;text-align:center;margin:0 0 .8rem;letter-spacing:.1em}
 .pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-.pl-btn{display:flex;flex-direction:column;gap:.15rem;background:#fff;border-radius:12px;border-left:6px solid var(--c);padding:.7rem .75rem;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.08);min-width:0}
+.pl-btn{display:flex;flex-direction:column;gap:.15rem;background:#fff;border-radius:12px;border-left:6px solid var(--c);padding:.7rem .75rem;text-decoration:none;color:#1f1f1f;box-shadow:0 2px 8px rgba(0,0,0,.08);min-width:0}
 .pl-btn b{font-size:.98rem;color:var(--c);line-height:1.4}
-.pl-btn span{font-size:.78rem;line-height:1.55;color:#555}
+.pl-btn span{font-size:.78rem;line-height:1.55;color:#333}
 @media(min-width:641px){.pl-grid{grid-template-columns:repeat(4,1fr)}}
-.map-hint{font-size:.8rem;color:#666;text-align:right;margin:0 .3rem .35rem}</style>
+.map-hint{font-size:.8rem;color:#3d3d3d;text-align:right;margin:0 .3rem .35rem}body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>
@@ -304,7 +304,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.73rem;color:#888;
   <p>🐾 迷子のペットが早く見つかりますように</p>
   <p style="margin-top:0.3rem">掲載内容は各自治体の公式情報をご確認ください</p>
 
-  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/index.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
+  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#3d3d3d">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/index.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
 </footer>
 <script>
 const names={

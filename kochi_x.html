@@ -9,12 +9,12 @@
 :root{--font:'Kosugi Maru',sans-serif;--border:#dde;--radius:12px;
   --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;--kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;--cs:50px;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+body{font-family:var(--font);background:#f5f7fa;color:#1f1f1f;min-height:100vh;}
 header{background:linear-gradient(135deg,#111,#333);color:white;padding:1.4rem 1rem 0;}
 .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
 .header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
-.header-text .breadcrumb{font-size:0.76rem;opacity:0.75;margin-bottom:0.3rem;}
+.header-text .breadcrumb{font-size:0.76rem;opacity:1;margin-bottom:0.3rem;}
 .header-text .breadcrumb a{color:white;text-decoration:none;}
 .header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
 .header-text p{font-size:0.8rem;opacity:0.82;}
@@ -37,13 +37,13 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .xs-head{display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1rem;background:linear-gradient(90deg,#b8b0f0,#e3dfff);color:#1f1a4a;font-weight:700;font-size:0.95rem;}
 .xs-head img{width:34px;height:34px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 1px 4px rgba(0,0,0,0.2);flex-shrink:0;}
 .xs-body{padding:0.9rem 1rem 1rem;}
-.xs-body p{font-size:0.8rem;line-height:1.7;color:#444;margin-bottom:0.7rem;}
+.xs-body p{font-size:0.8rem;line-height:1.7;color:#2b2b2b;margin-bottom:0.7rem;}
 .xs-body label{display:block;font-size:0.8rem;font-weight:700;color:#1f1a4a;margin:0.5rem 0 0.25rem;}
 .xs-body select,.xs-body input{width:100%;font-size:1rem;padding:0.6rem 0.7rem;border:2px solid #c9c3f5;border-radius:10px;background:#fff;color:#222;font-family:inherit;}
 .xs-body select:focus,.xs-body input:focus{outline:none;border-color:#6c4fd0;}
 .xs-go{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.9rem;background:#1f1a4a;color:#fff;text-decoration:none;font-weight:700;font-size:0.98rem;padding:0.75rem 1rem;border-radius:999px;}
 .xs-go:hover{background:#34308a;}
-.xs-note{margin-top:0.6rem;font-size:0.72rem;color:#666;line-height:1.6;}
+.xs-note{margin-top:0.6rem;font-size:0.72rem;color:#3d3d3d;line-height:1.6;}
 .note{background:#fffbe6;border-left:4px solid #f6ad55;border-radius:0 var(--radius) var(--radius) 0;padding:0.75rem 1rem;font-size:0.82rem;color:#7a4000;margin-bottom:1.3rem;line-height:1.75;}
 .note a{color:#c05a00;font-weight:700;text-decoration:none;}
 .section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
@@ -71,7 +71,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .search-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.38rem;}
 .s-card{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;background:#fafafa;border:1px solid var(--border);border-radius:8px;padding:0.48rem 0.65rem;}
 .s-word{font-size:0.81rem;font-weight:700;color:#222;flex:1;}
-.s-word span{font-size:0.69rem;font-weight:400;color:#888;display:block;margin-top:0.06rem;}
+.s-word span{font-size:0.69rem;font-weight:400;color:#555;display:block;margin-top:0.06rem;}
 .s-btn{display:inline-flex;align-items:center;background:#111;color:white;padding:0.25rem 0.6rem;border-radius:50px;font-size:0.72rem;font-weight:700;text-decoration:none;flex-shrink:0;font-family:var(--font);white-space:nowrap;}
 .s-btn:hover{background:#444;}
 .s-btn.ht{background:#1a6a3a;}
@@ -107,14 +107,14 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .f-kumamoto{grid-column:2;grid-row:8;}.f-miyazaki{grid-column:2;grid-row:9;}
 .f-kagoshima{grid-column:1;grid-row:9/11;}.f-okinawa{grid-column:14/16;grid-row:10;}
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;padding-bottom:0.5rem;}
-.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#333;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
 .bottom-banner{display:flex;align-items:flex-start;gap:0.8rem;background:#ebf4ff;border:2px solid #90c2f5;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#1a365d;transition:border-color 0.15s;}
 .bottom-banner:hover{border-color:#2b6cb0;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
 .bottom-banner .bb-text span{font-size:0.79rem;color:#2c5282;line-height:1.7;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
-footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#555;border-top:1px solid var(--border);}
 
 .sns-section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
 .sns-section-head{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
@@ -153,7 +153,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .sub-btn{flex:1 1 0;min-width:0;text-align:center;text-decoration:none;font-weight:700;font-size:clamp(.68rem,3vw,.8rem);line-height:1.3;padding:.45rem .1rem;border-radius:0 0 12px 12px;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .s-search{background:#1f9a63}.s-spread{background:#0b7a9b}.s-guard{background:#6c45c9}
 .sub-btn.active{box-shadow:inset 0 -4px 0 #ffd54f}
-</style>
+body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>
@@ -357,7 +357,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   <p>🐾 迷子のペットが早く見つかりますように</p>
   <p style="margin-top:0.3rem">掲載内容は各自治体・各団体の公式情報をご確認ください</p>
 
-  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/kochi_x.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
+  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#3d3d3d">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/kochi_x.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
 </footer>
 </body>
 </html>

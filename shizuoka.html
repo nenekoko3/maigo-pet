@@ -9,7 +9,7 @@
 :root{--font:'Kosugi Maru',sans-serif;--blue:#2b6cb0;--blue-light:#ebf4ff;--border:#dde;--radius:12px;
   --hk:#7ec8e3;--th:#88cc88;--kt:#a8bfe8;--cb:#f5d78e;--kk:#f5a8c8;--cg:#c8a8e8;--sk:#f5c87a;--ky:#f59898;--ok:#7adcd0;--cs:50px;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+body{font-family:var(--font);background:#f5f7fa;color:#1f1f1f;min-height:100vh;}
 header{background:linear-gradient(135deg,#004d7a,#008793);color:white;padding:1.2rem 1rem;}
 .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;}
 .header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
@@ -17,15 +17,15 @@ header{background:linear-gradient(135deg,#004d7a,#008793);color:white;padding:1.
 .header-text .breadcrumb{font-size:0.76rem;opacity:0.78;margin-bottom:0.3rem;}
 .header-text .breadcrumb a{color:white;text-decoration:none;}
 .header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
-.header-text p{font-size:0.8rem;opacity:0.85;}
+.header-text p{font-size:0.8rem;opacity:1;}
 main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .back-btn{display:inline-flex;align-items:center;gap:0.4rem;background:var(--blue);color:white;padding:0.55rem 1.1rem;border-radius:50px;text-decoration:none;font-size:0.83rem;font-weight:700;margin-bottom:1.2rem;transition:background 0.14s;font-family:var(--font);}
 .back-btn:hover{background:#1a4a8a;}
-.x-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:0.85rem 1.1rem;margin-bottom:1rem;text-decoration:none;color:#333;transition:border-color 0.15s,background 0.15s;}
+.x-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:0.85rem 1.1rem;margin-bottom:1rem;text-decoration:none;color:#1f1f1f;transition:border-color 0.15s,background 0.15s;}
 .x-banner:hover{border-color:#555;background:#eee;}
 .x-banner .xi{font-size:1.5rem;flex-shrink:0;}
 .x-banner .xt strong{display:block;font-size:0.9rem;margin-bottom:0.15rem;}
-.x-banner .xt span{font-size:0.78rem;color:#555;}
+.x-banner .xt span{font-size:0.78rem;color:#333;}
 .x-banner .xa{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 .note{background:#fffbe6;border-left:4px solid #f6ad55;border-radius:0 var(--radius) var(--radius) 0;padding:0.75rem 1rem;font-size:0.82rem;color:#7a4000;margin-bottom:1.3rem;line-height:1.75;}
 .section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.4rem;overflow:hidden;}
@@ -33,7 +33,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .section-head img{width:26px;height:26px;object-fit:contain;}
 .tbl-wrap{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:0.83rem;}
-th{background:#f0f4f8;padding:0.58rem 0.8rem;text-align:left;font-weight:700;color:#555;border-bottom:2px solid var(--border);white-space:nowrap;}
+th{background:#f0f4f8;padding:0.58rem 0.8rem;text-align:left;font-weight:700;color:#333;border-bottom:2px solid var(--border);white-space:nowrap;}
 td{padding:0.65rem 0.8rem;border-bottom:1px solid var(--border);vertical-align:top;}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:#fafbff;}
@@ -66,7 +66,7 @@ tr:hover td{background:#fafbff;}
 .board-card:last-child{border-bottom:none;}
 .board-info{flex:1;}
 .board-name{font-weight:700;font-size:0.88rem;margin-bottom:0.1rem;}
-.board-desc{font-size:0.76rem;color:#666;}
+.board-desc{font-size:0.76rem;color:#3d3d3d;}
 .map-section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.4rem;overflow:hidden;}
 .map-section-head{padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f0f8f0;color:#276749;border-bottom:2px solid var(--border);}
 .map-wrap{overflow-x:auto;padding:1rem 0.8rem 0.8rem;}
@@ -100,7 +100,7 @@ tr:hover td{background:#fafbff;}
 .f-kumamoto{grid-column:2;grid-row:8;}.f-miyazaki{grid-column:2;grid-row:9;}
 .f-kagoshima{grid-column:1;grid-row:9/11;}.f-okinawa{grid-column:14/16;grid-row:10;}
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;margin-top:0.7rem;padding-bottom:0.5rem;}
-.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#333;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
 .x-hero{display:flex;align-items:center;gap:1rem;background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:0.6rem;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.28);transition:transform 0.12s,box-shadow 0.12s;}
 .x-hero:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.35);}
@@ -112,14 +112,14 @@ tr:hover td{background:#fafbff;}
 .rin-row{font-size:0.84rem;margin:-0.5rem 0 1rem;text-align:right;}
 .rin-row a{color:#2060a0;}
 .x-subrow{display:flex;flex-wrap:wrap;gap:0.4rem 1rem;justify-content:space-between;font-size:0.8rem;margin:0 0 1rem;}
-.x-subrow a{color:#444;}
+.x-subrow a{color:#2b2b2b;}
 .x-subrow .here{color:#2d5a2d;font-weight:700;}
-.bottom-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#333;transition:border-color 0.15s;}
+.bottom-banner{display:flex;align-items:center;gap:0.8rem;background:#f7f7f7;border:2px solid #bbb;border-radius:var(--radius);padding:1rem 1.2rem;text-decoration:none;color:#1f1f1f;transition:border-color 0.15s;}
 .bottom-banner:hover{border-color:#555;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
-.bottom-banner .bb-text span{font-size:0.79rem;color:#555;line-height:1.65;}
+.bottom-banner .bb-text span{font-size:0.79rem;color:#333;line-height:1.65;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
-footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#555;border-top:1px solid var(--border);}
 
 .tab-nav{max-width:900px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding-bottom:0;}
 .tab-nav::-webkit-scrollbar{display:none;}
@@ -149,7 +149,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .sub-btn{flex:1 1 0;min-width:0;text-align:center;text-decoration:none;font-weight:700;font-size:clamp(.68rem,3vw,.8rem);line-height:1.3;padding:.45rem .1rem;border-radius:0 0 12px 12px;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .s-search{background:#1f9a63}.s-spread{background:#0b7a9b}.s-guard{background:#6c45c9}
 .sub-btn.active{box-shadow:inset 0 -4px 0 #ffd54f}
-</style>
+body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>
@@ -341,7 +341,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
 </main>
 <footer><p>🐾 迷子のペットが早く見つかりますように</p><p style="margin-top:0.3rem">掲載内容は各自治体の公式情報をご確認ください</p>
-  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/shizuoka.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
+  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#3d3d3d">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/shizuoka.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
 </footer>
 </body>
 </html>

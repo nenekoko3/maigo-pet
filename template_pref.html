@@ -15,7 +15,7 @@
   --cs:50px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+body{font-family:var(--font);background:#f5f7fa;color:#1f1f1f;min-height:100vh;}
 
 /* ヘッダー */
 header{
@@ -30,7 +30,7 @@ header{
 .header-text .breadcrumb a{color:white;text-decoration:none;}
 .header-text .breadcrumb a:hover{text-decoration:underline;}
 .header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
-.header-text p{font-size:0.8rem;opacity:0.85;}
+.header-text p{font-size:0.8rem;opacity:1;}
 
 main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 
@@ -49,13 +49,13 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
   display:flex;align-items:center;gap:0.8rem;
   background:#f7f7f7;border:2px solid #bbb;
   border-radius:var(--radius);padding:0.85rem 1.1rem;
-  margin-bottom:1rem;text-decoration:none;color:#333;
+  margin-bottom:1rem;text-decoration:none;color:#1f1f1f;
   transition:border-color 0.15s,background 0.15s;
 }
 .x-banner:hover{border-color:#555;background:#eee;}
 .x-banner .xi{font-size:1.5rem;flex-shrink:0;}
 .x-banner .xt strong{display:block;font-size:0.9rem;margin-bottom:0.15rem;}
-.x-banner .xt span{font-size:0.78rem;color:#555;}
+.x-banner .xt span{font-size:0.78rem;color:#333;}
 .x-banner .xa{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 
 /* 注意書き */
@@ -76,12 +76,12 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .tbl-wrap{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:0.83rem;}
 th{background:#f0f4f8;padding:0.58rem 0.8rem;text-align:left;
-  font-weight:700;color:#555;border-bottom:2px solid var(--border);white-space:nowrap;}
+  font-weight:700;color:#333;border-bottom:2px solid var(--border);white-space:nowrap;}
 td{padding:0.65rem 0.8rem;border-bottom:1px solid var(--border);vertical-align:top;}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:#fafbff;}
 .shelter-name{font-weight:700;font-size:0.87rem;margin-bottom:0.15rem;}
-.shelter-sub{font-size:0.73rem;color:#999;}
+.shelter-sub{font-size:0.73rem;color:#666;}
 .city-tags{display:flex;flex-wrap:wrap;gap:0.22rem;}
 .city-tag{background:#f0f4f8;border:1px solid #ccd;border-radius:50px;
   padding:0.15rem 0.48rem;font-size:0.71rem;color:#445;}
@@ -150,22 +150,22 @@ tr:hover td{background:#fafbff;}
   display:flex;align-items:center;gap:0.8rem;
   background:#f7f7f7;border:2px solid #bbb;
   border-radius:var(--radius);padding:1rem 1.2rem;
-  text-decoration:none;color:#333;transition:border-color 0.15s;
+  text-decoration:none;color:#1f1f1f;transition:border-color 0.15s;
 }
 .bottom-banner:hover{border-color:#555;}
 .bottom-banner .bb-text strong{display:block;font-size:0.9rem;margin-bottom:0.25rem;}
-.bottom-banner .bb-text span{font-size:0.79rem;color:#555;line-height:1.65;}
+.bottom-banner .bb-text span{font-size:0.79rem;color:#333;line-height:1.65;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;}
 
 /* 凡例 */
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;
   margin-top:0.7rem;padding-bottom:0.5rem;}
-.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#333;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
 
-footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#555;
   border-top:1px solid var(--border);}
-</style>
+body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>

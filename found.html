@@ -8,16 +8,16 @@
 <style>
 :root{--font:'M PLUS Rounded 1c',sans-serif;--radius:12px;--border:#dde;--orange:#ff6600;}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
-header{background:#ff6600;color:#333;padding:1.4rem 1rem 0;}
+body{font-family:var(--font);background:#f5f7fa;color:#1f1f1f;min-height:100vh;}
+header{background:#ff6600;color:#1f1f1f;padding:1.4rem 1rem 0;}
 .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding-bottom:0.8rem;}
 .header-icon{width:62px;height:62px;border-radius:50%;background:white;padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
 .header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
-.header-text p{font-size:0.8rem;opacity:0.88;line-height:1.6;}
+.header-text p{font-size:0.8rem;opacity:1;line-height:1.6;}
 .tab-nav{max-width:940px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0.5rem 0.5rem 0;gap:0.35rem;}
 .tab-nav::-webkit-scrollbar{display:none;}
-.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#333;}
+.tab-btn{display:flex;align-items:center;gap:0.3rem;padding:0.45rem 0.85rem;font-family:var(--font);font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:8px 8px 0 0;white-space:nowrap;transition:all 0.15s;flex-shrink:0;color:#1f1f1f;}
 .tab-btn.soon{opacity:0.55;cursor:default;}
 .tab-btn.t-shelter{background:#c1e0ff;}
 .tab-btn.t-x{background:#dcd5ff;}
@@ -33,7 +33,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;flex-shrink:0;background:#ff6600;}
 .step-title{flex:1;}
 .step-title strong{display:block;font-size:1rem;margin-bottom:0.15rem;}
-.step-title span{font-size:0.78rem;color:#666;}
+.step-title span{font-size:0.78rem;color:#3d3d3d;}
 .badge{background:#ff6600;color:white;font-size:0.72rem;font-weight:700;padding:0.18rem 0.55rem;border-radius:50px;flex-shrink:0;}
 .step-body{padding:0 1.3rem 1.2rem;}
 .alert-box{background:#fff8e1;border-left:4px solid #ff9800;border-radius:0 8px 8px 0;padding:0.7rem 1rem;margin-bottom:0.9rem;font-size:0.82rem;color:#7a4000;line-height:1.75;}
@@ -44,7 +44,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;font-family:var(--font);}
 .link-btn.orange{background:#fff3e0;color:#c04000;border:1.5px solid #ffcc80;}
 .link-btn .li{font-size:1.2rem;flex-shrink:0;}
-.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:0.75;margin-top:0.1rem;}
+.link-btn .lt span{display:block;font-size:0.7rem;font-weight:400;opacity:1;margin-top:0.1rem;}
 .template-box{background:#f8f8f8;border:1.5px solid #dde;border-radius:10px;padding:1rem 1.1rem;margin-bottom:0.8rem;font-size:0.83rem;line-height:2;position:relative;}
 .template-box pre{white-space:pre-wrap;font-family:var(--font);}
 .copy-btn{position:absolute;top:0.6rem;right:0.6rem;background:#ff6600;color:white;border:none;border-radius:50px;padding:0.28rem 0.75rem;font-size:0.73rem;font-weight:700;cursor:pointer;font-family:var(--font);}
@@ -54,17 +54,17 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .tips-list li .ti{font-size:1.3rem;flex-shrink:0;padding-top:0.05rem;}
 .tips-list li strong{display:block;font-weight:700;margin-bottom:0.15rem;}
 
-footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#555;border-top:1px solid var(--border);}
 
 .witness-board{background:#e8874a;border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1.3rem;box-shadow:0 4px 14px rgba(200,80,0,0.3);}
 .witness-head{display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem;}
 .witness-head img{width:48px;height:48px;border-radius:50%;background:white;padding:4px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
 .witness-title{color:white;font-size:1rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.2);}
-.witness-item{background:white;border-radius:4px;padding:0.85rem 1rem;margin-bottom:0.8rem;color:#333;position:relative;box-shadow:2px 3px 8px rgba(0,0,0,0.2);}
+.witness-item{background:white;border-radius:4px;padding:0.85rem 1rem;margin-bottom:0.8rem;color:#1f1f1f;position:relative;box-shadow:2px 3px 8px rgba(0,0,0,0.2);}
 .witness-item::before{content:'📌';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:1.1rem;}
 .witness-item:last-child{margin-bottom:0;}
 .witness-item .w-num{font-size:0.75rem;font-weight:700;color:#ff6600;display:block;margin-bottom:0.4rem;}
-.witness-item p{font-size:0.78rem;line-height:1.8;color:#333;}
+.witness-item p{font-size:0.78rem;line-height:1.8;color:#1f1f1f;}
 /* デカニャン案内カード・追加カード */
 .tips-hero{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem 1.1rem 1rem;margin-bottom:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,0.28);}
 .th-top{display:flex;align-items:center;gap:1rem;}
@@ -73,11 +73,11 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .th-top span{display:block;font-size:0.92rem;line-height:1.75;opacity:0.95;}
 .th-choose{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.9rem;}
 .th-choose a{display:block;text-align:center;background:#fff;color:#111;text-decoration:none;font-weight:700;font-size:1rem;line-height:1.5;padding:0.8rem 0.5rem;border-radius:12px;}
-.th-choose a small{display:block;font-size:0.75rem;font-weight:400;color:#555;}
+.th-choose a small{display:block;font-size:0.75rem;font-weight:400;color:#333;}
 .cat-head{display:flex;align-items:center;gap:0.8rem;padding:1rem 1.3rem 0.4rem;}
 .cat-head img{width:52px;height:52px;border-radius:50%;background:#fff;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);border:2px solid #eee;}
 .cat-head strong{display:block;font-size:1.12rem;line-height:1.5;}
-.cat-head span{display:block;font-size:0.88rem;color:#666;line-height:1.6;}
+.cat-head span{display:block;font-size:0.88rem;color:#3d3d3d;line-height:1.6;}
 .plain-list{list-style:none;padding:0;margin:0.2rem 0 0.4rem;}
 .plain-list li{padding:0.6rem 0;border-bottom:1px solid var(--border,#dde);font-size:0.96rem;line-height:1.85;}
 .plain-list li:last-child{border-bottom:none;}
@@ -129,7 +129,7 @@ body{line-height:1.8;}
 .link-btn.dark{background:#1a1a2e!important;}
 .link-btn[style*="ffe3ee"]{background:#e0568c!important;}
 .link-btn[style*="background:white"]{background:#2f6fb5!important;}
-.link-btn .lt span{opacity:0.92!important;}
+.link-btn .lt span{opacity:1!important;}
 .tag{background:#2f6fb5!important;border-color:#2f6fb5!important;color:#fff!important;}
 .police-link{background:#fff!important;border:2px solid #1a1a2e!important;color:#1a1a2e!important;font-weight:700;}
 .police-link:hover{background:#eef0ff!important;}
@@ -160,7 +160,7 @@ details.fold>summary::-webkit-details-marker{display:none}
 details.fold>summary .fold-ic{position:absolute;right:1rem;top:1.1rem;width:2rem;height:2rem;border-radius:50%;background:var(--fold,#e74c3c);color:#fff;display:grid;place-items:center;font-size:1.1rem;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2)}
 details.fold>summary .fold-ic::before{content:"＋"}
 details.fold[open]>summary .fold-ic::before{content:"－"}
-.fold-hint{font-size:.88rem;color:#666;margin:.2rem .3rem .7rem}
+.fold-hint{font-size:.88rem;color:#3d3d3d;margin:.2rem .3rem .7rem}
 /* ニャンの案内ボード */
 .go-board{background:#1a1a2e;color:#fff;border-radius:var(--radius);padding:1.1rem;margin:1.4rem 0;box-shadow:0 4px 14px rgba(0,0,0,.28)}
 .go-board .gb-top{display:flex;gap:1rem;align-items:center}
@@ -193,7 +193,7 @@ details.fold>summary.cat-head span{font-size:.86rem!important}
 details.fold>summary .fold-ic{top:.85rem!important;width:1.8rem!important;height:1.8rem!important}
 .step-group{background:#fff;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden;margin-bottom:1.3rem}
 .step-group .sg-title{margin:0;padding:.9rem 1rem .3rem;font-size:1.1rem;font-weight:700;line-height:1.45}
-.step-group .sg-hint{margin:0;padding:0 1rem .5rem;font-size:.85rem;color:#777}
+.step-group .sg-hint{margin:0;padding:0 1rem .5rem;font-size:.85rem;color:#4a4a4a}
 .step-group>details.fold.step-card{margin:0!important;border-radius:0!important;box-shadow:none!important;border:0!important;border-top:1px solid #ececf3!important}
 details.fold>summary.cat-head img{display:none!important}
 details.fold.step-card[style*="border-top"]{border-top:0!important;border-left:5px solid #ee7a2e!important}
@@ -217,7 +217,7 @@ details.fold>summary .pink-tag{grid-column:2;justify-self:start;display:inline-b
 .sub-btn{flex:1 1 0;min-width:0;text-align:center;text-decoration:none;font-weight:700;font-size:clamp(.68rem,3vw,.8rem);line-height:1.3;padding:.45rem .1rem;border-radius:0 0 12px 12px;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .s-search{background:#1f9a63}.s-spread{background:#0b7a9b}.s-guard{background:#6c45c9}
 .sub-btn.active{box-shadow:inset 0 -4px 0 #ffd54f}
-</style>
+body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>
@@ -308,8 +308,8 @@ details.fold>summary .pink-tag{grid-column:2;justify-self:start;display:inline-b
       <div class="badge">拡散を！</div>
     <span class="fold-ic" aria-hidden="true"></span></summary>
     <div class="step-body">
-      <p style="font-size:0.84rem;color:#555;margin-bottom:0.8rem;">【】の中を書き換えてね！</p>
-      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">👁️ 目撃した場合</p>
+      <p style="font-size:0.84rem;color:#333;margin-bottom:0.8rem;">【】の中を書き換えてね！</p>
+      <p style="font-size:0.8rem;font-weight:700;color:#1f1f1f;margin-bottom:0.4rem;">👁️ 目撃した場合</p>
       <div class="alert-box" style="background:#eef6ff;border-left-color:#2980b9;color:#1a3a5a;">
         🔒 <strong>投稿には、あえて書かない特徴を残しておきましょう。</strong><br>
         首輪の細かい特徴、体の傷やあざ、模様の一部、マイクロチップの番号など、<strong>本当の飼い主さんだけが答えられること</strong>を全部は出さず、問い合わせてきた方に質問して確認すると、なりすまし防止になります。
@@ -326,7 +326,7 @@ details.fold>summary .pink-tag{grid-column:2;justify-self:start;display:inline-b
 
 #迷子犬 #迷子猫 #目撃情報 #【都道府県名】</pre>
       </div>
-      <p style="font-size:0.8rem;font-weight:700;color:#333;margin-bottom:0.4rem;">🐾 保護した場合</p>
+      <p style="font-size:0.8rem;font-weight:700;color:#1f1f1f;margin-bottom:0.4rem;">🐾 保護した場合</p>
       <div class="template-box">
         <button class="copy-btn">コピー</button>
         <pre>🐾保護しています🐾
@@ -460,7 +460,7 @@ details.fold>summary .pink-tag{grid-column:2;justify-self:start;display:inline-b
 <footer>
   <p>🐾 迷子のペットが早く見つかりますように</p>
 
-  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#666">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/found.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
+  <p style="text-align:center;margin:1rem 0 1.2rem;font-size:.85rem;color:#3d3d3d">🐾 ここまでに来てくれた人の数 <img src="https://hits.sh/nenekoko3.github.io/maigo-pet/found.html.svg?style=flat-square&label=%E8%A8%AA%E5%95%8F&color=008793&extraCount=0" alt="訪問カウンター" style="vertical-align:middle;margin-left:.3rem;height:20px"></p>
 </footer>
 <script>
 (function(){
