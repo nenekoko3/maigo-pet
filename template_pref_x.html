@@ -14,14 +14,14 @@
   --cs:50px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font);background:#f5f7fa;color:#333;min-height:100vh;}
+body{font-family:var(--font);background:#f5f7fa;color:#1f1f1f;min-height:100vh;}
 
 header{background:linear-gradient(135deg,#111,#333);color:white;padding:1.2rem 1rem;}
 .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1rem;}
 .header-icon{width:62px;height:62px;border-radius:50%;background:white;
   padding:5px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
 .header-icon img{width:100%;height:100%;object-fit:contain;border-radius:50%;}
-.header-text .breadcrumb{font-size:0.76rem;opacity:0.75;margin-bottom:0.3rem;}
+.header-text .breadcrumb{font-size:0.76rem;opacity:1;margin-bottom:0.3rem;}
 .header-text .breadcrumb a{color:white;text-decoration:none;}
 .header-text .breadcrumb a:hover{text-decoration:underline;}
 .header-text h1{font-size:clamp(1.1rem,3.2vw,1.6rem);letter-spacing:0.05em;margin-bottom:0.2rem;}
@@ -56,7 +56,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .section-head{display:flex;align-items:center;gap:0.5rem;
   padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;
   background:#f7f7f7;border-bottom:2px solid var(--border);}
-.section-note{font-size:0.78rem;color:#888;padding:0.5rem 1.2rem 0;font-weight:400;}
+.section-note{font-size:0.78rem;color:#555;padding:0.5rem 1.2rem 0;font-weight:400;}
 
 /* Xアカウントカード */
 .x-list{padding:0.6rem 1rem;}
@@ -66,9 +66,9 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .xc-num{font-size:0.72rem;color:#bbb;width:1.2rem;flex-shrink:0;text-align:right;}
 .xc-info{flex:1;min-width:0;}
 .xc-name{font-weight:700;font-size:0.88rem;margin-bottom:0.15rem;}
-.xc-desc{font-size:0.77rem;color:#666;line-height:1.55;}
+.xc-desc{font-size:0.77rem;color:#3d3d3d;line-height:1.55;}
 .x-tag{display:inline-block;background:#f0f0f0;border-radius:50px;
-  padding:0.13rem 0.45rem;font-size:0.69rem;color:#555;margin-right:0.2rem;}
+  padding:0.13rem 0.45rem;font-size:0.69rem;color:#333;margin-right:0.2rem;}
 .x-link{display:inline-flex;align-items:center;gap:0.22rem;
   background:#111;color:white;padding:0.32rem 0.75rem;border-radius:50px;
   font-size:0.77rem;font-weight:700;text-decoration:none;flex-shrink:0;
@@ -96,7 +96,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
   padding:0.5rem 0.65rem;
 }
 .s-word{font-size:0.82rem;font-weight:700;color:#222;flex:1;}
-.s-word span{font-size:0.7rem;font-weight:400;color:#888;display:block;margin-top:0.08rem;}
+.s-word span{font-size:0.7rem;font-weight:400;color:#555;display:block;margin-top:0.08rem;}
 .s-btn{
   display:inline-flex;align-items:center;gap:0.18rem;
   background:#111;color:white;padding:0.26rem 0.62rem;border-radius:50px;
@@ -151,7 +151,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 
 .legend{display:flex;flex-wrap:wrap;gap:0.35rem 0.7rem;justify-content:center;
   margin-top:0.7rem;padding-bottom:0.5rem;}
-.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#555;}
+.leg{display:flex;align-items:center;gap:0.22rem;font-size:0.68rem;color:#333;}
 .leg-dot{width:11px;height:11px;border-radius:2px;border:1.5px solid #666;}
 
 .bottom-banner{display:flex;align-items:flex-start;gap:0.8rem;
@@ -162,7 +162,7 @@ main{max-width:900px;margin:0 auto;padding:1.2rem 1rem 3rem;}
 .bottom-banner .bb-text span{font-size:0.79rem;color:#2c5282;line-height:1.7;}
 .bottom-banner .bb-arr{margin-left:auto;font-size:1.1rem;flex-shrink:0;padding-top:0.2rem;}
 
-footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:1px solid var(--border);}
+footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#555;border-top:1px solid var(--border);}
 
 .sns-section{background:white;border-radius:var(--radius);box-shadow:0 2px 12px rgba(0,0,0,0.08);margin-bottom:1.3rem;overflow:hidden;}
 .sns-section-head{display:flex;align-items:center;gap:0.5rem;padding:0.85rem 1.2rem;font-size:0.98rem;font-weight:700;background:#f7f7f7;border-bottom:2px solid var(--border);}
@@ -179,7 +179,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .other-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.5rem;padding:0.8rem 1rem 1rem;}
 .other-link-btn{display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1rem;border-radius:10px;text-decoration:none;font-size:0.84rem;font-weight:700;background:#f0f6ff;color:#1a4a8a;border:1.5px solid #90c2f5;}
 .other-link-btn:hover{background:#dbeafe;}
-</style>
+body{-webkit-text-stroke:.25px currentColor}</style>
 </head>
 <body>
 <header>
