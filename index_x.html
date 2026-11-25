@@ -223,7 +223,14 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
 .sub-btn{flex:1 1 0;min-width:0;text-align:center;text-decoration:none;font-weight:700;font-size:clamp(.68rem,3vw,.8rem);line-height:1.3;padding:.45rem .1rem;border-radius:0 0 12px 12px;color:#fff!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .s-search{background:#1f9a63}.s-spread{background:#0b7a9b}.s-guard{background:#6c45c9}
 .sub-btn.active{box-shadow:inset 0 -4px 0 #ffd54f}
-</style>
+.pl-nav{margin:1.6rem 0 .6rem}
+.pl-nav h2{font-size:.95rem;color:#666;text-align:center;margin:0 0 .8rem;letter-spacing:.1em}
+.pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.pl-btn{display:flex;flex-direction:column;gap:.15rem;background:#fff;border-radius:12px;border-left:6px solid var(--c);padding:.7rem .75rem;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.08);min-width:0}
+.pl-btn b{font-size:.98rem;color:var(--c);line-height:1.4}
+.pl-btn span{font-size:.78rem;line-height:1.55;color:#555}
+@media(min-width:641px){.pl-grid{grid-template-columns:repeat(4,1fr)}}
+.map-hint{font-size:.8rem;color:#666;text-align:right;margin:0 .3rem .35rem}</style>
 </head>
 <body>
 <header>
@@ -304,6 +311,7 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
 
   <!-- ブロック地図 -->
+  <p class="map-hint">👈 左にスライドすると、西日本も見られます</p>
   <div class="map-wrap">
     <div class="jmap">
       <a class="b hk f-hokkaido" href="hokkaido_x.html">北海道</a>
@@ -368,9 +376,9 @@ footer{text-align:center;padding:1.5rem;font-size:0.72rem;color:#888;border-top:
   </div>
 
   <!-- テキストリスト -->
-  <div class="region-nav">
-    <h2>── 地域から探す ──</h2>
-    <div class="regions" id="regionList"></div>
+  <div class="pl-nav">
+    <h2>── ほかのページ ──</h2>
+    <div class="pl-grid"><a class="pl-btn" style="--c:#008793" href="index.html"><b>🐾 保健所</b><span>都道府県ごとの保健所・収容施設</span></a><a class="pl-btn" style="--c:#c98a00" href="tips.html"><b>🚨 迷子にしたら</b><span>今すぐやることを順番に</span></a><a class="pl-btn" style="--c:#e8670c" href="found.html"><b>👀 目撃・保護</b><span>見かけた・保護したときに</span></a><a class="pl-btn" style="--c:#e0568c" href="poster.html"><b>🖼️ ポスター</b><span>無料で迷子ポスターを作る</span></a><a class="pl-btn" style="--c:#1f9a63" href="search.html"><b>🔎 詳しい探し方</b><span>届け出の先の捜索のコツ</span></a><a class="pl-btn" style="--c:#0b7a9b" href="spread.html"><b>📣 地域に広める</b><span>掲示板・回覧板・ラジオなど</span></a><a class="pl-btn" style="--c:#6c45c9" href="guard.html"><b>🛡️ 迷子対策</b><span>迷子にさせないための備え</span></a></div>
   </div>
 
   <!-- 保護情報まとめ -->
@@ -470,7 +478,7 @@ const regions=[
   {name:"九州・沖縄",cls:"ky",prefs:["fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","okinawa"]},
 ];
 const list=document.getElementById('regionList');
-regions.forEach(r=>{
+if(list)regions.forEach(r=>{
   const d=document.createElement('div');
   d.className='region-block';
   d.innerHTML=`<h3 class="rh-${r.cls}">${r.name}</h3>`;
@@ -484,6 +492,7 @@ regions.forEach(r=>{
   });
   list.appendChild(d);
 });
+(function(){var w=document.querySelector('.map-wrap');if(w&&w.scrollWidth>w.clientWidth){w.scrollLeft=w.scrollWidth}})();
 </script>
 </body>
 </html>
